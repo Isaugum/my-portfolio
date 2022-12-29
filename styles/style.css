@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -24,10 +28,11 @@ button {
   justify-content: center;
   align-items: stretch;
   background-color: #131313;
+  width: 100%;
 }
 
 .background-image {
-  height: 200vh;
+  height: 200%;
   width: 100%;
   position: absolute;
   top: 0;
@@ -38,18 +43,17 @@ button {
 }
 
 .landing-page {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: relative;
   z-index: 1;
-  margin: 0;
 }
 .landing-page .navbar {
   display: flex;
   flex-direction: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 7rem;
+  padding: 1% 7rem;
   background-color: rgba(63, 63, 63, 0.1);
 }
 .landing-page .navbar h1 {
@@ -61,7 +65,7 @@ button {
   flex-direction: flex;
   justify-content: space-around;
   align-items: stretch;
-  width: 400px;
+  width: 500px;
 }
 .landing-page .navbar ul li {
   font-size: 1.8rem;
@@ -85,7 +89,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  width: 600px;
+  width: 40%;
   margin: 5% 7rem 0 7rem;
 }
 .landing-page .landing-page-text h1 {
@@ -115,16 +119,16 @@ button {
   flex-direction: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 4% 7rem 0 7rem;
+  margin: 15% 7rem 0 7rem;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 .cv-section .cv-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  width: 600px;
+  width: 50%;
 }
 .cv-section .cv-text h1 {
   font-size: 2.5em;
@@ -140,7 +144,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 600px;
+  width: 50%;
 }
 .cv-section .cv-skills h1 {
   font-size: 2.5em;
@@ -149,5 +153,77 @@ button {
 }
 .cv-section .cv-skills p {
   font-size: 1.7em;
+  color: #e4e4e4;
+}
+
+.music-media {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 7% 0;
+}
+.music-media svg {
+  stroke: #e4e4e4;
+  stroke-width: 0.5;
+}
+.music-media h1 {
+  height: 100px;
+  color: #e4e4e4;
+  text-align: center;
+}
+
+.projects-section {
+  position: relative;
+  z-index: 1;
+  height: 80vh;
+  margin: 0 7rem 5% 7rem;
+}
+.projects-section h1 {
+  font-size: 2.5em;
+  color: #e4e4e4;
+  margin: 0;
+}
+.projects-section ul {
+  display: flex;
+  flex-direction: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 700px;
+  margin: 50px 0;
+  padding: 0;
+}
+.projects-section ul li {
+  font-size: 1.3em;
+  color: #3F3F3F;
+  transition: 500ms;
+}
+.projects-section ul li:hover {
+  cursor: pointer;
+  color: #707070;
+}
+.projects-section .project-container {
+  display: flex;
+  flex-direction: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.projects-section .project-container img {
+  width: 50%;
+  aspect-ratio: 3/2;
+  background-color: #86A4B8;
+}
+.projects-section .project-container .project-info {
+  width: 40%;
+}
+.projects-section .project-container .project-info h2 {
+  font-size: 1.5em;
+  color: #e4e4e4;
+}
+.projects-section .project-container .project-info h3 {
+  font-size: 1.3em;
+  color: #707070;
+}
+.projects-section .project-container .project-info p {
+  font-size: 1em;
   color: #e4e4e4;
 }/*# sourceMappingURL=style.css.map */

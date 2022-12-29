@@ -10,6 +10,9 @@ $light-button: rgba(19, 19, 19, 0.5);
 $margin-left-right: 7rem;
 
 //Reset
+* {
+    box-sizing: border-box;
+}
 html, body {
     margin: 0;
     padding: 0;
@@ -42,10 +45,12 @@ button {
 .container {
     @include flex(column, center, stretch);
     background-color: $background-color;
+
+    width: 100%;
 }
 
 .background-image {
-    height: 200vh;
+    height: 200%;
     width: 100%;
 
     position: absolute;
@@ -58,18 +63,16 @@ button {
 }
 
 .landing-page {
-    height: 100vh;
+    height: 100%;
     width: 100%;
 
     position: relative;
     z-index: 1;
 
-    margin: 0;
-
     .navbar {
         @include flex(flex, space-between, center);
 
-        padding: 1rem $margin-left-right;
+        padding: 1% $margin-left-right;
 
         background-color: $light-background;
 
@@ -81,7 +84,7 @@ button {
         ul {
             @include flex(flex, space-around, stretch);
 
-            width: 400px;
+            width: 500px;
 
             li {
                 font-size: 1.8rem;
@@ -109,7 +112,7 @@ button {
     .landing-page-text {
         @include flex(column, center, start);
 
-        width: 600px;
+        width: 40%;
 
         margin: 5% $margin-left-right 0 $margin-left-right;
 
@@ -145,15 +148,15 @@ button {
 
 .cv-section {
     @include flex(flex, space-between, center);
-    margin: 4% $margin-left-right 0 $margin-left-right;
+    margin: 15% $margin-left-right 0 $margin-left-right;
 
     position: relative;
-    z-index: 2;
+    z-index: 1;
 
     .cv-text {
         @include flex(column, center, start);
 
-        width: 600px;
+        width: 50%;
     
         h1 {
             font-size: 2.5em;
@@ -170,7 +173,7 @@ button {
     .cv-skills {
         @include flex(column, center, flex-start);
 
-        width: 600px;
+        width: 50%;
     
         h1 {
             font-size: 2.5em;
@@ -181,6 +184,87 @@ button {
         p {
             font-size: 1.7em;
             color: $font-color-light;
+        }
+    }
+}
+
+.music-media {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin: 7% 0;
+
+    svg {
+        stroke: $font-color-light;
+        stroke-width: 0.5;
+    }
+
+    h1 {
+        height: 100px;
+        color: $font-color-light;
+        text-align: center;
+    }
+}
+
+.projects-section {
+    position: relative;
+    z-index: 1;
+
+    height: 80vh;
+
+    margin: 0 $margin-left-right 5% $margin-left-right;
+
+    h1 {
+        font-size: 2.5em;
+        color: $font-color-light;
+        margin: 0;
+    }
+
+    ul {
+        @include flex(flex, space-between, center);
+
+        width: 700px;
+        margin: 50px 0;
+        padding: 0;
+
+        li {
+            font-size: 1.3em;
+            color: $font-color-dark;
+            transition: 500ms;
+
+            &:hover {
+                cursor: pointer;
+                color: $font-color-medium;
+            }
+        }
+    }
+
+    .project-container {
+        @include flex(flex, space-between, stretch);
+
+        img {
+            width: 50%;
+            aspect-ratio: 3/2;
+            background-color: $blue-highlights;
+        }
+
+        .project-info {
+            width: 40%;
+
+            h2 {
+                font-size: 1.5em;
+                color: $font-color-light;
+            }
+
+            h3 {
+                font-size: 1.3em;
+                color: $font-color-medium;
+            }
+
+            p {
+                font-size: 1em;
+                color: $font-color-light;
+            }
         }
     }
 }
