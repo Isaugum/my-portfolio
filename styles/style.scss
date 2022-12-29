@@ -64,6 +64,8 @@ button {
     position: relative;
     z-index: 1;
 
+    margin: 0;
+
     .navbar {
         @include flex(flex, space-between, center);
 
@@ -107,27 +109,26 @@ button {
     .landing-page-text {
         @include flex(column, center, start);
 
-        width: 40%;
-
+        width: 600px;
 
         margin: 5% $margin-left-right 0 $margin-left-right;
 
         h1 {
-            font-size: 2.8rem;
+            font-size: 3em;
             color: $font-color-dark;
             margin: 0;
         }
 
         p {
-            font-size: 1.7rem;
+            font-size: 1.7em;
             color: $font-color-medium;
         }
 
         button {
-            font-size: 1.8rem;
+            font-size: 1.8em;
             color: $font-color-light;
 
-            padding: 20px 120px;
+            padding: 20px 100px;
             margin-top: 5%;
 
             border-radius: 40px;
@@ -138,6 +139,48 @@ button {
                 background-color: $blue-highlights;
                 cursor: pointer;
             }
+        }
+    }
+}
+
+.cv-section {
+    @include flex(flex, space-between, center);
+    margin: 4% $margin-left-right 0 $margin-left-right;
+
+    position: relative;
+    z-index: 2;
+
+    .cv-text {
+        @include flex(column, center, start);
+
+        width: 600px;
+    
+        h1 {
+            font-size: 2.5em;
+            color: $font-color-light;
+            margin: 0;
+        }
+    
+        p {
+            font-size: 1.7em;
+            color: $font-color-light;
+        }
+    }
+
+    .cv-skills {
+        @include flex(column, center, flex-start);
+
+        width: 600px;
+    
+        h1 {
+            font-size: 2.5em;
+            color: $font-color-light;
+            margin: 0;
+        }
+    
+        p {
+            font-size: 1.7em;
+            color: $font-color-light;
         }
     }
 }

@@ -42,6 +42,7 @@ button {
   width: 100%;
   position: relative;
   z-index: 1;
+  margin: 0;
 }
 .landing-page .navbar {
   display: flex;
@@ -84,22 +85,22 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  width: 40%;
+  width: 600px;
   margin: 5% 7rem 0 7rem;
 }
 .landing-page .landing-page-text h1 {
-  font-size: 2.8rem;
+  font-size: 3em;
   color: #3F3F3F;
   margin: 0;
 }
 .landing-page .landing-page-text p {
-  font-size: 1.7rem;
+  font-size: 1.7em;
   color: #707070;
 }
 .landing-page .landing-page-text button {
-  font-size: 1.8rem;
+  font-size: 1.8em;
   color: #e4e4e4;
-  padding: 20px 120px;
+  padding: 20px 100px;
   margin-top: 5%;
   border-radius: 40px;
   transition: 500ms;
@@ -107,4 +108,46 @@ button {
 .landing-page .landing-page-text button:hover {
   background-color: #86A4B8;
   cursor: pointer;
+}
+
+.cv-section {
+  display: flex;
+  flex-direction: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4% 7rem 0 7rem;
+  position: relative;
+  z-index: 2;
+}
+.cv-section .cv-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 600px;
+}
+.cv-section .cv-text h1 {
+  font-size: 2.5em;
+  color: #e4e4e4;
+  margin: 0;
+}
+.cv-section .cv-text p {
+  font-size: 1.7em;
+  color: #e4e4e4;
+}
+.cv-section .cv-skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 600px;
+}
+.cv-section .cv-skills h1 {
+  font-size: 2.5em;
+  color: #e4e4e4;
+  margin: 0;
+}
+.cv-section .cv-skills p {
+  font-size: 1.7em;
+  color: #e4e4e4;
 }/*# sourceMappingURL=style.css.map */
