@@ -1,6 +1,110 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  text-decoration: none;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background-color: rgba(19, 19, 19, 0.5);
+}
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
+  background-color: #131313;
+}
+
+.background-image {
+  height: 200vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("/../images/landing-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.landing-page {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.landing-page .navbar {
+  display: flex;
+  flex-direction: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 7rem;
+  background-color: rgba(63, 63, 63, 0.1);
+}
+.landing-page .navbar h1 {
+  font-size: 1.8rem;
+  color: #3F3F3F;
+}
+.landing-page .navbar ul {
+  display: flex;
+  flex-direction: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  width: 400px;
+}
+.landing-page .navbar ul li {
+  font-size: 1.8rem;
+  color: #707070;
+}
+.landing-page .navbar ul li::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  background: #707070;
+  margin: auto;
+  display: block;
+  position: relative;
+  transition: 500ms;
+}
+.landing-page .navbar ul li:hover::after {
+  width: 100%;
+}
+.landing-page .landing-page-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 40%;
+  margin: 5% 7rem 0 7rem;
+}
+.landing-page .landing-page-text h1 {
+  font-size: 2.8rem;
+  color: #3F3F3F;
+  margin: 0;
+}
+.landing-page .landing-page-text p {
+  font-size: 1.7rem;
+  color: #707070;
+}
+.landing-page .landing-page-text button {
+  font-size: 1.8rem;
+  color: #e4e4e4;
+  padding: 20px 120px;
+  margin-top: 5%;
+  border-radius: 40px;
+  transition: 500ms;
+}
+.landing-page .landing-page-text button:hover {
+  background-color: #86A4B8;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
