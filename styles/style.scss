@@ -192,7 +192,7 @@ button {
     position: relative;
     z-index: 1;
     width: 100%;
-    margin: 7% 0;
+    margin: 10% 0;
 
     svg {
         stroke: $font-color-light;
@@ -267,4 +267,20 @@ button {
             }
         }
     }
+}
+
+.contacts-section {
+
+    margin: 0 $margin-left-right 0 $margin-left-right;
+
+    h1 {
+        font-size: 2em;
+        color: $font-color-light;
+    }
+
+    p {
+        font-size: 1.4em;
+        color: $font-color-light;
+    }
+    
 }

@@ -160,7 +160,7 @@ button {
   position: relative;
   z-index: 1;
   width: 100%;
-  margin: 7% 0;
+  margin: 10% 0;
 }
 .music-media svg {
   stroke: #e4e4e4;
@@ -225,5 +225,17 @@ button {
 }
 .projects-section .project-container .project-info p {
   font-size: 1em;
+  color: #e4e4e4;
+}
+
+.contacts-section {
+  margin: 0 7rem 0 7rem;
+}
+.contacts-section h1 {
+  font-size: 2em;
+  color: #e4e4e4;
+}
+.contacts-section p {
+  font-size: 1.4em;
   color: #e4e4e4;
 }/*# sourceMappingURL=style.css.map */
