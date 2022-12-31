@@ -221,9 +221,10 @@ button {
     }
 
     ul {
-        @include flex(flex, space-between, center);
+        @include flex(flex, space-between, start);
 
-        width: 700px;
+
+        width: 50%;
         margin: 50px 0;
         padding: 0;
 
@@ -282,5 +283,23 @@ button {
         font-size: 1.4em;
         color: $font-color-light;
     }
-    
+
+    svg {
+        stroke: $font-color-light;
+        stroke-width: 1;
+
+        width: 400px;
+
+        margin: 20px 0;
+    }
+}
+
+.footer {
+    margin-top: 10%;
+    height: 20vh;
+
+    svg {
+        stroke: $font-color-light;
+        stroke-width: 1; 
+    }
 }

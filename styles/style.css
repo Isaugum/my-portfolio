@@ -187,8 +187,8 @@ button {
   display: flex;
   flex-direction: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 700px;
+  align-items: start;
+  width: 50%;
   margin: 50px 0;
   padding: 0;
 }
@@ -238,4 +238,19 @@ button {
 .contacts-section p {
   font-size: 1.4em;
   color: #e4e4e4;
+}
+.contacts-section svg {
+  stroke: #e4e4e4;
+  stroke-width: 1;
+  width: 400px;
+  margin: 20px 0;
+}
+
+.footer {
+  margin-top: 10%;
+  height: 20vh;
+}
+.footer svg {
+  stroke: #e4e4e4;
+  stroke-width: 1;
 }/*# sourceMappingURL=style.css.map */
