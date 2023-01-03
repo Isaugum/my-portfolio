@@ -18,6 +18,7 @@ $light-button-phone: rgba(158, 158, 158, 0.3);
 html, body {
     margin: 0;
     padding: 0;
+    background-color: $background-color;
 }
 
 ul, li {
@@ -43,17 +44,9 @@ button {
     align-items: $align;
 }
 
-.container {
-    @include flex(column, center, start);
-
-    width: 100%;
-
-    background-color: $background-color;
-}
-
 .background-image {
     width: 100%;
-    height: 100vh;
+    height: 70vh;
 
     background-image: url("/../images/landing-background.jpg");
     background-repeat: no-repeat;
@@ -66,24 +59,101 @@ button {
 
 @media only screen and (max-width: 600px) {
     .landing-page {
+        @include flex(column, center, center);
+        position: relative;
+        width: 100%;
+
         .navbar {
-            display: none;
+            h1 {
+                display: none;
+            }
+
+            ul {
+                @include flex(flex, space-between, center);
+                margin: 20px 0;
+                padding: 0;
+
+                width: 350px;
+
+                li {
+                    color: $font-color-dark;
+                }
+            }
+        }
+
+        .landing-page-text {
+            @include flex(column, center, center);
+            margin-top: 40%;
+
+
+            h1 {
+                color: $font-color-light;
+                margin: 0;
+            }
+
+            button {
+                color: $font-color-light;
+                background-color: $blue-highlights;
+                padding: 15px 70px;
+                margin-top: 10px;
+
+                border-radius: 50px;
+            }
+
+            .landing-text-small {
+                color: $font-color-medium;
+                text-align: center;
+                width:300px;
+
+                margin: 30px 0;
+            }
+
+            .landing-text-big {
+                display: none;
+            }
         }
     }
 
     .cv-section {
         color: $font-color-light;
+
+        height: 32vh;
+        position: relative;
+
+        margin: 100px 50px 100px 50px;
+    }
+
+    .music-media {
+        color: $font-color-light;
+
+        position: relative;
+        height: 10vh;
+
         display: none;
+
+        svg {
+            background-color: $font-color-light;
+        }
     }
     
     .projects-section {
         color: $font-color-light;
-        display: none;
+        position: relative;
+
+        height: 30vh;
+        margin: 100px 50px 50px 0;
+
+        ul {
+            @include flex(flex, space-between, center);
+            padding: 0;
+        }
     }
     
     .contact-section {
         color: $font-color-light;
-        display: none;
+        position: relative;
+
+        margin: 0 50px 0 50px;
     }
 }
 
