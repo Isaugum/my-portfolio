@@ -3,11 +3,13 @@ $font-color-dark: #3F3F3F;
 $font-color-medium: #707070;
 $font-color-light: #e4e4e4;
 $blue-highlights: #86A4B8;
+$blue-highlights-phone: rgba(134, 164, 184, 0.5);
 $blue-highlights-opacity: rgba(134, 164, 184, 0.7);
 $background-color: #131313;
 $light-background: rgba(63, 63, 63, 0.1);
 $light-button: rgba(19, 19, 19, 0.5);
-$margin-left-right: 7rem;
+$light-button-phone: rgba(158, 158, 158, 0.3);
+//$margin-left-right: 7rem;
 
 //Reset
 * {
@@ -33,7 +35,7 @@ button {
     background-color: $light-button;
 }
 
-//Flex / Grid
+//Flex
 @mixin flex($direction, $justify, $align) {
     display: flex;
     flex-direction: $direction;
@@ -41,265 +43,62 @@ button {
     align-items: $align;
 }
 
-
 .container {
-    @include flex(column, center, stretch);
-    background-color: $background-color;
+    @include flex(column, center, start);
 
     width: 100%;
+
+    background-color: $background-color;
 }
 
 .background-image {
-    height: 200%;
     width: 100%;
+    height: 100vh;
+
+    background-image: url("/../images/landing-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 
     position: absolute;
     top: 0;
     left: 0;
-
-    background-image: url("/../images/landing-background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
-.landing-page {
-    height: 100%;
-    width: 100%;
-
-    position: relative;
-    z-index: 1;
-
-    .navbar {
-        @include flex(flex, space-between, center);
-
-        padding: 1% $margin-left-right;
-
-        background-color: $light-background;
-
-        h1 {
-            font-size: 1.8rem;
-            color: $font-color-dark;
-        }
-
-        ul {
-            @include flex(flex, space-around, stretch);
-
-            width: 500px;
-
-            li {
-                font-size: 1.8rem;
-                color: $font-color-medium;
-
-                &::after {
-                    content: "";
-                    height: 2px;
-                    width: 0;
-                    background: $font-color-medium;
-                    margin: auto;
-                    display: block;
-                    position: relative;
-
-                    transition: 500ms;
-                }
-
-                &:hover::after {
-                    width: 100%;
-                }
-            }
+@media only screen and (max-width: 600px) {
+    .landing-page {
+        .navbar {
+            display: none;
         }
     }
 
-    .landing-page-text {
-        @include flex(column, center, start);
-
-        width: 40%;
-
-        margin: 5% $margin-left-right 0 $margin-left-right;
-
-        h1 {
-            font-size: 3em;
-            color: $font-color-dark;
-            margin: 0;
-        }
-
-        p {
-            font-size: 1.7em;
-            color: $font-color-medium;
-        }
-
-        button {
-            font-size: 1.8em;
-            color: $font-color-light;
-
-            padding: 20px 100px;
-            margin-top: 5%;
-
-            border-radius: 40px;
-
-            transition: 500ms;
-
-            &:hover {
-                background-color: $blue-highlights;
-                cursor: pointer;
-            }
-        }
-    }
-}
-
-.cv-section {
-    @include flex(flex, space-between, center);
-    margin: 15% $margin-left-right 0 $margin-left-right;
-
-    position: relative;
-    z-index: 1;
-
-    .cv-text {
-        @include flex(column, center, start);
-
-        width: 50%;
-    
-        h1 {
-            font-size: 2.5em;
-            color: $font-color-light;
-            margin: 0;
-        }
-    
-        p {
-            font-size: 1.7em;
-            color: $font-color-light;
-        }
-    }
-
-    .cv-skills {
-        @include flex(column, center, flex-start);
-
-        width: 50%;
-    
-        h1 {
-            font-size: 2.5em;
-            color: $font-color-light;
-            margin: 0;
-        }
-    
-        p {
-            font-size: 1.7em;
-            color: $font-color-light;
-        }
-    }
-}
-
-.music-media {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    margin: 10% 0;
-
-    svg {
-        stroke: $font-color-light;
-        stroke-width: 0.5;
-    }
-
-    h1 {
-        height: 100px;
+    .cv-section {
         color: $font-color-light;
-        text-align: center;
+        display: none;
+    }
+    
+    .projects-section {
+        color: $font-color-light;
+        display: none;
+    }
+    
+    .contact-section {
+        color: $font-color-light;
+        display: none;
     }
 }
 
-.projects-section {
-    position: relative;
-    z-index: 1;
-
-    height: 80vh;
-
-    margin: 0 $margin-left-right 5% $margin-left-right;
-
-    h1 {
-        font-size: 2.5em;
-        color: $font-color-light;
-        margin: 0;
-    }
-
-    ul {
-        @include flex(flex, space-between, start);
-
-
-        width: 50%;
-        margin: 50px 0;
-        padding: 0;
-
-        li {
-            font-size: 1.3em;
-            color: $font-color-dark;
-            transition: 500ms;
-
-            &:hover {
-                cursor: pointer;
-                color: $font-color-medium;
-            }
-        }
-    }
-
-    .project-container {
-        @include flex(flex, space-between, stretch);
-
-        img {
-            width: 50%;
-            aspect-ratio: 3/2;
-            background-color: $blue-highlights;
-        }
-
-        .project-info {
-            width: 40%;
-
-            h2 {
-                font-size: 1.5em;
-                color: $font-color-light;
-            }
-
-            h3 {
-                font-size: 1.3em;
-                color: $font-color-medium;
-            }
-
-            p {
-                font-size: 1em;
-                color: $font-color-light;
-            }
-        }
-    }
+@media only screen and (min-width: 600px) {
+    
 }
 
-.contacts-section {
-
-    margin: 0 $margin-left-right 0 $margin-left-right;
-
-    h1 {
-        font-size: 2em;
-        color: $font-color-light;
-    }
-
-    p {
-        font-size: 1.4em;
-        color: $font-color-light;
-    }
-
-    svg {
-        stroke: $font-color-light;
-        stroke-width: 1;
-
-        width: 400px;
-
-        margin: 20px 0;
-    }
+@media only screen and (min-width: 768px) {
+    
 }
 
-.footer {
-    margin-top: 10%;
-    height: 20vh;
+@media only screen and (min-width: 992px) {
+    
+}
 
-    svg {
-        stroke: $font-color-light;
-        stroke-width: 1; 
-    }
+@media only screen and (min-width: 1200px) {
+    
 }
