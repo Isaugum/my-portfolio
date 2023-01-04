@@ -7,7 +7,7 @@ $blue-highlights-phone: rgba(134, 164, 184, 0.5);
 $blue-highlights-opacity: rgba(134, 164, 184, 0.7);
 $background-color: #131313;
 $light-background: rgba(63, 63, 63, 0.1);
-$light-button: rgba(19, 19, 19, 0.5);
+$light-button: rgba(19, 19, 19, 0.3);
 $light-button-phone: rgba(158, 158, 158, 0.3);
 //$margin-left-right: 7rem;
 
@@ -19,6 +19,8 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: $background-color;
+
+    scroll-behavior: smooth;
 }
 
 ul, li {
@@ -141,7 +143,7 @@ button {
         position: relative;
 
         height: 30vh;
-        margin: 100px 50px 50px 0;
+        margin: 100px 50px 50px 50px;
 
         ul {
             @include flex(flex, space-between, center);
@@ -158,17 +160,506 @@ button {
 }
 
 @media only screen and (min-width: 600px) {
+    .background-image {
+        height: 100vh;
+    }
+    .landing-page {
+        @include flex(column, center, center);
+        position: relative;
+        width: 100%;
+
+        .navbar {
+            h1 {
+                display: none;
+            }
+
+            ul {
+                @include flex(flex, space-between, center);
+                margin: 20px 0;
+                padding: 0;
+
+                width: 350px;
+
+                li {
+                    color: $font-color-dark;
+                }
+            }
+        }
+
+        .landing-page-text {
+            @include flex(column, center, center);
+            margin-top: 40%;
+
+
+            h1 {
+                color: $font-color-light;
+                margin: 0;
+            }
+
+            button {
+                color: $font-color-light;
+                background-color: red;
+                padding: 15px 70px;
+                margin-top: 10px;
+
+                border-radius: 50px;
+            }
+
+            .landing-text-small {
+                color: $font-color-medium;
+                text-align: center;
+                width:300px;
+
+                margin: 30px 0;
+            }
+
+            .landing-text-big {
+                display: none;
+            }
+        }
+    }
+
+    .cv-section {
+        color: $font-color-light;
+
+        height: 32vh;
+        position: relative;
+
+        margin: 100px 50px 100px 50px;
+    }
+
+    .music-media {
+        color: $font-color-light;
+
+        position: relative;
+        height: 10vh;
+
+        display: none;
+
+        svg {
+            background-color: $font-color-light;
+        }
+    }
     
+    .projects-section {
+        color: $font-color-light;
+        position: relative;
+
+        height: 30vh;
+        margin: 100px 50px 50px 0;
+
+        ul {
+            @include flex(flex, space-between, center);
+            padding: 0;
+        }
+    }
+    
+    .contact-section {
+        color: $font-color-light;
+        position: relative;
+
+        margin: 0 50px 0 50px;
+    }
 }
 
 @media only screen and (min-width: 768px) {
+    .background-image {
+        height: 100vh;
+    }
+
+    .landing-page {
+        @include flex(column, center, center);
+        position: relative;
+        width: 100%;
+
+        .navbar {
+            
+            h1 {
+                display: none;
+            }
+
+            ul {
+                @include flex(flex, space-between, center);
+                margin: 20px 0;
+                padding: 0;
+
+                width: 350px;
+
+                li {
+                    color: $font-color-dark;
+                }
+            }
+        }
+
+        .landing-page-text {
+            @include flex(column, center, center);
+            margin-top: 40%;
+
+
+            h1 {
+                color: $font-color-light;
+                margin: 0;
+            }
+
+            button {
+                color: $font-color-light;
+                background-color: green;
+                padding: 15px 70px;
+                margin-top: 10px;
+
+                border-radius: 50px;
+            }
+
+            .landing-text-small {
+                color: $font-color-medium;
+                text-align: center;
+                width:300px;
+
+                margin: 30px 0;
+            }
+
+            .landing-text-big {
+                display: none;
+            }
+        }
+    }
+
+    .cv-section {
+        color: $font-color-light;
+
+        height: 32vh;
+        position: relative;
+
+        margin: 100px 50px 100px 50px;
+    }
+
+    .music-media {
+        color: $font-color-light;
+
+        position: relative;
+        height: 10vh;
+
+        display: none;
+
+        svg {
+            background-color: $font-color-light;
+        }
+    }
     
+    .projects-section {
+        color: $font-color-light;
+        position: relative;
+
+        height: 30vh;
+        margin: 100px 50px 50px 0;
+
+        ul {
+            @include flex(flex, space-between, center);
+            padding: 0;
+        }
+    }
+    
+    .contact-section {
+        color: $font-color-light;
+        position: relative;
+
+        margin: 0 50px 0 50px;
+    }
 }
 
 @media only screen and (min-width: 992px) {
+    .background-image {
+        height: 170vh;
+    }
+
+    .landing-page {
+        @include flex(column, center, center);
+        position: relative;
+        width: 100%;
+
+        .navbar {
+            
+            h1 {
+                display: none;
+            }
+
+            ul {
+                @include flex(flex, space-between, center);
+                margin: 20px 0;
+                padding: 0;
+
+                width: 350px;
+
+                li {
+                    color: $font-color-dark;
+                }
+            }
+        }
+
+        .landing-page-text {
+            @include flex(column, center, center);
+            margin-top: 40%;
+
+
+            h1 {
+                color: $font-color-light;
+                margin: 0;
+            }
+
+            button {
+                color: $font-color-light;
+                background-color: pink;
+                padding: 15px 70px;
+                margin-top: 10px;
+
+                border-radius: 50px;
+            }
+
+            .landing-text-small {
+                color: $font-color-medium;
+                text-align: center;
+                width:300px;
+
+                margin: 30px 0;
+            }
+
+            .landing-text-big {
+                display: none;
+            }
+        }
+    }
+
+    .cv-section {
+        color: $font-color-light;
+
+        height: 32vh;
+        position: relative;
+
+        margin: 100px 50px 100px 50px;
+    }
+
+    .music-media {
+        color: $font-color-light;
+
+        position: relative;
+        height: 10vh;
+
+        display: none;
+
+        svg {
+            background-color: $font-color-light;
+        }
+    }
     
+    .projects-section {
+        color: $font-color-light;
+        position: relative;
+
+        height: 30vh;
+        margin: 100px 50px 50px 0;
+
+        ul {
+            @include flex(flex, space-between, center);
+            padding: 0;
+        }
+    }
+    
+    .contact-section {
+        color: $font-color-light;
+        position: relative;
+
+        margin: 0 50px 0 50px;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
+    .background-image {
+        height: 150vh;
+    }
+
+    .landing-page {
+        position: relative;
+        width: 100%;
+
+        height: 100vh;
+
+        .navbar {
+            @include flex(flex, space-between, center);
+
+            width: 100%;
+            position: absolute;
+            top: 0;
+
+            background-color: $light-background;
+            
+            h1 {
+                display: block;
+                
+                color: $font-color-dark;
+                font-size: 1.8em;
+
+                margin: 40px 0 40px 150px;
+            }
+
+            ul {
+                @include flex(flex, space-between, center);
+                margin: 40px 150px 40px 0;
+                width: 500px;
+                padding: 0;
+
+                li {
+                    color: $font-color-medium;
+                    font-size: 1.8em;
+
+                    &::after {
+                        display: block;
+                        width: 0;
+                        content: "";
+                        background-color: $font-color-medium;
+                        height: 2px;
+                        margin: auto;
+                        transition: 500ms;
+                    }
+
+                    &:hover::after  {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .landing-page-text {
+            @include flex(column, center, flex-start);
+            margin: 0 0 0 0;
+            padding: 30vh 0 20vh 150px;
+
+            width: 100%;
+
+            h1 {
+                color: $font-color-dark;
+                font-size: 2.5em;
+            }
+
+            button {
+                color: $font-color-light;
+                font-size: 1.5em;
+                background-color: $light-button;
+                padding: 20px 120px;
+
+                border-radius: 50px;
+
+                &:hover {
+                    background-color: $blue-highlights;
+                    cursor: pointer;
+                }
+            }
+
+            .landing-text-small {
+                display: none;
+            }
+
+            .landing-text-big {
+                display: block;
+                width: 700px;
+
+                color: $font-color-medium;
+                font-size: 1.8em;
+
+                margin: 30px 0 50px 0;
+            }
+        }
+    }
+
+    .cv-section {
+        @include flex(flex, space-between, center);
+        color: $font-color-light;
+
+        padding: 7em 150px 0 150px;
+        margin: 0;
+
+        .cv-text {
+            width: 45%;
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            p {
+                font-size: 1.6em;
+            }
+        }
+
+        .cv-skills {
+            width: 45%;
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            p {
+                font-size: 1.6em;
+            }
+        }
+    }
+
+    .music-media {
+        color: $font-color-light;
+
+        position: relative;
+        height: 100vh;
+
+        display: none;
+
+        svg {
+            background-color: $font-color-light;
+        }
+    }
     
+    .projects-section {
+        color: $font-color-light;
+        position: relative;
+
+        height: 100vh;
+        padding: 7em 150px 0 150px;
+
+        h1 {
+            font-size: 2.2em;
+        }
+
+        ul {
+            @include flex(flex, space-between, center);
+            width: 25em;
+            padding: 2em 0 2em 0;
+
+            color: $font-color-dark;
+            font-size: 1.5em;
+        }
+
+        .project-container {
+            @include flex(flex, space-between, flex-start);
+            width: 100%;
+
+            img {
+                width: 45%;
+                aspect-ratio: 3/2;
+                background: $blue-highlights;
+            }
+
+            .project-info {
+                width: 45%;
+            }
+        }
+    }
+    
+    .contact-section {
+        color: $font-color-light;
+        position: relative;
+
+        margin: 0 50px 0 50px;
+
+        svg {
+            background-color: $font-color-light;
+            width: 250px;
+        }
+    }
 }
