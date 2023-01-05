@@ -3,34 +3,28 @@ $font-color-dark: #3F3F3F;
 $font-color-medium: #707070;
 $font-color-light: #e4e4e4;
 $blue-highlights: #86A4B8;
-$blue-highlights-phone: rgba(134, 164, 184, 0.5);
+$blue-highlights-phone: rgba(134, 164, 184, 0.3);
 $blue-highlights-opacity: rgba(134, 164, 184, 0.7);
 $background-color: #131313;
 $light-background: rgba(63, 63, 63, 0.1);
 $light-button: rgba(19, 19, 19, 0.3);
 $light-button-phone: rgba(158, 158, 158, 0.3);
-//$margin-left-right: 7rem;
+$base-side-margin: 180px;
 
 //Reset
 * {
     box-sizing: border-box;
-}
-html, body {
-    margin: 0;
-    padding: 0;
-    background-color: $background-color;
-
-    scroll-behavior: smooth;
-}
-
-ul, li {
+    
     text-decoration: none;
     list-style: none;
-}
+    margin: 0;
+    padding: 0;
+    color: $font-color-light;
 
-a {
-    text-decoration: none;
-    color: inherit;
+}
+html, body {
+    scroll-behavior: smooth;
+    background-color: $background-color;
 }
 
 button {
@@ -46,470 +40,79 @@ button {
     align-items: $align;
 }
 
-.background-image {
-    width: 100%;
-    height: 70vh;
+.container {
+    @include flex(column, center, flex-start);
 
-    background-image: url("/../images/landing-background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 100%;
 
     position: absolute;
     top: 0;
     left: 0;
 }
 
+.background-image {
+    width: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+
+//PHONE
 @media only screen and (max-width: 600px) {
-    .landing-page {
-        @include flex(column, center, center);
-        position: relative;
-        width: 100%;
-
-        .navbar {
-            h1 {
-                display: none;
-            }
-
-            ul {
-                @include flex(flex, space-between, center);
-                margin: 20px 0;
-                padding: 0;
-
-                width: 350px;
-
-                li {
-                    color: $font-color-dark;
-                }
-            }
-        }
-
-        .landing-page-text {
-            @include flex(column, center, center);
-            margin-top: 40%;
-
-
-            h1 {
-                color: $font-color-light;
-                margin: 0;
-            }
-
-            button {
-                color: $font-color-light;
-                background-color: $blue-highlights;
-                padding: 15px 70px;
-                margin-top: 10px;
-
-                border-radius: 50px;
-            }
-
-            .landing-text-small {
-                color: $font-color-medium;
-                text-align: center;
-                width:300px;
-
-                margin: 30px 0;
-            }
-
-            .landing-text-big {
-                display: none;
-            }
-        }
-    }
-
-    .cv-section {
-        color: $font-color-light;
-
-        height: 32vh;
-        position: relative;
-
-        margin: 100px 50px 100px 50px;
-    }
-
-    .music-media {
-        color: $font-color-light;
-
-        position: relative;
-        height: 10vh;
-
-        display: none;
-
-        svg {
-            background-color: $font-color-light;
-        }
-    }
-    
-    .projects-section {
-        color: $font-color-light;
-        position: relative;
-
-        height: 30vh;
-        margin: 100px 50px 50px 50px;
-
-        ul {
-            @include flex(flex, space-between, center);
-            padding: 0;
-        }
-    }
-    
-    .contact-section {
-        color: $font-color-light;
-        position: relative;
-
-        margin: 0 50px 0 50px;
-    }
 }
 
+
+//TABLET 2
 @media only screen and (min-width: 600px) {
-    .background-image {
-        height: 100vh;
-    }
-    .landing-page {
-        @include flex(column, center, center);
-        position: relative;
-        width: 100%;
-
-        .navbar {
-            h1 {
-                display: none;
-            }
-
-            ul {
-                @include flex(flex, space-between, center);
-                margin: 20px 0;
-                padding: 0;
-
-                width: 350px;
-
-                li {
-                    color: $font-color-dark;
-                }
-            }
-        }
-
-        .landing-page-text {
-            @include flex(column, center, center);
-            margin-top: 40%;
-
-
-            h1 {
-                color: $font-color-light;
-                margin: 0;
-            }
-
-            button {
-                color: $font-color-light;
-                background-color: red;
-                padding: 15px 70px;
-                margin-top: 10px;
-
-                border-radius: 50px;
-            }
-
-            .landing-text-small {
-                color: $font-color-medium;
-                text-align: center;
-                width:300px;
-
-                margin: 30px 0;
-            }
-
-            .landing-text-big {
-                display: none;
-            }
-        }
-    }
-
-    .cv-section {
-        color: $font-color-light;
-
-        height: 32vh;
-        position: relative;
-
-        margin: 100px 50px 100px 50px;
-    }
-
-    .music-media {
-        color: $font-color-light;
-
-        position: relative;
-        height: 10vh;
-
-        display: none;
-
-        svg {
-            background-color: $font-color-light;
-        }
-    }
-    
-    .projects-section {
-        color: $font-color-light;
-        position: relative;
-
-        height: 30vh;
-        margin: 100px 50px 50px 0;
-
-        ul {
-            @include flex(flex, space-between, center);
-            padding: 0;
-        }
-    }
-    
-    .contact-section {
-        color: $font-color-light;
-        position: relative;
-
-        margin: 0 50px 0 50px;
-    }
 }
 
+
+//TABLET 1
 @media only screen and (min-width: 768px) {
-    .background-image {
-        height: 100vh;
-    }
-
-    .landing-page {
-        @include flex(column, center, center);
-        position: relative;
-        width: 100%;
-
-        .navbar {
-            
-            h1 {
-                display: none;
-            }
-
-            ul {
-                @include flex(flex, space-between, center);
-                margin: 20px 0;
-                padding: 0;
-
-                width: 350px;
-
-                li {
-                    color: $font-color-dark;
-                }
-            }
-        }
-
-        .landing-page-text {
-            @include flex(column, center, center);
-            margin-top: 40%;
-
-
-            h1 {
-                color: $font-color-light;
-                margin: 0;
-            }
-
-            button {
-                color: $font-color-light;
-                background-color: green;
-                padding: 15px 70px;
-                margin-top: 10px;
-
-                border-radius: 50px;
-            }
-
-            .landing-text-small {
-                color: $font-color-medium;
-                text-align: center;
-                width:300px;
-
-                margin: 30px 0;
-            }
-
-            .landing-text-big {
-                display: none;
-            }
-        }
-    }
-
-    .cv-section {
-        color: $font-color-light;
-
-        height: 32vh;
-        position: relative;
-
-        margin: 100px 50px 100px 50px;
-    }
-
-    .music-media {
-        color: $font-color-light;
-
-        position: relative;
-        height: 10vh;
-
-        display: none;
-
-        svg {
-            background-color: $font-color-light;
-        }
-    }
-    
-    .projects-section {
-        color: $font-color-light;
-        position: relative;
-
-        height: 30vh;
-        margin: 100px 50px 50px 0;
-
-        ul {
-            @include flex(flex, space-between, center);
-            padding: 0;
-        }
-    }
-    
-    .contact-section {
-        color: $font-color-light;
-        position: relative;
-
-        margin: 0 50px 0 50px;
-    }
 }
 
+
+//MEDIUM WIDTH
 @media only screen and (min-width: 992px) {
-    .background-image {
-        height: 170vh;
-    }
-
-    .landing-page {
-        @include flex(column, center, center);
-        position: relative;
-        width: 100%;
-
-        .navbar {
-            
-            h1 {
-                display: none;
-            }
-
-            ul {
-                @include flex(flex, space-between, center);
-                margin: 20px 0;
-                padding: 0;
-
-                width: 350px;
-
-                li {
-                    color: $font-color-dark;
-                }
-            }
-        }
-
-        .landing-page-text {
-            @include flex(column, center, center);
-            margin-top: 40%;
-
-
-            h1 {
-                color: $font-color-light;
-                margin: 0;
-            }
-
-            button {
-                color: $font-color-light;
-                background-color: pink;
-                padding: 15px 70px;
-                margin-top: 10px;
-
-                border-radius: 50px;
-            }
-
-            .landing-text-small {
-                color: $font-color-medium;
-                text-align: center;
-                width:300px;
-
-                margin: 30px 0;
-            }
-
-            .landing-text-big {
-                display: none;
-            }
-        }
-    }
-
-    .cv-section {
-        color: $font-color-light;
-
-        height: 32vh;
-        position: relative;
-
-        margin: 100px 50px 100px 50px;
-    }
-
-    .music-media {
-        color: $font-color-light;
-
-        position: relative;
-        height: 10vh;
-
-        display: none;
-
-        svg {
-            background-color: $font-color-light;
-        }
-    }
-    
-    .projects-section {
-        color: $font-color-light;
-        position: relative;
-
-        height: 30vh;
-        margin: 100px 50px 50px 0;
-
-        ul {
-            @include flex(flex, space-between, center);
-            padding: 0;
-        }
-    }
-    
-    .contact-section {
-        color: $font-color-light;
-        position: relative;
-
-        margin: 0 50px 0 50px;
-    }
 }
 
+
+// MAX WIDTH
 @media only screen and (min-width: 1200px) {
-    .background-image {
-        height: 150vh;
-    }
 
     .landing-page {
-        position: relative;
         width: 100%;
-
         height: 100vh;
+        min-height: 700px;
+
+        z-index: 1;
 
         .navbar {
             @include flex(flex, space-between, center);
 
-            width: 100%;
-            position: absolute;
-            top: 0;
+            height: 100px;
+            padding: 0 $base-side-margin;
 
             background-color: $light-background;
             
             h1 {
-                display: block;
-                
                 color: $font-color-dark;
                 font-size: 1.8em;
-
-                margin: 40px 0 40px 150px;
             }
 
             ul {
                 @include flex(flex, space-between, center);
-                margin: 40px 150px 40px 0;
-                width: 500px;
-                padding: 0;
+
+                width: 420px;
 
                 li {
-                    color: $font-color-medium;
-                    font-size: 1.8em;
+                    a {
+                        color: $font-color-medium;
+                        font-size: 1.8em;
+                    }
 
                     &::after {
                         display: block;
@@ -530,10 +133,8 @@ button {
 
         .landing-page-text {
             @include flex(column, center, flex-start);
-            margin: 0 0 0 0;
-            padding: 30vh 0 20vh 150px;
-
-            width: 100%;
+            //top margin needs fixing !! not responsive !!
+            margin: 10rem $base-side-margin 0 $base-side-margin;
 
             h1 {
                 color: $font-color-dark;
@@ -541,12 +142,12 @@ button {
             }
 
             button {
-                color: $font-color-light;
                 font-size: 1.5em;
-                background-color: $light-button;
                 padding: 20px 120px;
-
                 border-radius: 50px;
+
+                color: $font-color-light;
+                background-color: $light-button;
 
                 &:hover {
                     background-color: $blue-highlights;
@@ -560,25 +161,28 @@ button {
 
             .landing-text-big {
                 display: block;
+
                 width: 700px;
+                margin: 2rem 0 3rem 0;
 
                 color: $font-color-medium;
                 font-size: 1.8em;
-
-                margin: 30px 0 50px 0;
             }
         }
     }
-
+ 
     .cv-section {
         @include flex(flex, space-between, center);
         color: $font-color-light;
 
-        padding: 7em 150px 0 150px;
-        margin: 0;
+        margin: 0 $base-side-margin 0 $base-side-margin;
+        padding: 3rem 0;
+
+        z-index: 1;
 
         .cv-text {
-            width: 45%;
+            width: 50%;
+            margin-right: 30px;
 
             h1 {
                 font-size: 2.2em;
@@ -604,10 +208,6 @@ button {
 
     .music-media {
         color: $font-color-light;
-
-        position: relative;
-        height: 100vh;
-
         display: none;
 
         svg {
@@ -616,11 +216,19 @@ button {
     }
     
     .projects-section {
+        @include flex(column, flex-start, flex-start);
         color: $font-color-light;
-        position: relative;
 
         height: 100vh;
-        padding: 7em 150px 0 150px;
+        width: calc(100% - 2*$base-side-margin);
+
+        min-height: 700px;
+        margin: 0 $base-side-margin 0 $base-side-margin;
+
+        //RESPONSIVE PADDING!! ADJUST
+        padding: 8rem 0;
+
+        z-index: 1;
 
         h1 {
             font-size: 2.2em;
@@ -628,38 +236,110 @@ button {
 
         ul {
             @include flex(flex, space-between, center);
-            width: 25em;
-            padding: 2em 0 2em 0;
 
             color: $font-color-dark;
             font-size: 1.5em;
+            
+            width: 50%;
+
+            margin: 60px 0;
+
+            li {
+                color: $font-color-dark;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
         }
 
         .project-container {
             @include flex(flex, space-between, flex-start);
+
             width: 100%;
 
             img {
-                width: 45%;
-                aspect-ratio: 3/2;
+                width: 50%;
+                aspect-ratio: 5/3;
+                margin-right: 30px;
+
                 background: $blue-highlights;
             }
 
             .project-info {
                 width: 45%;
+
+                margin-left: 30px;
+
+                h2 {
+                    font-size: 1.5em;
+                }
+
+                h3 {
+                    font-size: 1.2em;
+
+                    margin: 20px 0 50px 0;
+                    color: $font-color-medium;
+                }
+
+                p {
+                    font-size: 1.3em;
+                }
             }
         }
     }
     
     .contact-section {
         color: $font-color-light;
-        position: relative;
 
-        margin: 0 50px 0 50px;
+        margin: 0 $base-side-margin 6rem $base-side-margin;
+
+        z-index: 1;
 
         svg {
-            background-color: $font-color-light;
-            width: 250px;
+            background-color: $font-color-dark;
+            width: 60%;
+
+            margin: 30px 0;
         }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 40px;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+    }
+
+    .footer {
+        width: 100%;
+        height: 20vh;
+        min-height: 200px;
+
+        svg {
+            background-color: $font-color-dark;
+        }
+    }
+}
+
+@media only screen and (max-height: 800px) {
+    .landing-page {
+        .landing-page-text {
+            margin-top: 6rem;
+        }
+    }
+
+    .cv-section {
+        padding: 6rem 0;
+    }
+
+    .projects-section {
+        padding: 5rem 0;
+    }
+
+    .contact-section {
+        padding: 6rem 0;
     }
 }

@@ -1,22 +1,15 @@
 * {
   box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #e4e4e4;
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
-  background-color: #131313;
   scroll-behavior: smooth;
-}
-
-ul, li {
-  text-decoration: none;
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
+  background-color: #131313;
 }
 
 button {
@@ -24,401 +17,53 @@ button {
   background-color: rgba(19, 19, 19, 0.3);
 }
 
-.background-image {
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   width: 100%;
-  height: 70vh;
-  background-image: url("/../images/landing-background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
   position: absolute;
   top: 0;
   left: 0;
 }
 
-@media only screen and (max-width: 600px) {
-  .landing-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-  }
-  .landing-page .navbar h1 {
-    display: none;
-  }
-  .landing-page .navbar ul {
-    display: flex;
-    flex-direction: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px 0;
-    padding: 0;
-    width: 350px;
-  }
-  .landing-page .navbar ul li {
-    color: #3F3F3F;
-  }
-  .landing-page .landing-page-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40%;
-  }
-  .landing-page .landing-page-text h1 {
-    color: #e4e4e4;
-    margin: 0;
-  }
-  .landing-page .landing-page-text button {
-    color: #e4e4e4;
-    background-color: #86A4B8;
-    padding: 15px 70px;
-    margin-top: 10px;
-    border-radius: 50px;
-  }
-  .landing-page .landing-page-text .landing-text-small {
-    color: #707070;
-    text-align: center;
-    width: 300px;
-    margin: 30px 0;
-  }
-  .landing-page .landing-page-text .landing-text-big {
-    display: none;
-  }
-  .cv-section {
-    color: #e4e4e4;
-    height: 32vh;
-    position: relative;
-    margin: 100px 50px 100px 50px;
-  }
-  .music-media {
-    color: #e4e4e4;
-    position: relative;
-    height: 10vh;
-    display: none;
-  }
-  .music-media svg {
-    background-color: #e4e4e4;
-  }
-  .projects-section {
-    color: #e4e4e4;
-    position: relative;
-    height: 30vh;
-    margin: 100px 50px 50px 50px;
-  }
-  .projects-section ul {
-    display: flex;
-    flex-direction: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0;
-  }
-  .contact-section {
-    color: #e4e4e4;
-    position: relative;
-    margin: 0 50px 0 50px;
-  }
+.background-image {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
-@media only screen and (min-width: 600px) {
-  .background-image {
-    height: 100vh;
-  }
-  .landing-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-  }
-  .landing-page .navbar h1 {
-    display: none;
-  }
-  .landing-page .navbar ul {
-    display: flex;
-    flex-direction: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px 0;
-    padding: 0;
-    width: 350px;
-  }
-  .landing-page .navbar ul li {
-    color: #3F3F3F;
-  }
-  .landing-page .landing-page-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40%;
-  }
-  .landing-page .landing-page-text h1 {
-    color: #e4e4e4;
-    margin: 0;
-  }
-  .landing-page .landing-page-text button {
-    color: #e4e4e4;
-    background-color: red;
-    padding: 15px 70px;
-    margin-top: 10px;
-    border-radius: 50px;
-  }
-  .landing-page .landing-page-text .landing-text-small {
-    color: #707070;
-    text-align: center;
-    width: 300px;
-    margin: 30px 0;
-  }
-  .landing-page .landing-page-text .landing-text-big {
-    display: none;
-  }
-  .cv-section {
-    color: #e4e4e4;
-    height: 32vh;
-    position: relative;
-    margin: 100px 50px 100px 50px;
-  }
-  .music-media {
-    color: #e4e4e4;
-    position: relative;
-    height: 10vh;
-    display: none;
-  }
-  .music-media svg {
-    background-color: #e4e4e4;
-  }
-  .projects-section {
-    color: #e4e4e4;
-    position: relative;
-    height: 30vh;
-    margin: 100px 50px 50px 0;
-  }
-  .projects-section ul {
-    display: flex;
-    flex-direction: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0;
-  }
-  .contact-section {
-    color: #e4e4e4;
-    position: relative;
-    margin: 0 50px 0 50px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .background-image {
-    height: 100vh;
-  }
-  .landing-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-  }
-  .landing-page .navbar h1 {
-    display: none;
-  }
-  .landing-page .navbar ul {
-    display: flex;
-    flex-direction: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px 0;
-    padding: 0;
-    width: 350px;
-  }
-  .landing-page .navbar ul li {
-    color: #3F3F3F;
-  }
-  .landing-page .landing-page-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40%;
-  }
-  .landing-page .landing-page-text h1 {
-    color: #e4e4e4;
-    margin: 0;
-  }
-  .landing-page .landing-page-text button {
-    color: #e4e4e4;
-    background-color: green;
-    padding: 15px 70px;
-    margin-top: 10px;
-    border-radius: 50px;
-  }
-  .landing-page .landing-page-text .landing-text-small {
-    color: #707070;
-    text-align: center;
-    width: 300px;
-    margin: 30px 0;
-  }
-  .landing-page .landing-page-text .landing-text-big {
-    display: none;
-  }
-  .cv-section {
-    color: #e4e4e4;
-    height: 32vh;
-    position: relative;
-    margin: 100px 50px 100px 50px;
-  }
-  .music-media {
-    color: #e4e4e4;
-    position: relative;
-    height: 10vh;
-    display: none;
-  }
-  .music-media svg {
-    background-color: #e4e4e4;
-  }
-  .projects-section {
-    color: #e4e4e4;
-    position: relative;
-    height: 30vh;
-    margin: 100px 50px 50px 0;
-  }
-  .projects-section ul {
-    display: flex;
-    flex-direction: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0;
-  }
-  .contact-section {
-    color: #e4e4e4;
-    position: relative;
-    margin: 0 50px 0 50px;
-  }
-}
-@media only screen and (min-width: 992px) {
-  .background-image {
-    height: 170vh;
-  }
-  .landing-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-  }
-  .landing-page .navbar h1 {
-    display: none;
-  }
-  .landing-page .navbar ul {
-    display: flex;
-    flex-direction: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px 0;
-    padding: 0;
-    width: 350px;
-  }
-  .landing-page .navbar ul li {
-    color: #3F3F3F;
-  }
-  .landing-page .landing-page-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40%;
-  }
-  .landing-page .landing-page-text h1 {
-    color: #e4e4e4;
-    margin: 0;
-  }
-  .landing-page .landing-page-text button {
-    color: #e4e4e4;
-    background-color: pink;
-    padding: 15px 70px;
-    margin-top: 10px;
-    border-radius: 50px;
-  }
-  .landing-page .landing-page-text .landing-text-small {
-    color: #707070;
-    text-align: center;
-    width: 300px;
-    margin: 30px 0;
-  }
-  .landing-page .landing-page-text .landing-text-big {
-    display: none;
-  }
-  .cv-section {
-    color: #e4e4e4;
-    height: 32vh;
-    position: relative;
-    margin: 100px 50px 100px 50px;
-  }
-  .music-media {
-    color: #e4e4e4;
-    position: relative;
-    height: 10vh;
-    display: none;
-  }
-  .music-media svg {
-    background-color: #e4e4e4;
-  }
-  .projects-section {
-    color: #e4e4e4;
-    position: relative;
-    height: 30vh;
-    margin: 100px 50px 50px 0;
-  }
-  .projects-section ul {
-    display: flex;
-    flex-direction: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0;
-  }
-  .contact-section {
-    color: #e4e4e4;
-    position: relative;
-    margin: 0 50px 0 50px;
-  }
-}
+
 @media only screen and (min-width: 1200px) {
-  .background-image {
-    height: 150vh;
-  }
   .landing-page {
-    position: relative;
     width: 100%;
     height: 100vh;
+    min-height: 700px;
+    z-index: 1;
   }
   .landing-page .navbar {
     display: flex;
     flex-direction: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    position: absolute;
-    top: 0;
+    height: 100px;
+    padding: 0 180px;
     background-color: rgba(63, 63, 63, 0.1);
   }
   .landing-page .navbar h1 {
-    display: block;
     color: #3F3F3F;
     font-size: 1.8em;
-    margin: 40px 0 40px 150px;
   }
   .landing-page .navbar ul {
     display: flex;
     flex-direction: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 40px 150px 40px 0;
-    width: 500px;
-    padding: 0;
+    width: 420px;
   }
-  .landing-page .navbar ul li {
+  .landing-page .navbar ul li a {
     color: #707070;
     font-size: 1.8em;
   }
@@ -439,20 +84,18 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin: 0 0 0 0;
-    padding: 30vh 0 20vh 150px;
-    width: 100%;
+    margin: 10rem 180px 0 180px;
   }
   .landing-page .landing-page-text h1 {
     color: #3F3F3F;
     font-size: 2.5em;
   }
   .landing-page .landing-page-text button {
-    color: #e4e4e4;
     font-size: 1.5em;
-    background-color: rgba(19, 19, 19, 0.3);
     padding: 20px 120px;
     border-radius: 50px;
+    color: #e4e4e4;
+    background-color: rgba(19, 19, 19, 0.3);
   }
   .landing-page .landing-page-text button:hover {
     background-color: #86A4B8;
@@ -464,9 +107,9 @@ button {
   .landing-page .landing-page-text .landing-text-big {
     display: block;
     width: 700px;
+    margin: 2rem 0 3rem 0;
     color: #707070;
     font-size: 1.8em;
-    margin: 30px 0 50px 0;
   }
   .cv-section {
     display: flex;
@@ -474,11 +117,13 @@ button {
     justify-content: space-between;
     align-items: center;
     color: #e4e4e4;
-    padding: 7em 150px 0 150px;
-    margin: 0;
+    margin: 0 180px 0 180px;
+    padding: 3rem 0;
+    z-index: 1;
   }
   .cv-section .cv-text {
-    width: 45%;
+    width: 50%;
+    margin-right: 30px;
   }
   .cv-section .cv-text h1 {
     font-size: 2.2em;
@@ -497,18 +142,23 @@ button {
   }
   .music-media {
     color: #e4e4e4;
-    position: relative;
-    height: 100vh;
     display: none;
   }
   .music-media svg {
     background-color: #e4e4e4;
   }
   .projects-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     color: #e4e4e4;
-    position: relative;
     height: 100vh;
-    padding: 7em 150px 0 150px;
+    width: calc(100% - 360px);
+    min-height: 700px;
+    margin: 0 180px 0 180px;
+    padding: 8rem 0;
+    z-index: 1;
   }
   .projects-section h1 {
     font-size: 2.2em;
@@ -518,10 +168,16 @@ button {
     flex-direction: flex;
     justify-content: space-between;
     align-items: center;
-    width: 25em;
-    padding: 2em 0 2em 0;
     color: #3F3F3F;
     font-size: 1.5em;
+    width: 50%;
+    margin: 60px 0;
+  }
+  .projects-section ul li {
+    color: #3F3F3F;
+  }
+  .projects-section ul li:hover {
+    cursor: pointer;
   }
   .projects-section .project-container {
     display: flex;
@@ -531,20 +187,63 @@ button {
     width: 100%;
   }
   .projects-section .project-container img {
-    width: 45%;
-    aspect-ratio: 3/2;
+    width: 50%;
+    aspect-ratio: 5/3;
+    margin-right: 30px;
     background: #86A4B8;
   }
   .projects-section .project-container .project-info {
     width: 45%;
+    margin-left: 30px;
+  }
+  .projects-section .project-container .project-info h2 {
+    font-size: 1.5em;
+  }
+  .projects-section .project-container .project-info h3 {
+    font-size: 1.2em;
+    margin: 20px 0 50px 0;
+    color: #707070;
+  }
+  .projects-section .project-container .project-info p {
+    font-size: 1.3em;
   }
   .contact-section {
     color: #e4e4e4;
-    position: relative;
-    margin: 0 50px 0 50px;
+    margin: 0 180px 6rem 180px;
+    z-index: 1;
   }
   .contact-section svg {
-    background-color: #e4e4e4;
-    width: 250px;
+    background-color: #3F3F3F;
+    width: 60%;
+    margin: 30px 0;
+  }
+  .contact-section h1 {
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
+  .contact-section p {
+    font-size: 1.5em;
+  }
+  .footer {
+    width: 100%;
+    height: 20vh;
+    min-height: 200px;
+  }
+  .footer svg {
+    background-color: #3F3F3F;
+  }
+}
+@media only screen and (max-height: 800px) {
+  .landing-page .landing-page-text {
+    margin-top: 6rem;
+  }
+  .cv-section {
+    padding: 6rem 0;
+  }
+  .projects-section {
+    padding: 5rem 0;
+  }
+  .contact-section {
+    padding: 6rem 0;
   }
 }/*# sourceMappingURL=style.css.map */
