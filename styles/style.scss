@@ -248,6 +248,7 @@ button {
 
             li {
                 color: $font-color-dark;
+                transition: 500ms;
 
                 &:hover {
                     cursor: pointer;

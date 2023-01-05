@@ -176,6 +176,7 @@ button {
   }
   .projects-section ul li {
     color: #3F3F3F;
+    transition: 500ms;
   }
   .projects-section ul li:hover {
     cursor: pointer;
