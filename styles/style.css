@@ -96,6 +96,7 @@ button {
     border-radius: 50px;
     color: #e4e4e4;
     background-color: rgba(19, 19, 19, 0.3);
+    transition: 500ms;
   }
   .landing-page .landing-page-text button:hover {
     background-color: #86A4B8;

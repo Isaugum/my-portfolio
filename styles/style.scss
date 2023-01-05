@@ -149,6 +149,8 @@ button {
                 color: $font-color-light;
                 background-color: $light-button;
 
+                transition: 500ms;
+
                 &:hover {
                     background-color: $blue-highlights;
                     cursor: pointer;
