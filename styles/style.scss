@@ -96,11 +96,18 @@ button {
             height: 100px;
             padding: 0 $base-side-margin;
 
+            transform: translate(0, -100px);
+            opacity: 0;
+            transition: 800ms ease-out;
+
             background-color: $light-background;
             
             h1 {
                 color: $font-color-dark;
                 font-size: 1.8em;
+
+                opacity: 0;
+                transition: opacity 1000ms ease-in;
             }
 
             ul {
@@ -112,6 +119,9 @@ button {
                     a {
                         color: $font-color-medium;
                         font-size: 1.8em;
+                        &:hover {
+                            cursor: pointer;
+                        }
                     }
 
                     &::after {
@@ -127,14 +137,38 @@ button {
                     &:hover::after  {
                         width: 100%;
                     }
+
+                    &:nth-child(1) {
+                        transform: translate(0, -200px);
+                        opacity: 0;
+                        transition: transform 400ms, opacity 1000ms;
+                        transition-delay: 700ms;
+                    }
+
+                    &:nth-child(2) {
+                        transform: translate(0, -200px);
+                        opacity: 0;
+                        transition: transform 400ms, opacity 1000ms;
+                        transition-delay: 900ms;
+                    }
+
+                    &:nth-child(3) {
+                        transform: translate(0, -200px);
+                        opacity: 0;
+                        transition: transform 400ms, opacity 1000ms;
+                        transition-delay: 1200ms;
+                    }
                 }
             }
         }
 
         .landing-page-text {
             @include flex(column, center, flex-start);
-            //top margin needs fixing !! not responsive !!
             margin: 10rem $base-side-margin 0 $base-side-margin;
+
+            transform: translate(-500px, 0);
+            opacity: 0;
+            transition: 1000ms ease-out;
 
             h1 {
                 color: $font-color-dark;
@@ -182,6 +216,8 @@ button {
 
         z-index: 1;
 
+        overflow: hidden;
+
         .cv-text {
             width: 50%;
             margin-right: 30px;
@@ -193,6 +229,10 @@ button {
             p {
                 font-size: 1.6em;
             }
+
+            transform: translate(-100px, 0);
+            opacity: 0;
+            transition: 1000ms ease-out 500ms;
         }
 
         .cv-skills {
@@ -205,6 +245,10 @@ button {
             p {
                 font-size: 1.6em;
             }
+
+            transform: translate(200px, 0);
+            opacity: 0;
+            transition: 1000ms ease-out 500ms;
         }
     }
 

@@ -50,11 +50,16 @@ button {
     align-items: center;
     height: 100px;
     padding: 0 180px;
+    transform: translate(0, -100px);
+    opacity: 0;
+    transition: 800ms ease-out;
     background-color: rgba(63, 63, 63, 0.1);
   }
   .landing-page .navbar h1 {
     color: #3F3F3F;
     font-size: 1.8em;
+    opacity: 0;
+    transition: opacity 1000ms ease-in;
   }
   .landing-page .navbar ul {
     display: flex;
@@ -66,6 +71,9 @@ button {
   .landing-page .navbar ul li a {
     color: #707070;
     font-size: 1.8em;
+  }
+  .landing-page .navbar ul li a:hover {
+    cursor: pointer;
   }
   .landing-page .navbar ul li::after {
     display: block;
@@ -79,12 +87,33 @@ button {
   .landing-page .navbar ul li:hover::after {
     width: 100%;
   }
+  .landing-page .navbar ul li:nth-child(1) {
+    transform: translate(0, -200px);
+    opacity: 0;
+    transition: transform 400ms, opacity 1000ms;
+    transition-delay: 700ms;
+  }
+  .landing-page .navbar ul li:nth-child(2) {
+    transform: translate(0, -200px);
+    opacity: 0;
+    transition: transform 400ms, opacity 1000ms;
+    transition-delay: 900ms;
+  }
+  .landing-page .navbar ul li:nth-child(3) {
+    transform: translate(0, -200px);
+    opacity: 0;
+    transition: transform 400ms, opacity 1000ms;
+    transition-delay: 1200ms;
+  }
   .landing-page .landing-page-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     margin: 10rem 180px 0 180px;
+    transform: translate(-500px, 0);
+    opacity: 0;
+    transition: 1000ms ease-out;
   }
   .landing-page .landing-page-text h1 {
     color: #3F3F3F;
@@ -121,10 +150,14 @@ button {
     margin: 0 180px 0 180px;
     padding: 3rem 0;
     z-index: 1;
+    overflow: hidden;
   }
   .cv-section .cv-text {
     width: 50%;
     margin-right: 30px;
+    transform: translate(-100px, 0);
+    opacity: 0;
+    transition: 1000ms ease-out 500ms;
   }
   .cv-section .cv-text h1 {
     font-size: 2.2em;
@@ -134,6 +167,9 @@ button {
   }
   .cv-section .cv-skills {
     width: 45%;
+    transform: translate(200px, 0);
+    opacity: 0;
+    transition: 1000ms ease-out 500ms;
   }
   .cv-section .cv-skills h1 {
     font-size: 2.2em;
