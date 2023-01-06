@@ -12,9 +12,19 @@ html, body {
   background-color: #131313;
 }
 
+h1 {
+  font-family: "DM Serif Display", serif;
+  font-weight: normal;
+}
+
+p, li, div {
+  font-family: "Inter", sans-serif;
+}
+
 button {
   border: none;
   background-color: rgba(19, 19, 19, 0.3);
+  font-family: "Inter", sans-serif;
 }
 
 .container {
@@ -23,6 +33,7 @@ button {
   justify-content: center;
   align-items: flex-start;
   width: 100%;
+  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -36,6 +47,240 @@ button {
   z-index: 0;
 }
 
+@media only screen and (max-width: 600px) {
+  .background-image {
+    width: 1200px;
+    position: absolute;
+    top: -100px;
+    left: -600px;
+    z-index: 0;
+  }
+  .landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+  }
+  .landing-page .navbar {
+    display: flex;
+    flex-direction: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*height: 100px;
+    padding: 0 $base-side-margin;
+
+    transform: translate(0, -100px);
+    opacity: 0;
+    transition: 800ms ease-out;
+
+    background-color: $light-background;*/
+  }
+  .landing-page .navbar h1 {
+    display: none;
+  }
+  .landing-page .navbar ul {
+    display: flex;
+    flex-direction: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+  }
+  .landing-page .navbar ul li a {
+    color: #707070;
+    font-size: 1.5em;
+  }
+  .landing-page .navbar ul li a:hover {
+    cursor: pointer;
+  }
+  .landing-page .navbar ul li::after {
+    display: block;
+    width: 0;
+    content: "";
+    background-color: #707070;
+    height: 2px;
+    margin: auto;
+    transition: 500ms;
+  }
+  .landing-page .navbar ul li:hover::after {
+    width: 100%;
+  }
+  .landing-page .navbar ul li:nth-child(1) {
+    transform: translate(0, -200px);
+    opacity: 0;
+    transition: transform 400ms, opacity 1000ms;
+    transition-delay: 700ms;
+  }
+  .landing-page .navbar ul li:nth-child(2) {
+    transform: translate(0, -200px);
+    opacity: 0;
+    transition: transform 400ms, opacity 1000ms;
+    transition-delay: 900ms;
+  }
+  .landing-page .navbar ul li:nth-child(3) {
+    transform: translate(0, -200px);
+    opacity: 0;
+    transition: transform 400ms, opacity 1000ms;
+    transition-delay: 1200ms;
+  }
+  .landing-page .landing-page-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 120px 40px 0 40px;
+  }
+  .landing-page .landing-page-text h1 {
+    color: #e4e4e4;
+    font-size: 2em;
+  }
+  .landing-page .landing-page-text button {
+    font-size: 1.5em;
+    border-radius: 50px;
+    padding: 10px 75px;
+    color: #e4e4e4;
+    background-color: rgba(134, 164, 184, 0.5);
+    transition: 500ms;
+  }
+  .landing-page .landing-page-text .landing-text-small {
+    display: block;
+    color: #707070;
+    font-size: 1.5em;
+    margin: 30px 0 45px 0;
+  }
+  .landing-page .landing-page-text .landing-text-big {
+    display: none;
+  }
+  .cv-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #e4e4e4;
+    z-index: 1;
+    padding: 0 40px 40px 40px;
+    overflow: hidden;
+  }
+  .cv-section .cv-text {
+    transform: translate(-100px, 0);
+    opacity: 0;
+    transition: 800ms ease-out 500ms;
+  }
+  .cv-section .cv-text h1 {
+    font-size: 2em;
+  }
+  .cv-section .cv-text p {
+    margin-top: 30px;
+    font-size: 1.3em;
+  }
+  .cv-section .cv-skills {
+    margin-top: 60px;
+    transform: translate(200px, 0);
+    opacity: 0;
+    transition: 800ms ease-out 500ms;
+  }
+  .cv-section .cv-skills h1 {
+    font-size: 2em;
+  }
+  .cv-section .cv-skills p {
+    margin-top: 30px;
+    font-size: 1.3em;
+  }
+  .music-media {
+    color: #e4e4e4;
+    display: none;
+  }
+  .music-media svg {
+    background-color: #e4e4e4;
+  }
+  .projects-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: #e4e4e4;
+    padding: 60px 40px 60px 40px;
+    z-index: 1;
+  }
+  .projects-section h1 {
+    font-size: 2em;
+  }
+  .projects-section ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: #3F3F3F;
+    font-size: 1.3em;
+    margin: 50px 0 50px 0;
+  }
+  .projects-section ul li {
+    color: #3F3F3F;
+    transition: 500ms;
+    padding: 10px 0 10px 0;
+  }
+  .projects-section ul li:hover {
+    cursor: pointer;
+  }
+  .projects-section .project-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .projects-section .project-container img {
+    width: 100%;
+    aspect-ratio: 5/3;
+    transition: 700ms;
+  }
+  .projects-section .project-container .project-info {
+    margin-top: 50px;
+  }
+  .projects-section .project-container .project-info h2 {
+    font-size: 1.4em;
+    font-weight: bold;
+  }
+  .projects-section .project-container .project-info h3 {
+    font-size: 1.2em;
+    font-weight: lighter;
+    margin: 20px 0 20px 0;
+    color: #707070;
+  }
+  .projects-section .project-container .project-info p {
+    font-size: 1.3em;
+    font-weight: normal;
+  }
+  .contact-section {
+    color: #e4e4e4;
+    padding: 60px 40px 60px 40px;
+    z-index: 1;
+  }
+  .contact-section svg {
+    background-color: #3F3F3F;
+    width: 60%;
+    margin: 30px 0;
+  }
+  .contact-section h1 {
+    font-size: 1.8em;
+    margin-bottom: 40px;
+  }
+  .contact-section p {
+    font-size: 1.3em;
+  }
+  .footer {
+    width: 100%;
+    height: 20vh;
+    min-height: 200px;
+  }
+  .footer svg {
+    background-color: #3F3F3F;
+  }
+}
 @media only screen and (min-width: 1200px) {
   .landing-page {
     width: 100%;
@@ -70,7 +315,7 @@ button {
   }
   .landing-page .navbar ul li a {
     color: #707070;
-    font-size: 1.8em;
+    font-size: 1.5em;
   }
   .landing-page .navbar ul li a:hover {
     cursor: pointer;
@@ -117,7 +362,7 @@ button {
   }
   .landing-page .landing-page-text h1 {
     color: #3F3F3F;
-    font-size: 2.5em;
+    font-size: 3.2em;
   }
   .landing-page .landing-page-text button {
     font-size: 1.5em;
@@ -147,8 +392,7 @@ button {
     justify-content: space-between;
     align-items: center;
     color: #e4e4e4;
-    margin: 0 180px 0 180px;
-    padding: 3rem 0;
+    padding: 3rem 180px 3rem 180px;
     z-index: 1;
     overflow: hidden;
   }
@@ -157,25 +401,27 @@ button {
     margin-right: 30px;
     transform: translate(-100px, 0);
     opacity: 0;
-    transition: 1000ms ease-out 500ms;
+    transition: 800ms ease-out 500ms;
   }
   .cv-section .cv-text h1 {
     font-size: 2.2em;
   }
   .cv-section .cv-text p {
-    font-size: 1.6em;
+    margin-top: 30px;
+    font-size: 1.4em;
   }
   .cv-section .cv-skills {
     width: 45%;
     transform: translate(200px, 0);
     opacity: 0;
-    transition: 1000ms ease-out 500ms;
+    transition: 800ms ease-out 500ms;
   }
   .cv-section .cv-skills h1 {
     font-size: 2.2em;
   }
   .cv-section .cv-skills p {
-    font-size: 1.6em;
+    margin-top: 30px;
+    font-size: 1.4em;
   }
   .music-media {
     color: #e4e4e4;
@@ -206,8 +452,8 @@ button {
     justify-content: space-between;
     align-items: center;
     color: #3F3F3F;
-    font-size: 1.5em;
-    width: 50%;
+    font-size: 1.3em;
+    width: 48%;
     margin: 60px 0;
   }
   .projects-section ul li {
@@ -226,24 +472,28 @@ button {
   }
   .projects-section .project-container img {
     width: 50%;
-    aspect-ratio: 5/3;
     margin-right: 30px;
-    background: #86A4B8;
+    aspect-ratio: 5/3;
+    transform: translate(0, 0);
+    transition: 700ms;
   }
   .projects-section .project-container .project-info {
     width: 45%;
     margin-left: 30px;
   }
   .projects-section .project-container .project-info h2 {
-    font-size: 1.5em;
+    font-size: 1.4em;
+    font-weight: bold;
   }
   .projects-section .project-container .project-info h3 {
     font-size: 1.2em;
+    font-weight: lighter;
     margin: 20px 0 50px 0;
     color: #707070;
   }
   .projects-section .project-container .project-info p {
     font-size: 1.3em;
+    font-weight: normal;
   }
   .contact-section {
     color: #e4e4e4;
@@ -260,7 +510,7 @@ button {
     margin-bottom: 40px;
   }
   .contact-section p {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
   .footer {
     width: 100%;
@@ -276,7 +526,7 @@ button {
     margin-top: 6rem;
   }
   .cv-section {
-    padding: 6rem 0;
+    padding-top: 6rem;
   }
   .projects-section {
     padding: 5rem 0;

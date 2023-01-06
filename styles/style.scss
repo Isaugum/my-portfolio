@@ -4,13 +4,15 @@ $font-color-medium: #707070;
 $font-color-light: #e4e4e4;
 $blue-highlights: #86A4B8;
 $blue-highlights-phone: rgba(134, 164, 184, 0.3);
-$blue-highlights-opacity: rgba(134, 164, 184, 0.7);
+$blue-highlights-opacity: rgba(134, 164, 184, 0.5);
 $background-color: #131313;
 $light-background: rgba(63, 63, 63, 0.1);
 $light-button: rgba(19, 19, 19, 0.3);
 $light-button-phone: rgba(158, 158, 158, 0.3);
 $base-side-margin: 180px;
 
+$title-font: 'DM Serif Display', serif;
+$text-font: 'Inter', sans-serif;
 //Reset
 * {
     box-sizing: border-box;
@@ -20,16 +22,26 @@ $base-side-margin: 180px;
     margin: 0;
     padding: 0;
     color: $font-color-light;
-
 }
+
 html, body {
     scroll-behavior: smooth;
     background-color: $background-color;
 }
 
+h1 {
+    font-family: $title-font;
+    font-weight: normal;
+}
+
+p, li, div {
+    font-family: $text-font;
+}
+
 button {
     border: none;
     background-color: $light-button;
+    font-family: $text-font;
 }
 
 //Flex
@@ -44,6 +56,8 @@ button {
     @include flex(column, center, flex-start);
 
     width: 100%;
+
+    overflow: hidden;
 
     position: absolute;
     top: 0;
@@ -62,6 +76,281 @@ button {
 
 //PHONE
 @media only screen and (max-width: 600px) {
+
+    .background-image {
+        width: 1200px;
+    
+        position: absolute;
+        top: -100px;
+        left: -600px;
+        z-index: 0;
+    }
+
+    .landing-page {
+        @include flex(column, center, center);
+        width: 100%;
+        height: 100vh;
+
+        z-index: 1;
+
+        .navbar {
+            @include flex(flex, space-between, center);
+
+            /*height: 100px;
+            padding: 0 $base-side-margin;
+
+            transform: translate(0, -100px);
+            opacity: 0;
+            transition: 800ms ease-out;
+
+            background-color: $light-background;*/
+            
+            h1 {
+                display: none;
+            }
+
+            ul {
+                @include flex(flex, space-between, center);
+                display: none;
+
+                li {
+                    a {
+                        color: $font-color-medium;
+                        font-size: 1.5em;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    &::after {
+                        display: block;
+                        width: 0;
+                        content: "";
+                        background-color: $font-color-medium;
+                        height: 2px;
+                        margin: auto;
+                        transition: 500ms;
+                    }
+
+                    &:hover::after  {
+                        width: 100%;
+                    }
+
+                    &:nth-child(1) {
+                        transform: translate(0, -200px);
+                        opacity: 0;
+                        transition: transform 400ms, opacity 1000ms;
+                        transition-delay: 700ms;
+                    }
+
+                    &:nth-child(2) {
+                        transform: translate(0, -200px);
+                        opacity: 0;
+                        transition: transform 400ms, opacity 1000ms;
+                        transition-delay: 900ms;
+                    }
+
+                    &:nth-child(3) {
+                        transform: translate(0, -200px);
+                        opacity: 0;
+                        transition: transform 400ms, opacity 1000ms;
+                        transition-delay: 1200ms;
+                    }
+                }
+            }
+        }
+
+        .landing-page-text {
+            @include flex(column, center, center);
+
+            width: 100%;
+            text-align: center;
+
+            padding: 120px 40px 0 40px;
+
+            h1 {
+                color: $font-color-light;
+                font-size: 2em;
+            }
+
+            button {
+                font-size: 1.5em;
+                border-radius: 50px;
+
+                padding: 10px 75px;
+
+                color: $font-color-light;
+                background-color: $blue-highlights-opacity;
+
+                transition: 500ms;
+            }
+
+            .landing-text-small {
+                display: block;
+
+                color: $font-color-medium;
+                font-size: 1.5em;
+
+                margin: 30px 0 45px 0;
+            }
+
+            .landing-text-big {
+                display: none;
+            }
+        }
+    }
+ 
+    .cv-section {
+        @include flex(column, space-between, center);
+        color: $font-color-light;
+
+        z-index: 1;
+        padding: 0 40px 40px 40px;
+
+        overflow: hidden;
+
+        .cv-text {
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                margin-top: 30px;
+                font-size: 1.3em;
+            }
+
+            transform: translate(-100px, 0);
+            opacity: 0;
+            transition: 800ms ease-out 500ms;
+        }
+
+        .cv-skills {
+            margin-top: 60px;
+
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                margin-top: 30px;
+                font-size: 1.3em;
+            }
+
+            transform: translate(200px, 0);
+            opacity: 0;
+            transition: 800ms ease-out 500ms;
+        }
+    }
+
+    .music-media {
+        color: $font-color-light;
+        display: none;
+
+        svg {
+            background-color: $font-color-light;
+        }
+    }
+    
+    .projects-section {
+        @include flex(column, flex-start, flex-start);
+        color: $font-color-light;
+        padding: 60px 40px 60px 40px;
+
+        z-index: 1;
+
+        h1 {
+            font-size: 2em;
+        }
+
+        ul {
+            @include flex(column, space-between, flex-start);
+
+            color: $font-color-dark;
+            font-size: 1.3em;
+
+            margin: 50px 0 50px 0;
+
+            li {
+                color: $font-color-dark;
+                transition: 500ms;
+
+                padding: 10px 0 10px 0;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .project-container {
+            @include flex(column, space-between, flex-start);
+
+            width: 100%;
+
+            img {
+                width: 100%;
+                aspect-ratio: 5/3;
+
+                transition: 700ms;
+            }
+
+            .project-info {
+                margin-top: 50px;
+
+                h2 {
+                    font-size: 1.4em;
+                    font-weight: bold;
+                }
+
+                h3 {
+                    font-size: 1.2em;
+                    font-weight: lighter;
+
+                    margin: 20px 0 20px 0;
+                    color: $font-color-medium;
+                }
+
+                p {
+                    font-size: 1.3em;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+    
+    .contact-section {
+        color: $font-color-light;
+
+        padding: 60px 40px 60px 40px;
+
+        z-index: 1;
+
+        svg {
+            background-color: $font-color-dark;
+            width: 60%;
+
+            margin: 30px 0;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 40px;
+        }
+
+        p {
+            font-size: 1.3em;
+        }
+    }
+
+    .footer {
+        width: 100%;
+        height: 20vh;
+        min-height: 200px;
+
+        svg {
+            background-color: $font-color-dark;
+        }
+    }
 }
 
 
@@ -118,7 +407,7 @@ button {
                 li {
                     a {
                         color: $font-color-medium;
-                        font-size: 1.8em;
+                        font-size: 1.5em;
                         &:hover {
                             cursor: pointer;
                         }
@@ -172,7 +461,7 @@ button {
 
             h1 {
                 color: $font-color-dark;
-                font-size: 2.5em;
+                font-size: 3.2em;
             }
 
             button {
@@ -211,8 +500,7 @@ button {
         @include flex(flex, space-between, center);
         color: $font-color-light;
 
-        margin: 0 $base-side-margin 0 $base-side-margin;
-        padding: 3rem 0;
+        padding: 3rem $base-side-margin 3rem $base-side-margin;
 
         z-index: 1;
 
@@ -227,12 +515,13 @@ button {
             }
 
             p {
-                font-size: 1.6em;
+                margin-top: 30px;
+                font-size: 1.4em;
             }
 
             transform: translate(-100px, 0);
             opacity: 0;
-            transition: 1000ms ease-out 500ms;
+            transition: 800ms ease-out 500ms;
         }
 
         .cv-skills {
@@ -243,12 +532,13 @@ button {
             }
 
             p {
-                font-size: 1.6em;
+                margin-top: 30px;
+                font-size: 1.4em;
             }
 
             transform: translate(200px, 0);
             opacity: 0;
-            transition: 1000ms ease-out 500ms;
+            transition: 800ms ease-out 500ms;
         }
     }
 
@@ -270,8 +560,6 @@ button {
 
         min-height: 700px;
         margin: 0 $base-side-margin 0 $base-side-margin;
-
-        //RESPONSIVE PADDING!! ADJUST
         padding: 8rem 0;
 
         z-index: 1;
@@ -284,9 +572,9 @@ button {
             @include flex(flex, space-between, center);
 
             color: $font-color-dark;
-            font-size: 1.5em;
+            font-size: 1.3em;
             
-            width: 50%;
+            width: 48%;
 
             margin: 60px 0;
 
@@ -307,11 +595,12 @@ button {
 
             img {
                 width: 50%;
-                aspect-ratio: 5/3;
                 margin-right: 30px;
+                aspect-ratio: 5/3;
+                transform: translate(0, 0);
 
-                background: $blue-highlights;
-            }
+                transition: 700ms;
+            } 
 
             .project-info {
                 width: 45%;
@@ -319,11 +608,13 @@ button {
                 margin-left: 30px;
 
                 h2 {
-                    font-size: 1.5em;
+                    font-size: 1.4em;
+                    font-weight: bold;
                 }
 
                 h3 {
                     font-size: 1.2em;
+                    font-weight: lighter;
 
                     margin: 20px 0 50px 0;
                     color: $font-color-medium;
@@ -331,6 +622,7 @@ button {
 
                 p {
                     font-size: 1.3em;
+                    font-weight: normal;
                 }
             }
         }
@@ -356,7 +648,7 @@ button {
         }
 
         p {
-            font-size: 1.5em;
+            font-size: 1.3em;
         }
     }
 
@@ -379,7 +671,7 @@ button {
     }
 
     .cv-section {
-        padding: 6rem 0;
+        padding-top: 6rem;
     }
 
     .projects-section {

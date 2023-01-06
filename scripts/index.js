@@ -4,11 +4,16 @@ const navbar = document.querySelector('.navbar');
 const navBtns = document.querySelectorAll('.navbar > ul > li');
 const navTitle = document.querySelector('.navbar > h1');
 const landingText = document.querySelector('.landing-page-text');
-const projectButtons = document.querySelectorAll('.project-button');
+
 
 const aboutMeSection = document.querySelector('.cv-section');
 const aboutText = document.querySelector('.cv-section > .cv-text');
 const aboutSkills = document.querySelector('.cv-section > .cv-skills');
+
+const projectSection = document.querySelector('.projects-section');
+const projectButtons = document.querySelectorAll('.project-button');
+const projectImage = document.querySelector('.project-img-container > img');
+const projectText = document.querySelector('.project-info');
 
 const getSpecificPosition = (positionX, positionY) => {
     window.scrollTo(positionX, positionY);
@@ -62,7 +67,7 @@ window.addEventListener("load", () => {
 
     //MANUAL CLICK LISTENER FOR "ABOUT ME" to account for padding-top
     navBtns[0].addEventListener("click", () => {
-        getSpecificPosition(0, 700);
+        getSpecificPosition(0, 750);
     });
 
     //set initial active button
@@ -72,12 +77,13 @@ window.addEventListener("load", () => {
     navbar.style.transform = "translate(0, 0)";
     navbar.style.opacity = "1";
 
+    navTitle.style.opacity = "1";
+
+    //Animation for navbar buttons
     navBtns.forEach(btn => {
         btn.style.transform = "translate(0, 0)";
         btn.style.opacity = "1";
     });
-
-    navTitle.style.opacity = "1";
 
     //landing page text animation
     landingText.style.transform = "translate(0, 0)";
