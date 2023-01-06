@@ -70,7 +70,7 @@ window.addEventListener("load", () => {
 
     //MANUAL CLICK LISTENER FOR "ABOUT ME" to account for padding-top
     navBtns[0].addEventListener("click", () => {
-        getSpecificPosition(0, 750);
+        getSpecificPosition(0, 800);
     });
 
     navBtns.forEach(btn => {
