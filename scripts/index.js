@@ -5,6 +5,9 @@ const navBtns = document.querySelectorAll('.navbar > ul > li');
 const navTitle = document.querySelector('.navbar > h1');
 const landingText = document.querySelector('.landing-page-text');
 
+const menuButtonOpen = document.querySelector('.open-menu');
+const menuButtonClose = document.querySelector('.close-menu'); 
+
 
 const aboutMeSection = document.querySelector('.cv-section');
 const aboutText = document.querySelector('.cv-section > .cv-text');
@@ -89,3 +92,18 @@ window.addEventListener("load", () => {
     landingText.style.transform = "translate(0, 0)";
     landingText.style.opacity = "1";
 });
+
+let isMenuOpen = false;
+
+const openMenu = e => {
+    if(isMenuOpen === false) {
+        navbar.style.right = "0";
+        isMenuOpen = true;
+    } else {
+        navbar.style.right = "-370px"
+        isMenuOpen = false;
+    }
+}
+
+menuButtonOpen.addEventListener("click", openMenu);
+menuButtonClose.addEventListener("click", openMenu);

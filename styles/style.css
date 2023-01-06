@@ -64,29 +64,42 @@ button {
     height: 100vh;
     z-index: 1;
   }
+  .landing-page .open-menu {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #707070;
+  }
   .landing-page .navbar {
     display: flex;
-    flex-direction: flex;
-    justify-content: space-between;
-    align-items: center;
-    /*height: 100px;
-    padding: 0 $base-side-margin;
-
-    transform: translate(0, -100px);
-    opacity: 0;
-    transition: 800ms ease-out;
-
-    background-color: $light-background;*/
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    right: -370px;
+    z-index: 3;
+    width: 60%;
+    height: 100vh;
+    padding: 0 0 0 20px;
+    background-color: #86A4B8;
+    transition: 500ms ease-in-out;
+  }
+  .landing-page .navbar .close-menu {
+    padding: 10px;
+    background-color: rgba(19, 19, 19, 0.3);
   }
   .landing-page .navbar h1 {
-    display: none;
+    margin: 0;
   }
   .landing-page .navbar ul {
     display: flex;
-    flex-direction: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    display: none;
+    align-items: flex-start;
+  }
+  .landing-page .navbar ul li {
+    margin: 14px 0 14px 0;
   }
   .landing-page .navbar ul li a {
     color: #707070;
@@ -162,7 +175,7 @@ button {
     align-items: center;
     color: #e4e4e4;
     z-index: 1;
-    padding: 0 40px 40px 40px;
+    padding: 0 40px 60px 40px;
     overflow: hidden;
   }
   .cv-section .cv-text {
@@ -203,7 +216,8 @@ button {
     justify-content: flex-start;
     align-items: flex-start;
     color: #e4e4e4;
-    padding: 60px 40px 60px 40px;
+    padding: 60px 40px 0 40px;
+    height: 100vh;
     z-index: 1;
   }
   .projects-section h1 {
@@ -288,6 +302,9 @@ button {
     min-height: 700px;
     z-index: 1;
   }
+  .landing-page .open-menu {
+    display: none;
+  }
   .landing-page .navbar {
     display: flex;
     flex-direction: flex;
@@ -299,6 +316,9 @@ button {
     opacity: 0;
     transition: 800ms ease-out;
     background-color: rgba(63, 63, 63, 0.1);
+  }
+  .landing-page .navbar button {
+    display: none;
   }
   .landing-page .navbar h1 {
     color: #3F3F3F;

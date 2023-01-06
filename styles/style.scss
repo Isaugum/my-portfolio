@@ -93,27 +93,46 @@ button {
 
         z-index: 1;
 
+        .open-menu {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+
+            color: $font-color-medium;
+        }
+
         .navbar {
-            @include flex(flex, space-between, center);
+            @include flex(column-reverse, space-around, flex-start);
 
-            /*height: 100px;
-            padding: 0 $base-side-margin;
+            position: absolute;
+            top: 0;
+            right: -370px;
+            z-index: 3;
 
-            transform: translate(0, -100px);
-            opacity: 0;
-            transition: 800ms ease-out;
+            width: 60%;
+            height: 100vh;
 
-            background-color: $light-background;*/
+            padding: 0 0 0 20px;
+
+            background-color: $blue-highlights;
+
+            transition: 500ms ease-in-out;
+
+            .close-menu {
+                padding: 10px;
+                background-color: $light-button;
+            }
             
             h1 {
-                display: none;
+                margin: 0;
             }
 
             ul {
-                @include flex(flex, space-between, center);
-                display: none;
+                @include flex(column, space-between, flex-start);
 
                 li {
+                    margin: 14px 0 14px 0;
+
                     a {
                         color: $font-color-medium;
                         font-size: 1.5em;
@@ -205,7 +224,7 @@ button {
         color: $font-color-light;
 
         z-index: 1;
-        padding: 0 40px 40px 40px;
+        padding: 0 40px 60px 40px;
 
         overflow: hidden;
 
@@ -254,7 +273,9 @@ button {
     .projects-section {
         @include flex(column, flex-start, flex-start);
         color: $font-color-light;
-        padding: 60px 40px 60px 40px;
+        padding: 60px 40px 0 40px;
+
+        height: 100vh;
 
         z-index: 1;
 
@@ -379,6 +400,10 @@ button {
 
         z-index: 1;
 
+        .open-menu {
+            display: none
+        }
+
         .navbar {
             @include flex(flex, space-between, center);
 
@@ -390,6 +415,10 @@ button {
             transition: 800ms ease-out;
 
             background-color: $light-background;
+
+            button {
+                display: none;
+            }
             
             h1 {
                 color: $font-color-dark;
