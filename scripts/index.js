@@ -73,6 +73,13 @@ window.addEventListener("load", () => {
         getSpecificPosition(0, 750);
     });
 
+    navBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            navbar.style.right = "-500px"
+            isMenuOpen = false;
+        });
+    })
+
     //set initial active button
     projectButtons[0].style.color = "#86A4B8";
 
@@ -100,7 +107,7 @@ const openMenu = e => {
         navbar.style.right = "0";
         isMenuOpen = true;
     } else {
-        navbar.style.right = "-370px"
+        navbar.style.right = "-500px"
         isMenuOpen = false;
     }
 }

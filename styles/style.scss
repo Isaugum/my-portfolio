@@ -9,7 +9,7 @@ $background-color: #131313;
 $light-background: rgba(63, 63, 63, 0.1);
 $light-button: rgba(19, 19, 19, 0.3);
 $light-button-phone: rgba(158, 158, 158, 0.3);
-$base-side-margin: 180px;
+$base-side-margin: 165px;
 
 $title-font: 'DM Serif Display', serif;
 $text-font: 'Inter', sans-serif;
@@ -102,14 +102,13 @@ button {
         }
 
         .navbar {
-            @include flex(column-reverse, space-around, flex-start);
 
             position: absolute;
             top: 0;
-            right: -370px;
+            right: -500px;
             z-index: 3;
 
-            width: 60%;
+            width: 70%;
             height: 100vh;
 
             padding: 0 0 0 20px;
@@ -119,12 +118,15 @@ button {
             transition: 500ms ease-in-out;
 
             .close-menu {
-                padding: 10px;
+                width: 70%;
+                margin-top: 10px;
+                padding: 15px 10px 15px 20px;
+                font-size: 1.2em;
                 background-color: $light-button;
             }
             
             h1 {
-                margin: 0;
+                margin: 60px 0 50px 0;
             }
 
             ul {
@@ -132,10 +134,13 @@ button {
 
                 li {
                     margin: 14px 0 14px 0;
+                    padding: 15px;
+                    width: 70%;
+                    background-color: $light-button;
 
                     a {
-                        color: $font-color-medium;
-                        font-size: 1.5em;
+                        color: $font-color-light;
+                        font-size: 1.2em;
                         &:hover {
                             cursor: pointer;
                         }
@@ -416,7 +421,7 @@ button {
 
             background-color: $light-background;
 
-            button {
+            .close-menu {
                 display: none;
             }
             
@@ -589,7 +594,7 @@ button {
 
         min-height: 700px;
         margin: 0 $base-side-margin 0 $base-side-margin;
-        padding: 8rem 0;
+        padding: 10rem 0;
 
         z-index: 1;
 
@@ -601,9 +606,9 @@ button {
             @include flex(flex, space-between, center);
 
             color: $font-color-dark;
-            font-size: 1.3em;
+            font-size: 1.2em;
             
-            width: 48%;
+            width: 50%;
 
             margin: 60px 0;
 

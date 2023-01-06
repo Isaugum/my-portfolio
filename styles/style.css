@@ -71,26 +71,25 @@ button {
     color: #707070;
   }
   .landing-page .navbar {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-around;
-    align-items: flex-start;
     position: absolute;
     top: 0;
-    right: -370px;
+    right: -500px;
     z-index: 3;
-    width: 60%;
+    width: 70%;
     height: 100vh;
     padding: 0 0 0 20px;
     background-color: #86A4B8;
     transition: 500ms ease-in-out;
   }
   .landing-page .navbar .close-menu {
-    padding: 10px;
+    width: 70%;
+    margin-top: 10px;
+    padding: 15px 10px 15px 20px;
+    font-size: 1.2em;
     background-color: rgba(19, 19, 19, 0.3);
   }
   .landing-page .navbar h1 {
-    margin: 0;
+    margin: 60px 0 50px 0;
   }
   .landing-page .navbar ul {
     display: flex;
@@ -100,10 +99,13 @@ button {
   }
   .landing-page .navbar ul li {
     margin: 14px 0 14px 0;
+    padding: 15px;
+    width: 70%;
+    background-color: rgba(19, 19, 19, 0.3);
   }
   .landing-page .navbar ul li a {
-    color: #707070;
-    font-size: 1.5em;
+    color: #e4e4e4;
+    font-size: 1.2em;
   }
   .landing-page .navbar ul li a:hover {
     cursor: pointer;
@@ -311,13 +313,13 @@ button {
     justify-content: space-between;
     align-items: center;
     height: 100px;
-    padding: 0 180px;
+    padding: 0 165px;
     transform: translate(0, -100px);
     opacity: 0;
     transition: 800ms ease-out;
     background-color: rgba(63, 63, 63, 0.1);
   }
-  .landing-page .navbar button {
+  .landing-page .navbar .close-menu {
     display: none;
   }
   .landing-page .navbar h1 {
@@ -375,7 +377,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin: 10rem 180px 0 180px;
+    margin: 10rem 165px 0 165px;
     transform: translate(-500px, 0);
     opacity: 0;
     transition: 1000ms ease-out;
@@ -412,7 +414,7 @@ button {
     justify-content: space-between;
     align-items: center;
     color: #e4e4e4;
-    padding: 3rem 180px 3rem 180px;
+    padding: 3rem 165px 3rem 165px;
     z-index: 1;
     overflow: hidden;
   }
@@ -457,10 +459,10 @@ button {
     align-items: flex-start;
     color: #e4e4e4;
     height: 100vh;
-    width: calc(100% - 360px);
+    width: calc(100% - 330px);
     min-height: 700px;
-    margin: 0 180px 0 180px;
-    padding: 8rem 0;
+    margin: 0 165px 0 165px;
+    padding: 10rem 0;
     z-index: 1;
   }
   .projects-section h1 {
@@ -472,8 +474,8 @@ button {
     justify-content: space-between;
     align-items: center;
     color: #3F3F3F;
-    font-size: 1.3em;
-    width: 48%;
+    font-size: 1.2em;
+    width: 50%;
     margin: 60px 0;
   }
   .projects-section ul li {
@@ -517,7 +519,7 @@ button {
   }
   .contact-section {
     color: #e4e4e4;
-    margin: 0 180px 6rem 180px;
+    margin: 0 165px 6rem 165px;
     z-index: 1;
   }
   .contact-section svg {
