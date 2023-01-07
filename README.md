@@ -4,4 +4,5 @@
 - TO DO:
     - responsiveness for big and medium sized tablets
     - info
-    - finesse stylings and animations
+    
+2023-1-7 : added animation for projects section. Don't like using timeouts; there could be a better way to do this

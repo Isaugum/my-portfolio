@@ -15,11 +15,34 @@ const aboutSkills = document.querySelector('.cv-section > .cv-skills');
 
 const projectSection = document.querySelector('.projects-section');
 const projectButtons = document.querySelectorAll('.project-button');
+const projectContainer = document.querySelector('.project-container');
 const projectImage = document.querySelector('.project-img-container > img');
 const projectText = document.querySelector('.project-info');
 
+const projectTitle = projectText.children[0];
+const projectSubtitle = projectText.children[1];
+const projectDescription = projectText.children[2];
+
 const getSpecificPosition = (positionX, positionY) => {
     window.scrollTo(positionX, positionY);
+}
+
+const myProjects = {
+    LL: {
+        title: "Craiglist Simulator",
+        narocnik: "Lene Lekše",
+        description: "A simulator of new york lol."
+    },
+    PKMN: {
+        title: "Pokemon Teambuilder",
+        narocnik: " / ",
+        description: "A teambuilder for purpose of competitive battles."
+    },
+    IMA: {
+        title: "Inventory Managment App",
+        narocnik: " / ",
+        description: "An app to help a small bar manage its inventory and more."
+    }
 }
 
 //INTERSECTION OBSERVER FOR ABOUT ME
@@ -66,6 +89,26 @@ window.addEventListener("load", () => {
              btn.dataset.active = "true";
              btn.style.color = "#86A4B8";
          });
+
+        //do the animation
+        btn.addEventListener("click", () => {
+            projectContainer.style.transition = "400ms";
+            projectContainer.style.transform = "translate(500px, 0)";
+            projectContainer.style.opacity = "0";
+
+            const chaneAnimationLoc = setTimeout(() => {
+                projectContainer.style.transform = "translate(-500px, 0)";
+            }, 400);
+
+            const animationTimeout = setTimeout(() => {
+                projectContainer.style.transform = "translate(0, 0)";
+                projectContainer.style.opacity = "1"
+
+                projectTitle.innerText = myProjects[btn.dataset.content].title;
+                projectSubtitle.innerText = myProjects[btn.dataset.content].narocnik;
+                projectDescription.innerText = myProjects[btn.dataset.content].description;
+            }, 600);
+        });
     })
 
     //MANUAL CLICK LISTENER FOR "ABOUT ME" to account for padding-top
@@ -82,6 +125,9 @@ window.addEventListener("load", () => {
 
     //set initial active button
     projectButtons[0].style.color = "#86A4B8";
+    projectTitle.innerText = myProjects.LL.title;
+    projectSubtitle.innerText = myProjects.LL.narocnik;
+    projectDescription.innerText = myProjects.LL.description;
 
     //navbar animation
     navbar.style.transform = "translate(0, 0)";
