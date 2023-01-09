@@ -156,7 +156,7 @@ const openMenu = e => {
         navbar.style.right = "0";
         isMenuOpen = true;
     } else {
-        navbar.style.right = "-500px"
+        navbar.style.right = "-700px"
         isMenuOpen = false;
     }
 }
