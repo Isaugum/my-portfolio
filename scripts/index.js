@@ -24,8 +24,7 @@ const projectImage = document.querySelector('.project-container > img');
 const projectText = document.querySelector('.project-info');
 
 const projectTitle = projectText.children[0];
-const projectSubtitle = projectText.children[1];
-const projectDescription = projectText.children[2];
+const projectDescription = projectText.children[1];
 
 const getSpecificPosition = (positionX, positionY) => {
     window.scrollTo(positionX, positionY);
@@ -129,7 +128,6 @@ window.addEventListener("load", () => {
                 projectContainer.style.opacity = "1"
 
                 projectTitle.innerText = myProjects[btn.dataset.content].title;
-                projectSubtitle.innerText = myProjects[btn.dataset.content].narocnik;
                 projectDescription.innerText = myProjects[btn.dataset.content].description;
                 projectImage.src = myProjects[btn.dataset.content].imgSrc;
             }, 600);
@@ -139,7 +137,6 @@ window.addEventListener("load", () => {
     //set initial active button
     projectButtons[0].style.color = "#86A4B8";
     projectTitle.innerText = myProjects.LL.title;
-    projectSubtitle.innerText = myProjects.LL.narocnik;
     projectDescription.innerText = myProjects.LL.description;
     projectImage.src = "images/craiglist.png";
 });
