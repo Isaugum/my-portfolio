@@ -141,49 +141,6 @@ button {
                     padding: 15px;
                     width: 70%;
                     background-color: $light-button;
-
-                    a {
-                        color: $font-color-light;
-                        font-size: 1.2em;
-                        &:hover {
-                            cursor: pointer;
-                        }
-                    }
-
-                    &::after {
-                        display: block;
-                        width: 0;
-                        content: "";
-                        background-color: $font-color-medium;
-                        height: 2px;
-                        margin: auto;
-                        transition: 500ms;
-                    }
-
-                    &:hover::after  {
-                        width: 100%;
-                    }
-
-                    &:nth-child(1) {
-                        transform: translate(0, -200px);
-                        opacity: 0;
-                        transition: transform 400ms, opacity 1000ms;
-                        transition-delay: 700ms;
-                    }
-
-                    &:nth-child(2) {
-                        transform: translate(0, -200px);
-                        opacity: 0;
-                        transition: transform 400ms, opacity 1000ms;
-                        transition-delay: 900ms;
-                    }
-
-                    &:nth-child(3) {
-                        transform: translate(0, -200px);
-                        opacity: 0;
-                        transition: transform 400ms, opacity 1000ms;
-                        transition-delay: 1200ms;
-                    }
                 }
             }
         }
@@ -271,50 +228,81 @@ button {
     }
 
     .music-media {
+        @include flex(column, space-evenly, center);
         color: $font-color-light;
+
+        height: 100%;
         width: 100%;
         z-index: 1;
 
         .display-container {
-            @include flex(flex, flex-start, center);
-            height: 40vh;
-            margin: 10px 40px 10px 40px;
+            @include flex(column-reverse, center, center);
+            height: 100%;
+            width: 80%;
+
+            z-index: 2;
+
+            margin-bottom: 40px;
+            padding: 30px 10px;
+
+            background-color: rgb(26, 26, 26);
+            box-shadow: 15px 15px 0 rgba(10, 10, 10, 0.3);
+
+            transition: 700ms;
 
             .favourites-display {
-                height: 70%;
-                margin-right: 30px;
+                height: 90%;
 
                 img {
-                    height: 100%;
-                } 
+                    width: 200px;
+                }
             }
             
 
             .favourites-description {
                 @include flex(column, center, flex-start);
+                height: 80%;
+                margin: 0 30px 40px 30px;
+
+                text-align: center;
 
                 .favourite-type {
-                font-size: 0.8em;
-                color: $font-color-medium;
-                font-weight: lighter;
+                    font-size: 1em;
+                    color: $font-color-medium;
+                    font-weight: lighter;
                 }
 
                 .favourite-title {
-                    font-size: 0.8em;
-                    margin: 40px 0 20px 0;
+                    font-size: 1.2em;
+                    margin: 30px 0 10px 0;
                 }
 
                 .favourite-author {
-                    font-size: 0.8em;
+                    font-size: 1em;
                     color: $font-color-medium;
                     font-weight: lighter;
                 }
             }
         }
 
-        .white-line {
-            height: 1px;
-            background-color: $font-color-dark;
+        .arrow {
+            @include flex(flex, center, center);
+            height: 50px;
+
+            svg {
+                height: 50px;
+                transition: 500ms;
+            }
+        }
+
+        .arrows-phone {
+            @include flex(flex, space-evenly, center);
+            width:100%;
+            margin-top: 40px;
+        }
+
+        .max-screen {
+            display: none;
         }
     }
     
@@ -322,8 +310,10 @@ button {
         @include flex(column, flex-start, flex-start);
         color: $font-color-light;
         padding: 0 40px 0 0;
+        margin: 0 30px 0 30px;
 
         height: 100vh;
+        min-height: 700px;
 
         z-index: 1;
 
@@ -388,26 +378,64 @@ button {
     }
     
     .contact-section {
-        color: $font-color-light;
+        @include flex(column, space-between, center);
+        width: calc(100% - (2*40px));
+        margin: 6rem 40px 0 40px;
 
-        padding: 0 40px 60px 0;
+        .contact-section-text {
+            color: $font-color-light;
 
-        z-index: 1;
+            width: 100%;
 
-        svg {
-            background-color: $font-color-dark;
-            width: 60%;
+            z-index: 1;
 
-            margin: 30px 0;
+            padding: 20px 30px 30px 30px;
+
+            background-color: rgb(26, 26, 26, 0.5);
+            box-shadow: 15px 15px 15px 0 rgba(10, 10, 10, 0.3);
+
+                svg {
+                    background-color: $font-color-dark;
+                    width: 60%;
+
+                    margin: 30px 0;
+                }
+
+                h1 {
+                    font-size: 1.6em;
+                    margin-bottom: 40px;
+                }
+
+                p {
+                    font-size: 1.1em;
+                }
         }
 
-        h1 {
-            font-size: 1.8em;
-            margin-bottom: 40px;
-        }
+        .social-media-container {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
 
-        p {
-            font-size: 1.3em;
+            height: 270px;
+            width: 270px;
+
+            margin-top: 60px;
+
+            img {
+                height: 80px;
+                width: 80px;
+
+                transition: 400ms;
+
+                &:hover {
+                    height: 90px;
+                    width: 90px;
+
+                    cursor: pointer;
+                }
+            }
         }
     }
 
@@ -578,6 +606,7 @@ button {
         color: $font-color-light;
 
         height: 55vh;
+        min-height: 500px;
         padding: 0 $base-side-margin 0 $base-side-margin;
 
         z-index: 1;
@@ -633,7 +662,7 @@ button {
 
         .display-container {
             @include flex(flex, center, center);
-            height: 300px;
+            height: 250px;
             width: 500px;
 
             padding: 20px 40px;
@@ -692,6 +721,10 @@ button {
                     background-color: $light-background;
                 }
             }
+        }
+
+        .arrows-phone {
+            display: none;
         }
     }
 
@@ -854,7 +887,7 @@ button {
 @media only screen and (max-height: 800px) {
     .landing-page {
         .landing-page-text {
-            margin-top: 6rem;
+            margin-top: 4rem;
         }
     }
 
