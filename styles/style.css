@@ -658,7 +658,7 @@ button {
     grid-template-rows: 1fr 1fr;
     height: 350px;
     width: 350px;
-    margin-right: 150px;
+    margin-left: 50px;
   }
   .contact-section .social-media-container img {
     height: 80px;
