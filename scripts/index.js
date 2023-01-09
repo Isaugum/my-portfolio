@@ -13,10 +13,14 @@ const aboutMeSection = document.querySelector('.cv-section');
 const aboutText = document.querySelector('.cv-section > .cv-text');
 const aboutSkills = document.querySelector('.cv-section > .cv-skills');
 
+const mediaFavs = document.querySelector('.music-media');
+const mediaDisplay = document.querySelectorAll('.music-media > .display-container');
+
+
 const projectSection = document.querySelector('.projects-section');
 const projectButtons = document.querySelectorAll('.project-button');
 const projectContainer = document.querySelector('.project-container');
-const projectImage = document.querySelector('.project-img-container > img');
+const projectImage = document.querySelector('.project-container > img');
 const projectText = document.querySelector('.project-info');
 
 const projectTitle = projectText.children[0];
@@ -27,21 +31,25 @@ const getSpecificPosition = (positionX, positionY) => {
     window.scrollTo(positionX, positionY);
 }
 
+//Data for projects section
 const myProjects = {
     LL: {
         title: "Craiglist Simulator",
         narocnik: "Lene Lekše",
-        description: "A simulator of new york lol."
+        description: "A simulator of new york lol.",
+        imgSrc: "images/craiglist.png"
     },
     PKMN: {
         title: "Pokemon Teambuilder",
         narocnik: " / ",
-        description: "A teambuilder for purpose of competitive battles."
+        description: "A teambuilder for purpose of competitive battles.",
+        imgSrc: "images/pkmn-app.jpg"
     },
     IMA: {
         title: "Inventory Managment App",
         narocnik: " / ",
-        description: "An app to help a small bar manage its inventory and more."
+        description: "An app to help a small bar manage its inventory and more.",
+        imgSrc: "images/pkmn-app.jpg"
     }
 }
 
@@ -54,13 +62,29 @@ const observer = new IntersectionObserver(entries => {
             children[0].style.opacity = '1';
             children[1].style.transform = 'translate(0, 0)';
             children[1].style.opacity = '1';
+
+            mediaFavs.style.opacity = '1';
             }
         });
 }, { threshold: 0.3 })
 
 observer.observe(aboutMeSection);
 
+//ON LOAD - Project buttons functionality, animations, etc
 window.addEventListener("load", () => {
+
+    mediaDisplay.forEach(element => {
+        element.addEventListener('mouseover', (event) => {
+            element.style.transform = "scaleX(-1)";
+            element.style.boxShadow = "none";
+        });
+
+        element.addEventListener('mouseout', (event) => {
+            element.style.transform = "scaleX(1)";
+            element.style.boxShadow = "15px 15px 0 rgba(10, 10, 10, 0.3)";
+        });
+    })
+
     projectButtons.forEach(btn => {
 
         //controlled hoover effect
@@ -107,19 +131,8 @@ window.addEventListener("load", () => {
                 projectTitle.innerText = myProjects[btn.dataset.content].title;
                 projectSubtitle.innerText = myProjects[btn.dataset.content].narocnik;
                 projectDescription.innerText = myProjects[btn.dataset.content].description;
+                projectImage.src = myProjects[btn.dataset.content].imgSrc;
             }, 600);
-        });
-    })
-
-    //MANUAL CLICK LISTENER FOR "ABOUT ME" to account for padding-top
-    navBtns[0].addEventListener("click", () => {
-        getSpecificPosition(0, 800);
-    });
-
-    navBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            navbar.style.right = "-500px"
-            isMenuOpen = false;
         });
     })
 
@@ -128,6 +141,7 @@ window.addEventListener("load", () => {
     projectTitle.innerText = myProjects.LL.title;
     projectSubtitle.innerText = myProjects.LL.narocnik;
     projectDescription.innerText = myProjects.LL.description;
+    projectImage.src = "images/craiglist.png";
 
     //navbar animation
     navbar.style.transform = "translate(0, 0)";
@@ -146,7 +160,15 @@ window.addEventListener("load", () => {
     landingText.style.opacity = "1";
 });
 
+//OPENINA AND CLOSING MENU FOR PHONE / SMALL TABLETS
 let isMenuOpen = false;
+
+navBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        navbar.style.right = "-500px"
+        isMenuOpen = false;
+    });
+})
 
 const openMenu = e => {
     if(isMenuOpen === false) {
@@ -160,3 +182,6 @@ const openMenu = e => {
 
 menuButtonOpen.addEventListener("click", openMenu);
 menuButtonClose.addEventListener("click", openMenu);
+
+
+//FUNCTIONALLITY FOR MEDIA SECTION

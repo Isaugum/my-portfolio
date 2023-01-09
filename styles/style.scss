@@ -268,17 +268,56 @@ button {
 
     .music-media {
         color: $font-color-light;
-        display: none;
+        width: 100%;
+        z-index: 1;
 
-        svg {
-            background-color: $font-color-light;
+        .display-container {
+            @include flex(flex, flex-start, center);
+            height: 40vh;
+            margin: 10px 40px 10px 40px;
+
+            .favourites-display {
+                height: 70%;
+                margin-right: 30px;
+
+                img {
+                    height: 100%;
+                } 
+            }
+            
+
+            .favourites-description {
+                @include flex(column, center, flex-start);
+
+                .favourite-type {
+                font-size: 0.8em;
+                color: $font-color-medium;
+                font-weight: lighter;
+                }
+
+                .favourite-title {
+                    font-size: 0.8em;
+                    margin: 40px 0 20px 0;
+                }
+
+                .favourite-author {
+                    font-size: 0.8em;
+                    color: $font-color-medium;
+                    font-weight: lighter;
+                }
+            }
+        }
+
+        .white-line {
+            height: 1px;
+            background-color: $font-color-dark;
         }
     }
     
     .projects-section {
         @include flex(column, flex-start, flex-start);
         color: $font-color-light;
-        padding: 60px 40px 0 40px;
+        padding: 0 40px 0 0;
 
         height: 100vh;
 
@@ -347,7 +386,7 @@ button {
     .contact-section {
         color: $font-color-light;
 
-        padding: 60px 40px 60px 40px;
+        padding: 0 40px 60px 0;
 
         z-index: 1;
 
@@ -534,7 +573,8 @@ button {
         @include flex(flex, space-between, center);
         color: $font-color-light;
 
-        padding: 3rem $base-side-margin 3rem $base-side-margin;
+        height: 55vh;
+        padding: 0 $base-side-margin 0 $base-side-margin;
 
         z-index: 1;
 
@@ -577,16 +617,78 @@ button {
     }
 
     .music-media {
+        @include flex(flex, space-between, center);
         color: $font-color-light;
-        display: none;
 
-        svg {
-            background-color: $font-color-light;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+
+        opacity: 0;
+        transition: 1200ms ease-out 500ms;
+
+        .display-container {
+            @include flex(flex, center, center);
+            height: 300px;
+            width: 35%;
+
+            padding: 20px 40px;
+
+            z-index: 2;
+
+            background-color: rgb(26, 26, 26);
+            box-shadow: 15px 15px 0 rgba(10, 10, 10, 0.3);
+
+            transition: 700ms;
+
+            .favourites-display {
+                height: 90%;
+                margin-right: 30px;
+
+                img {
+                    height: 100%;
+                }
+            }
+            
+
+            .favourites-description {
+                @include flex(column, center, flex-start);
+                margin-left: 30px;
+
+                .favourite-type {
+                font-size: 1.2em;
+                color: $font-color-medium;
+                font-weight: lighter;
+                }
+
+                .favourite-title {
+                    font-size: 1.4em;
+                    margin: 100px 0 20px 0;
+                }
+
+                .favourite-author {
+                    font-size: 1.2em;
+                    color: $font-color-medium;
+                    font-weight: lighter;
+                }
+            }
         }
+    }
+
+    .arrow-left {
+        margin: 0 60px 0 120px;
+    }
+
+    .arrow-right {
+        margin: 0 120px 0 60px;
+    }
+
+    .white-line {
+        display: none;
     }
     
     .projects-section {
-        @include flex(column, flex-start, flex-start);
+        @include flex(column, center, flex-start);
         color: $font-color-light;
 
         height: 100vh;
@@ -594,7 +696,6 @@ button {
 
         min-height: 700px;
         margin: 0 $base-side-margin 0 $base-side-margin;
-        padding: 10rem 0;
 
         z-index: 1;
 
@@ -634,6 +735,7 @@ button {
                 transform: translate(0, 0);
 
                 transition: 700ms;
+
             } 
 
             .project-info {
@@ -665,9 +767,15 @@ button {
     .contact-section {
         color: $font-color-light;
 
+        width: 43%;
+
         margin: 0 $base-side-margin 6rem $base-side-margin;
+        padding: 70px 80px;
 
         z-index: 1;
+
+        background-color: rgb(26, 26, 26, 0.5);
+        box-shadow: 15px 15px 15px 0 rgba(10, 10, 10, 0.3);
 
         svg {
             background-color: $font-color-dark;
@@ -697,6 +805,8 @@ button {
     }
 }
 
+
+//HEIGHT!!!
 @media only screen and (max-height: 800px) {
     .landing-page {
         .landing-page-text {
@@ -706,6 +816,10 @@ button {
 
     .cv-section {
         padding-top: 6rem;
+    }
+
+    .music-media {
+        min-height: 400px;
     }
 
     .projects-section {
