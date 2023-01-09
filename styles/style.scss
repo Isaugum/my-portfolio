@@ -52,6 +52,10 @@ button {
     align-items: $align;
 }
 
+.mirror {
+    transform: scaleX(-1);
+}
+
 .container {
     @include flex(column, center, flex-start);
 
@@ -617,7 +621,7 @@ button {
     }
 
     .music-media {
-        @include flex(flex, space-between, center);
+        @include flex(flex, space-evenly, center);
         color: $font-color-light;
 
         height: 100%;
@@ -630,7 +634,7 @@ button {
         .display-container {
             @include flex(flex, center, center);
             height: 300px;
-            width: 35%;
+            width: 500px;
 
             padding: 20px 40px;
 
@@ -643,7 +647,6 @@ button {
 
             .favourites-display {
                 height: 90%;
-                margin-right: 30px;
 
                 img {
                     height: 100%;
@@ -652,35 +655,44 @@ button {
             
 
             .favourites-description {
-                @include flex(column, center, flex-start);
-                margin-left: 30px;
+                @include flex(column, space-between, flex-start);
+                height: 80%;
+                margin: 0 0 0 30px;
 
                 .favourite-type {
-                font-size: 1.2em;
+                font-size: 1em;
                 color: $font-color-medium;
                 font-weight: lighter;
                 }
 
                 .favourite-title {
-                    font-size: 1.4em;
-                    margin: 100px 0 20px 0;
+                    font-size: 1.2em;
+                    transform: translateY(35px);
                 }
 
                 .favourite-author {
-                    font-size: 1.2em;
+                    font-size: 1em;
                     color: $font-color-medium;
                     font-weight: lighter;
                 }
             }
         }
-    }
 
-    .arrow-left {
-        margin: 0 60px 0 120px;
-    }
+        .arrow {
+            @include flex(flex, center, center);
+            height: 200px;
 
-    .arrow-right {
-        margin: 0 120px 0 60px;
+            svg {
+                height: 70px;
+                transition: 500ms;
+                &:hover {
+                    height: 85px;
+                    cursor: pointer;
+
+                    background-color: $light-background;
+                }
+            }
+        }
     }
 
     .white-line {
@@ -763,13 +775,16 @@ button {
             }
         }
     }
-    
+
     .contact-section {
+        @include flex(flex, space-between, center);
+        width: calc(100% - (2 * $base-side-margin));
+        margin: 0 $base-side-margin 6rem $base-side-margin;
+
+        .contact-section-text {
         color: $font-color-light;
 
-        width: 43%;
-
-        margin: 0 $base-side-margin 6rem $base-side-margin;
+        width: 760px;
         padding: 70px 80px;
 
         z-index: 1;
@@ -777,22 +792,51 @@ button {
         background-color: rgb(26, 26, 26, 0.5);
         box-shadow: 15px 15px 15px 0 rgba(10, 10, 10, 0.3);
 
-        svg {
-            background-color: $font-color-dark;
-            width: 60%;
+            svg {
+                background-color: $font-color-dark;
+                width: 60%;
 
-            margin: 30px 0;
+                margin: 30px 0;
+            }
+
+            h1 {
+                font-size: 2em;
+                margin-bottom: 40px;
+            }
+
+            p {
+                font-size: 1.3em;
+            }
         }
 
-        h1 {
-            font-size: 2em;
-            margin-bottom: 40px;
-        }
+        .social-media-container {
+            display: grid;
+            align-items: center;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
 
-        p {
-            font-size: 1.3em;
+            height: 350px;
+            width: 350px;
+
+            margin-right: 150px;
+
+            img {
+                height: 80px;
+                width: 80px;
+
+                transition: 400ms;
+
+                &:hover {
+                    height: 90px;
+                    width: 90px;
+
+                    cursor: pointer;
+                }
+            }
         }
     }
+    
+    
 
     .footer {
         width: 100%;

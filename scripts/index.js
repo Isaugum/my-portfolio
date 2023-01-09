@@ -73,7 +73,7 @@ observer.observe(aboutMeSection);
 //ON LOAD - Project buttons functionality, animations, etc
 window.addEventListener("load", () => {
 
-    mediaDisplay.forEach(element => {
+    /*mediaDisplay.forEach(element => {
         element.addEventListener('mouseover', (event) => {
             element.style.transform = "scaleX(-1)";
             element.style.boxShadow = "none";
@@ -83,7 +83,7 @@ window.addEventListener("load", () => {
             element.style.transform = "scaleX(1)";
             element.style.boxShadow = "15px 15px 0 rgba(10, 10, 10, 0.3)";
         });
-    })
+    })*/
 
     projectButtons.forEach(btn => {
 
