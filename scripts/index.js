@@ -142,22 +142,6 @@ window.addEventListener("load", () => {
     projectSubtitle.innerText = myProjects.LL.narocnik;
     projectDescription.innerText = myProjects.LL.description;
     projectImage.src = "images/craiglist.png";
-
-    //navbar animation
-    navbar.style.transform = "translate(0, 0)";
-    navbar.style.opacity = "1";
-
-    navTitle.style.opacity = "1";
-
-    //Animation for navbar buttons
-    navBtns.forEach(btn => {
-        btn.style.transform = "translate(0, 0)";
-        btn.style.opacity = "1";
-    });
-
-    //landing page text animation
-    landingText.style.transform = "translate(0, 0)";
-    landingText.style.opacity = "1";
 });
 
 //OPENINA AND CLOSING MENU FOR PHONE / SMALL TABLETS

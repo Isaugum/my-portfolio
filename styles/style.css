@@ -72,6 +72,7 @@ button {
     position: absolute;
     top: 20px;
     right: 30px;
+    height: 20px;
     color: #707070;
   }
   .landing-page .navbar {
@@ -83,14 +84,12 @@ button {
     height: 100vh;
     padding: 0 0 0 20px;
     background-color: #86A4B8;
-    transition: 500ms ease-in-out;
+    transition: 500ms;
   }
   .landing-page .navbar .close-menu {
-    width: 70%;
-    margin-top: 10px;
-    padding: 15px 10px 15px 20px;
+    height: 20px;
+    margin: 30px 0 0 10px;
     font-size: 1.2em;
-    background-color: rgba(19, 19, 19, 0.3);
   }
   .landing-page .navbar h1 {
     margin: 60px 0 50px 0;
@@ -115,6 +114,8 @@ button {
     width: 100%;
     text-align: center;
     padding: 120px 40px 0 40px;
+    -webkit-animation: text-slide-up 500ms ease-in forwards;
+            animation: text-slide-up 500ms ease-in forwards;
   }
   .landing-page .landing-page-text h1 {
     color: #e4e4e4;
@@ -137,6 +138,26 @@ button {
   .landing-page .landing-page-text .landing-text-big {
     display: none;
   }
+  @-webkit-keyframes text-slide-up {
+    from {
+      transform: translateY(200px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes text-slide-up {
+    from {
+      transform: translateY(200px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
   .cv-section {
     display: flex;
     flex-direction: column;
@@ -150,7 +171,7 @@ button {
   .cv-section .cv-text {
     transform: translate(-100px, 0);
     opacity: 0;
-    transition: 800ms ease-out 500ms;
+    transition: 500ms ease-out 200ms;
   }
   .cv-section .cv-text h1 {
     font-size: 2em;
@@ -163,7 +184,7 @@ button {
     margin-top: 60px;
     transform: translate(200px, 0);
     opacity: 0;
-    transition: 800ms ease-out 500ms;
+    transition: 500ms ease-out 200ms;
   }
   .cv-section .cv-skills h1 {
     font-size: 2em;
@@ -192,8 +213,8 @@ button {
     z-index: 2;
     margin-bottom: 40px;
     padding: 30px 10px;
-    background-color: rgb(26, 26, 26);
-    box-shadow: 15px 15px 0 rgba(10, 10, 10, 0.3);
+    background-color: rgb(40, 40, 40);
+    box-shadow: 15px 15px 0 rgba(40, 40, 40, 0.3);
     transition: 700ms;
   }
   .music-media .display-container .favourites-display {
@@ -289,7 +310,7 @@ button {
   .projects-section .project-container img {
     width: 100%;
     aspect-ratio: 5/3;
-    transition: 700ms;
+    transition: 500ms;
   }
   .projects-section .project-container .project-info {
     margin-top: 50px;
@@ -321,8 +342,8 @@ button {
     width: 100%;
     z-index: 1;
     padding: 20px 30px 30px 30px;
-    background-color: rgba(26, 26, 26, 0.5);
-    box-shadow: 15px 15px 15px 0 rgba(10, 10, 10, 0.3);
+    background-color: rgb(40, 40, 40);
+    box-shadow: 15px 15px 0 rgba(40, 40, 40, 0.3);
   }
   .contact-section .contact-section-text svg {
     background-color: #3F3F3F;
@@ -334,7 +355,7 @@ button {
     margin-bottom: 40px;
   }
   .contact-section .contact-section-text p {
-    font-size: 1.1em;
+    font-size: 1em;
   }
   .contact-section .social-media-container {
     display: grid;
@@ -342,13 +363,13 @@ button {
     align-items: center;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    height: 270px;
-    width: 270px;
+    height: 200px;
+    width: 200px;
     margin-top: 60px;
   }
   .contact-section .social-media-container img {
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
     transition: 400ms;
   }
   .contact-section .social-media-container img:hover {
@@ -382,9 +403,6 @@ button {
     align-items: center;
     height: 100px;
     padding: 0 165px;
-    transform: translate(0, -100px);
-    opacity: 0;
-    transition: 800ms ease-out;
     background-color: rgba(63, 63, 63, 0.1);
   }
   .landing-page .navbar .close-menu {
@@ -393,8 +411,10 @@ button {
   .landing-page .navbar h1 {
     color: #3F3F3F;
     font-size: 1.8em;
-    opacity: 0;
-    transition: opacity 1000ms ease-in;
+    -webkit-animation-name: text-slide-down;
+            animation-name: text-slide-down;
+    -webkit-animation-duration: 1000ms;
+            animation-duration: 1000ms;
   }
   .landing-page .navbar ul {
     display: flex;
@@ -423,22 +443,39 @@ button {
     width: 100%;
   }
   .landing-page .navbar ul li:nth-child(1) {
-    transform: translate(0, -200px);
-    opacity: 0;
-    transition: transform 400ms, opacity 1000ms;
-    transition-delay: 700ms;
+    transform: translateY(-100px);
+    -webkit-animation: text-slide-down 700ms ease-in 500ms 1 normal forwards;
+            animation: text-slide-down 700ms ease-in 500ms 1 normal forwards;
   }
   .landing-page .navbar ul li:nth-child(2) {
-    transform: translate(0, -200px);
-    opacity: 0;
-    transition: transform 400ms, opacity 1000ms;
-    transition-delay: 900ms;
+    transform: translateY(-100px);
+    -webkit-animation: text-slide-down 700ms ease-in 800ms 1 normal forwards;
+            animation: text-slide-down 700ms ease-in 800ms 1 normal forwards;
   }
   .landing-page .navbar ul li:nth-child(3) {
-    transform: translate(0, -200px);
-    opacity: 0;
-    transition: transform 400ms, opacity 1000ms;
-    transition-delay: 1200ms;
+    transform: translateY(-100px);
+    -webkit-animation: text-slide-down 700ms ease-in 1100ms 1 normal forwards;
+            animation: text-slide-down 700ms ease-in 1100ms 1 normal forwards;
+  }
+  @-webkit-keyframes text-slide-down {
+    from {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes text-slide-down {
+    from {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
   .landing-page .landing-page-text {
     display: flex;
@@ -446,9 +483,8 @@ button {
     justify-content: center;
     align-items: flex-start;
     margin: 10rem 165px 0 165px;
-    transform: translate(-500px, 0);
-    opacity: 0;
-    transition: 1000ms ease-out;
+    -webkit-animation: text-slide-right 1000ms forwards;
+            animation: text-slide-right 1000ms forwards;
   }
   .landing-page .landing-page-text h1 {
     color: #3F3F3F;
@@ -460,7 +496,6 @@ button {
     border-radius: 50px;
     color: #e4e4e4;
     background-color: rgba(19, 19, 19, 0.3);
-    transition: 500ms;
   }
   .landing-page .landing-page-text button:hover {
     background-color: #86A4B8;
@@ -475,6 +510,26 @@ button {
     margin: 2rem 0 3rem 0;
     color: #707070;
     font-size: 1.8em;
+  }
+  @-webkit-keyframes text-slide-right {
+    from {
+      transform: translateX(-500px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes text-slide-right {
+    from {
+      transform: translateX(-500px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
   .cv-section {
     display: flex;
@@ -493,7 +548,7 @@ button {
     margin-right: 30px;
     transform: translate(-100px, 0);
     opacity: 0;
-    transition: 800ms ease-out 500ms;
+    transition: 500ms ease-out 200ms;
   }
   .cv-section .cv-text h1 {
     font-size: 2.2em;
@@ -506,7 +561,7 @@ button {
     width: 45%;
     transform: translate(200px, 0);
     opacity: 0;
-    transition: 800ms ease-out 500ms;
+    transition: 500ms ease-out 200ms;
   }
   .cv-section .cv-skills h1 {
     font-size: 2.2em;

@@ -13,6 +13,7 @@ $base-side-margin: 165px;
 
 $title-font: 'DM Serif Display', serif;
 $text-font: 'Inter', sans-serif;
+
 //Reset
 * {
     box-sizing: border-box;
@@ -102,6 +103,8 @@ button {
             top: 20px;
             right: 30px;
 
+            height: 20px;
+
             color: $font-color-medium;
         }
 
@@ -119,14 +122,12 @@ button {
 
             background-color: $blue-highlights;
 
-            transition: 500ms ease-in-out;
+            transition: 500ms;
 
             .close-menu {
-                width: 70%;
-                margin-top: 10px;
-                padding: 15px 10px 15px 20px;
+                height: 20px;
+                margin: 30px 0 0 10px;
                 font-size: 1.2em;
-                background-color: $light-button;
             }
             
             h1 {
@@ -152,6 +153,8 @@ button {
             text-align: center;
 
             padding: 120px 40px 0 40px;
+
+            animation: text-slide-up 500ms ease-in forwards;
 
             h1 {
                 color: $font-color-light;
@@ -182,6 +185,17 @@ button {
             .landing-text-big {
                 display: none;
             }
+
+            @keyframes text-slide-up {
+                from {
+                    transform: translateY(200px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
         }
     }
  
@@ -206,7 +220,7 @@ button {
 
             transform: translate(-100px, 0);
             opacity: 0;
-            transition: 800ms ease-out 500ms;
+            transition: 500ms ease-out 200ms;
         }
 
         .cv-skills {
@@ -223,7 +237,7 @@ button {
 
             transform: translate(200px, 0);
             opacity: 0;
-            transition: 800ms ease-out 500ms;
+            transition: 500ms ease-out 200ms;
         }
     }
 
@@ -245,8 +259,8 @@ button {
             margin-bottom: 40px;
             padding: 30px 10px;
 
-            background-color: rgb(26, 26, 26);
-            box-shadow: 15px 15px 0 rgba(10, 10, 10, 0.3);
+            background-color: rgb(40, 40, 40);
+            box-shadow: 15px 15px 0 rgba(40, 40, 40, 0.3);
 
             transition: 700ms;
 
@@ -350,7 +364,7 @@ button {
                 width: 100%;
                 aspect-ratio: 5/3;
 
-                transition: 700ms;
+                transition: 500ms;
             }
 
             .project-info {
@@ -391,8 +405,8 @@ button {
 
             padding: 20px 30px 30px 30px;
 
-            background-color: rgb(26, 26, 26, 0.5);
-            box-shadow: 15px 15px 15px 0 rgba(10, 10, 10, 0.3);
+            background-color: rgb(40, 40, 40);
+            box-shadow: 15px 15px 0 rgba(40, 40, 40, 0.3);
 
                 svg {
                     background-color: $font-color-dark;
@@ -407,7 +421,7 @@ button {
                 }
 
                 p {
-                    font-size: 1.1em;
+                    font-size: 1em;
                 }
         }
 
@@ -418,14 +432,14 @@ button {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
 
-            height: 270px;
-            width: 270px;
+            height: 200px;
+            width: 200px;
 
             margin-top: 60px;
 
             img {
-                height: 80px;
-                width: 80px;
+                height: 60px;
+                width: 60px;
 
                 transition: 400ms;
 
@@ -486,10 +500,6 @@ button {
             height: 100px;
             padding: 0 $base-side-margin;
 
-            transform: translate(0, -100px);
-            opacity: 0;
-            transition: 800ms ease-out;
-
             background-color: $light-background;
 
             .close-menu {
@@ -500,8 +510,8 @@ button {
                 color: $font-color-dark;
                 font-size: 1.8em;
 
-                opacity: 0;
-                transition: opacity 1000ms ease-in;
+                animation-name: text-slide-down;
+                animation-duration: 1000ms;
             }
 
             ul {
@@ -533,25 +543,33 @@ button {
                     }
 
                     &:nth-child(1) {
-                        transform: translate(0, -200px);
-                        opacity: 0;
-                        transition: transform 400ms, opacity 1000ms;
-                        transition-delay: 700ms;
+                        transform: translateY(-100px);
+
+                        animation: text-slide-down 700ms ease-in 500ms 1 normal forwards;
                     }
 
                     &:nth-child(2) {
-                        transform: translate(0, -200px);
-                        opacity: 0;
-                        transition: transform 400ms, opacity 1000ms;
-                        transition-delay: 900ms;
+                        transform: translateY(-100px);
+
+                        animation: text-slide-down 700ms ease-in 800ms 1 normal forwards;
                     }
 
                     &:nth-child(3) {
-                        transform: translate(0, -200px);
-                        opacity: 0;
-                        transition: transform 400ms, opacity 1000ms;
-                        transition-delay: 1200ms;
+                        transform: translateY(-100px);
+
+                        animation: text-slide-down 700ms ease-in 1100ms 1 normal forwards;
                     }
+                }
+            }
+
+            @keyframes text-slide-down {
+                from {
+                    transform: translateY(-100px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
                 }
             }
         }
@@ -560,9 +578,7 @@ button {
             @include flex(column, center, flex-start);
             margin: 10rem $base-side-margin 0 $base-side-margin;
 
-            transform: translate(-500px, 0);
-            opacity: 0;
-            transition: 1000ms ease-out;
+            animation: text-slide-right 1000ms forwards;
 
             h1 {
                 color: $font-color-dark;
@@ -576,8 +592,6 @@ button {
 
                 color: $font-color-light;
                 background-color: $light-button;
-
-                transition: 500ms;
 
                 &:hover {
                     background-color: $blue-highlights;
@@ -597,6 +611,17 @@ button {
 
                 color: $font-color-medium;
                 font-size: 1.8em;
+            }
+
+            @keyframes text-slide-right {
+                from {
+                    transform: translateX(-500px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
             }
         }
     }
@@ -628,7 +653,7 @@ button {
 
             transform: translate(-100px, 0);
             opacity: 0;
-            transition: 800ms ease-out 500ms;
+            transition: 500ms ease-out 200ms;
         }
 
         .cv-skills {
@@ -645,7 +670,7 @@ button {
 
             transform: translate(200px, 0);
             opacity: 0;
-            transition: 800ms ease-out 500ms;
+            transition: 500ms ease-out 200ms;
         }
     }
 
