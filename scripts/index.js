@@ -95,6 +95,8 @@ observer.observe(aboutMeSection);
 //ON LOAD - Project buttons functionality, animations, etc
 window.addEventListener("load", () => {
 
+    mediaDisplay[0].children[2].style.display = "none";
+
     mediaDisplay.forEach(element => {
         let stateOfMediaDisplay = "normal";
         
@@ -123,17 +125,6 @@ window.addEventListener("load", () => {
             } 
         });
     })
-
-    let touchstartX = 0
-    let touchendX = 0
-
-    document.addEventListener('touchstart', e => {
-        touchstartX = e.changedTouches[0].screenX
-    });
-
-    document.addEventListener('touchend', e => {
-        touchendX = e.changedTouches[0].screenX
-    });
 
     arrowsMedia.forEach(arrow => {
 
@@ -168,43 +159,6 @@ window.addEventListener("load", () => {
                 const animationTimeout = setTimeout(() => {
                     mediaDisplay[0].style.transform = "translate(0, 0)";
                     mediaDisplay[0].style.opacity = "1"
-
-                }, 600);
-            }
-        })
-
-        arrow.addEventListener("touchend", () => {
-            if(touchendX < touchstartX) {
-
-                console.log("arrow left")
-                mediaDisplay[0].style.transition = "400ms";
-                mediaDisplay[0].style.transform = "translate(-500px, 0)";
-                mediaDisplay[0].style.opacity = "0";
-
-                const chaneAnimationLoc = setTimeout(() => {
-                    mediaDisplay[0].style.transform = "translate(500px, 0)";
-                }, 400);
-
-                const animationTimeout = setTimeout(() => {
-                    mediaDisplay[0].style.transform = "translate(0, 0)";
-                    mediaDisplay[0].style.opacity = "1"
-
-                }, 600);
-
-            } else if(touchendX > touchstartX) {
-                console.log("arrow right");
-                mediaDisplay[0].style.transition = "400ms";
-                mediaDisplay[0].style.transform = "translate(500px, 0)";
-                mediaDisplay[0].style.opacity = "0";
-
-                const chaneAnimationLoc = setTimeout(() => {
-                    mediaDisplay[0].style.transform = "translate(-500px, 0)";
-                }, 400);
-
-                const animationTimeout = setTimeout(() => {
-                    mediaDisplay[0].style.transform = "translate(0, 0)";
-                    mediaDisplay[0].style.opacity = "1"
-
                 }, 600);
             }
         })
