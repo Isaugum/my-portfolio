@@ -303,7 +303,7 @@ button {
         }
 
         .arrow {
-            @include flex(flex, center, center);
+            @include flex(row, center, center);
             height: 50px;
 
             svg {
@@ -313,7 +313,7 @@ button {
         }
 
         .arrows-phone {
-            @include flex(flex, space-evenly, center);
+            @include flex(row, space-evenly, center);
             width:100%;
             margin-top: 40px;
         }
@@ -1304,7 +1304,7 @@ button {
         }
 
         .navbar {
-            @include flex(flex, space-between, center);
+            @include flex(row, space-between, center);
 
             height: 100px;
             padding: 0 $base-side-margin;
@@ -1324,7 +1324,7 @@ button {
             }
 
             ul {
-                @include flex(flex, space-between, center);
+                @include flex(row, space-between, center);
 
                 width: 420px;
 
@@ -1436,7 +1436,7 @@ button {
     }
  
     .cv-section {
-        @include flex(flex, space-between, center);
+        @include flex(row, space-between, center);
         color: $font-color-light;
 
         height: 55vh;
@@ -1484,7 +1484,7 @@ button {
     }
 
     .music-media {
-        @include flex(flex, center, center);
+        @include flex(row, center, center);
         color: $font-color-light;
 
         height: 100%;
@@ -1495,7 +1495,7 @@ button {
         transition: 1200ms ease-out 500ms;
 
         .display-container {
-            @include flex(flex, center, center);
+            @include flex(row, center, center);
             width: 40%;
             height: 300px;
 
