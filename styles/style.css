@@ -1508,4 +1508,91 @@ button {
     min-height: 700px;
     padding: 6rem 0;
   }
+}
+@media only screen and (max-height: 600px) {
+  .landing-page {
+    min-height: 700px;
+  }
+  .landing-page .landing-page-text {
+    margin-top: 4rem;
+  }
+  .landing-page .landing-page-text h1 {
+    color: #707070;
+  }
+  .music-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .music-media .display-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 300px;
+    padding: 20px 40px;
+    overflow: hidden;
+  }
+  .music-media .display-container .favourites-display {
+    height: 90%;
+    transition: 500ms;
+  }
+  .music-media .display-container .favourites-display img {
+    height: 100%;
+    width: 150px;
+  }
+  .music-media .display-container .favourites-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 80%;
+    margin-top: 30px;
+  }
+  .music-media .display-container .favourites-description .favourite-type {
+    font-size: 0.9em;
+  }
+  .music-media .display-container .favourites-description .favourite-title {
+    margin: 40px 0 0 0;
+    font-size: 0.9em;
+  }
+  .music-media .display-container .favourites-description .favourite-author {
+    font-size: 0.9em;
+  }
+  .music-media .display-container .description-text {
+    display: none;
+  }
+  .music-media .arrow {
+    display: flex;
+    flex-direction: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    margin: 0 40px;
+  }
+  .music-media .arrow svg {
+    height: 70px;
+  }
+  .music-media .arrows-phone {
+    display: none;
+  }
+  .cv-section {
+    min-height: 700px;
+    padding-top: 6rem;
+  }
+  .music-media {
+    min-height: 700px;
+    min-height: 400px;
+  }
+  .projects-section {
+    min-height: 700px;
+    padding: 5rem 0;
+  }
+  .contact-section {
+    min-height: 700px;
+    padding: 6rem 0;
+  }
 }/*# sourceMappingURL=style.css.map */

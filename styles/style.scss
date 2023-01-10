@@ -1703,8 +1703,6 @@ button {
         }
     }
     
-    
-
     .footer {
         width: 100%;
         height: 20vh;
@@ -1723,6 +1721,104 @@ button {
         min-height: 700px;
         .landing-page-text {
             margin-top: 4rem;
+        }
+    }
+
+    .cv-section {
+        min-height: 700px;
+        padding-top: 6rem;
+    }
+
+    .music-media {
+        min-height: 700px;
+        min-height: 400px;
+    }
+
+    .projects-section {
+        min-height: 700px;
+        padding: 5rem 0;
+    }
+
+    .contact-section {
+        min-height: 700px;
+        padding: 6rem 0;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    .landing-page {
+        min-height: 700px;
+        .landing-page-text {
+            margin-top: 4rem;
+
+            h1 {
+                color: $font-color-medium;
+            }
+        }
+    }
+
+    .music-media {
+        @include flex(row, center, center);
+        width: 100%;
+
+        .display-container {
+            @include flex(row, center, center);
+            width: 700px;
+            height: 300px;
+
+            padding: 20px 40px;
+
+            overflow: hidden;
+
+            .favourites-display {
+                height: 90%;
+
+                transition: 500ms;
+
+                img {
+                    height: 100%;
+                    width: 150px;
+                }
+            }
+            
+
+            .favourites-description {
+                @include flex(column, space-between, flex-start);
+                height: 80%;
+                margin-top: 30px;
+
+                .favourite-type {
+                    font-size: 0.9em;
+                }
+
+                .favourite-title {
+                    margin: 40px 0 0 0;
+                    font-size: 0.9em;
+                }
+
+                .favourite-author {
+                    font-size: 0.9em;
+                }
+            }
+
+            .description-text {
+                    display: none;
+                }
+        }
+
+        .arrow {
+            @include flex(flex, center, center);
+            height: 200px;
+
+            margin: 0 40px;
+
+            svg {
+                height: 70px;
+            }
+        }
+
+        .arrows-phone {
+            display: none;
         }
     }
 
