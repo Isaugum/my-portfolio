@@ -1296,13 +1296,12 @@ button {
   .music-media {
     display: flex;
     flex-direction: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     color: #e4e4e4;
     height: 100%;
     width: 100%;
     z-index: 1;
-    margin-bottom: 3rem;
     opacity: 0;
     transition: 1200ms ease-out 500ms;
   }
@@ -1311,8 +1310,8 @@ button {
     flex-direction: flex;
     justify-content: center;
     align-items: center;
-    height: 250px;
-    width: 500px;
+    width: 40%;
+    height: 300px;
     padding: 20px 40px;
     z-index: 2;
     background-color: rgb(26, 26, 26);
@@ -1321,6 +1320,7 @@ button {
   }
   .music-media .display-container .favourites-display {
     height: 90%;
+    transition: 500ms;
   }
   .music-media .display-container .favourites-display img {
     height: 100%;
@@ -1332,6 +1332,7 @@ button {
     align-items: flex-start;
     height: 80%;
     margin: 0 0 0 30px;
+    transition: 500ms;
   }
   .music-media .display-container .favourites-description .favourite-type {
     font-size: 1em;
@@ -1347,12 +1348,16 @@ button {
     color: #707070;
     font-weight: lighter;
   }
+  .music-media .display-container .description-text {
+    display: none;
+  }
   .music-media .arrow {
     display: flex;
     flex-direction: flex;
     justify-content: center;
     align-items: center;
     height: 200px;
+    margin: 0 80px;
   }
   .music-media .arrow svg {
     height: 70px;
@@ -1432,7 +1437,7 @@ button {
     justify-content: space-between;
     align-items: center;
     width: calc(100% - 330px);
-    margin: 6rem 165px 6rem 165px;
+    margin: 0 165px 6rem 165px;
   }
   .contact-section .contact-section-text {
     color: #e4e4e4;
@@ -1459,18 +1464,18 @@ button {
     align-items: center;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    height: 350px;
-    width: 350px;
-    margin-left: 50px;
+    height: 300px;
+    width: 300px;
+    margin-left: 100px;
   }
   .contact-section .social-media-container img {
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 70px;
     transition: 400ms;
   }
   .contact-section .social-media-container img:hover {
-    height: 90px;
-    width: 90px;
+    height: 80px;
+    width: 80px;
     cursor: pointer;
   }
   .footer {

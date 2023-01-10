@@ -1487,22 +1487,20 @@ button {
     }
 
     .music-media {
-        @include flex(flex, space-evenly, center);
+        @include flex(flex, center, center);
         color: $font-color-light;
 
         height: 100%;
         width: 100%;
         z-index: 1;
 
-        margin-bottom: 3rem;
-
         opacity: 0;
         transition: 1200ms ease-out 500ms;
 
         .display-container {
             @include flex(flex, center, center);
-            height: 250px;
-            width: 500px;
+            width: 40%;
+            height: 300px;
 
             padding: 20px 40px;
 
@@ -1516,6 +1514,8 @@ button {
             .favourites-display {
                 height: 90%;
 
+                transition: 500ms;
+
                 img {
                     height: 100%;
                 }
@@ -1526,6 +1526,8 @@ button {
                 @include flex(column, space-between, flex-start);
                 height: 80%;
                 margin: 0 0 0 30px;
+
+                transition: 500ms;
 
                 .favourite-type {
                 font-size: 1em;
@@ -1544,11 +1546,17 @@ button {
                     font-weight: lighter;
                 }
             }
+
+            .description-text {
+                display: none;
+            }
         }
 
         .arrow {
             @include flex(flex, center, center);
             height: 200px;
+
+            margin: 0 80px;
 
             svg {
                 height: 70px;
@@ -1641,7 +1649,7 @@ button {
     .contact-section {
         @include flex(flex, space-between, center);
         width: calc(100% - (2 * $base-side-margin));
-        margin: 6rem $base-side-margin 6rem $base-side-margin;
+        margin: 0 $base-side-margin 6rem $base-side-margin;
 
         .contact-section-text {
         color: $font-color-light;
@@ -1677,20 +1685,20 @@ button {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
 
-            height: 350px;
-            width: 350px;
+            height: 300px;
+            width: 300px;
 
-            margin-left: 50px;
+            margin-left: 100px;
 
             img {
-                height: 80px;
-                width: 80px;
+                height: 70px;
+                width: 70px;
 
                 transition: 400ms;
 
                 &:hover {
-                    height: 90px;
-                    width: 90px;
+                    height: 80px;
+                    width: 80px;
 
                     cursor: pointer;
                 }

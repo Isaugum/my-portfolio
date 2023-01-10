@@ -15,6 +15,7 @@ const aboutSkills = document.querySelector('.cv-section > .cv-skills');
 
 const mediaFavs = document.querySelector('.music-media');
 const mediaDisplay = document.querySelectorAll('.music-media > .display-container');
+const arrowsMedia = document.querySelectorAll('.arrow');
 
 
 const projectSection = document.querySelector('.projects-section');
@@ -28,6 +29,28 @@ const projectDescription = projectText.children[1];
 
 const getSpecificPosition = (positionX, positionY) => {
     window.scrollTo(positionX, positionY);
+}
+
+//Data for favourites section
+const myFavourites = {
+    time_war: {
+        title: "This Is How You Lose the Time War",
+        narocnik: "Lene Lekše",
+        description: "A simulator of new york lol.",
+        imgSrc: "images/craiglist.png"
+    },
+    PKMN: {
+        title: "Pokemon Teambuilder",
+        narocnik: " / ",
+        description: "A teambuilder for purpose of competitive battles.",
+        imgSrc: "images/pkmn-app.jpg"
+    },
+    IMA: {
+        title: "Inventory Managment App",
+        narocnik: " / ",
+        description: "An app to help a small bar manage its inventory and more.",
+        imgSrc: "images/pkmn-app.jpg"
+    }
 }
 
 //Data for projects section
@@ -72,17 +95,125 @@ observer.observe(aboutMeSection);
 //ON LOAD - Project buttons functionality, animations, etc
 window.addEventListener("load", () => {
 
-    /*mediaDisplay.forEach(element => {
-        element.addEventListener('mouseover', (event) => {
-            element.style.transform = "scaleX(-1)";
-            element.style.boxShadow = "none";
-        });
+    mediaDisplay.forEach(element => {
+        let stateOfMediaDisplay = "normal";
+        
+        element.addEventListener('click', (event) => {
+            if(stateOfMediaDisplay === "normal") {
+                element.style.transform = "scaleX(-1)";
+                element.style.boxShadow = "none";
+                element.children[0].style.transform = "scaleX(-1)";
+                element.children[0].style.opacity = "0.3";
+                element.children[1].style.opacity = "0";
+                element.children[2].style.transform = "scaleX(-1)";
+                element.children[2].style.display = "block";
+                
+                stateOfMediaDisplay = "reverse";
 
-        element.addEventListener('mouseout', (event) => {
-            element.style.transform = "scaleX(1)";
-            element.style.boxShadow = "15px 15px 0 rgba(10, 10, 10, 0.3)";
+            } else if (stateOfMediaDisplay === "reverse") {
+                element.style.transform = "scaleX(1)";
+                element.children[0].style.transform = "scaleX(1)";
+                element.children[1].style.transform = "scaleX(1)";
+                element.children[0].style.opacity = "1";
+                element.children[1].style.opacity = "1";
+                element.children[2].style.display = "none";
+                element.style.boxShadow = "15px 15px 0 rgba(10, 10, 10, 0.3)";
+
+                stateOfMediaDisplay = "normal";
+            } 
         });
-    })*/
+    })
+
+    let touchstartX = 0
+    let touchendX = 0
+        
+    function checkDirection() {
+        if (touchendX < touchstartX) return 'left';
+        if (touchendX > touchstartX) return 'right';
+    }
+
+    document.addEventListener('touchstart', e => {
+        touchstartX = e.changedTouches[0].screenX
+    });
+
+    document.addEventListener('touchend', e => {
+        touchendX = e.changedTouches[0].screenX
+    });
+
+    arrowsMedia.forEach(arrow => {
+
+        arrow.addEventListener('click', () => {
+            if(arrow.children[0].className.animVal === "arrow-right mirror") {
+
+                console.log("arrow left")
+                mediaDisplay[0].style.transition = "400ms";
+                mediaDisplay[0].style.transform = "translate(-500px, 0)";
+                mediaDisplay[0].style.opacity = "0";
+
+                const chaneAnimationLoc = setTimeout(() => {
+                    mediaDisplay[0].style.transform = "translate(500px, 0)";
+                }, 400);
+
+                const animationTimeout = setTimeout(() => {
+                    mediaDisplay[0].style.transform = "translate(0, 0)";
+                    mediaDisplay[0].style.opacity = "1"
+
+                }, 600);
+
+            } else if(arrow.children[0].className.animVal === "arrow-right") {
+                console.log("arrow right");
+                mediaDisplay[0].style.transition = "400ms";
+                mediaDisplay[0].style.transform = "translate(500px, 0)";
+                mediaDisplay[0].style.opacity = "0";
+
+                const chaneAnimationLoc = setTimeout(() => {
+                    mediaDisplay[0].style.transform = "translate(-500px, 0)";
+                }, 400);
+
+                const animationTimeout = setTimeout(() => {
+                    mediaDisplay[0].style.transform = "translate(0, 0)";
+                    mediaDisplay[0].style.opacity = "1"
+
+                }, 600);
+            }
+        })
+
+        arrow.addEventListener("touchend", () => {
+            if(checkDirection() === "left") {
+
+                console.log("arrow left")
+                mediaDisplay[0].style.transition = "400ms";
+                mediaDisplay[0].style.transform = "translate(-500px, 0)";
+                mediaDisplay[0].style.opacity = "0";
+
+                const chaneAnimationLoc = setTimeout(() => {
+                    mediaDisplay[0].style.transform = "translate(500px, 0)";
+                }, 400);
+
+                const animationTimeout = setTimeout(() => {
+                    mediaDisplay[0].style.transform = "translate(0, 0)";
+                    mediaDisplay[0].style.opacity = "1"
+
+                }, 600);
+
+            } else if(checkDirection() === "right") {
+                console.log("arrow right");
+                mediaDisplay[0].style.transition = "400ms";
+                mediaDisplay[0].style.transform = "translate(500px, 0)";
+                mediaDisplay[0].style.opacity = "0";
+
+                const chaneAnimationLoc = setTimeout(() => {
+                    mediaDisplay[0].style.transform = "translate(-500px, 0)";
+                }, 400);
+
+                const animationTimeout = setTimeout(() => {
+                    mediaDisplay[0].style.transform = "translate(0, 0)";
+                    mediaDisplay[0].style.opacity = "1"
+
+                }, 600);
+            }
+        })
+    })
 
     projectButtons.forEach(btn => {
 
