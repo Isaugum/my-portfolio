@@ -76,9 +76,9 @@ observer.observe(aboutMeSection);
 window.addEventListener("load", () => {
 
     mediaDisplay[0].children[2].style.display = "none";
+    let stateOfMediaDisplay = "normal";
 
     mediaDisplay.forEach(element => {
-        let stateOfMediaDisplay = "normal";
         
         element.addEventListener('click', (event) => {
             if(stateOfMediaDisplay === "normal") {
@@ -109,6 +109,7 @@ window.addEventListener("load", () => {
     arrowsMedia.forEach(arrow => {
 
         arrow.addEventListener('click', () => {
+
             if(arrow.children[0].className.animVal === "arrow-right mirror") {
 
                 console.log("arrow left")
@@ -126,6 +127,20 @@ window.addEventListener("load", () => {
 
                 }, 600);
 
+                if(stateOfMediaDisplay === "reverse") {
+                    const changeOrientation = setTimeout(() => {
+                        mediaDisplay[0].style.transform = "scaleX(1)";
+                        mediaDisplay[0].children[0].style.transform = "scaleX(1)";
+                        mediaDisplay[0].children[1].style.transform = "scaleX(1)";
+                        mediaDisplay[0].children[0].style.opacity = "1";
+                        mediaDisplay[0].children[1].style.opacity = "1";
+                        mediaDisplay[0].children[2].style.display = "none";
+                        mediaDisplay[0].style.boxShadow = "15px 15px 0 rgba(10, 10, 10, 0.3)";
+    
+                        stateOfMediaDisplay = "normal";
+                    }, 600);
+                }
+
             } else if(arrow.children[0].className.animVal === "arrow-right") {
                 console.log("arrow right");
                 mediaDisplay[0].style.transition = "400ms";
@@ -140,6 +155,20 @@ window.addEventListener("load", () => {
                     mediaDisplay[0].style.transform = "translate(0, 0)";
                     mediaDisplay[0].style.opacity = "1"
                 }, 600);
+
+                if(stateOfMediaDisplay === "reverse") {
+                    const changeOrientation = setTimeout(() => {
+                        mediaDisplay[0].style.transform = "scaleX(1)";
+                        mediaDisplay[0].children[0].style.transform = "scaleX(1)";
+                        mediaDisplay[0].children[1].style.transform = "scaleX(1)";
+                        mediaDisplay[0].children[0].style.opacity = "1";
+                        mediaDisplay[0].children[1].style.opacity = "1";
+                        mediaDisplay[0].children[2].style.display = "none";
+                        mediaDisplay[0].style.boxShadow = "15px 15px 0 rgba(10, 10, 10, 0.3)";
+    
+                        stateOfMediaDisplay = "normal";
+                    }, 800);
+                }
             }
         })
     })
@@ -204,7 +233,15 @@ window.addEventListener("load", () => {
 //OPENINA AND CLOSING MENU FOR PHONE / SMALL TABLETS
 let isMenuOpen = false;
 
-const openMenu = (navbarMove) => {
+window.addEventListener("scroll", () => {
+    console.log(isMenuOpen);
+    if(isMenuOpen === true) {
+        console.log("yess, yess");
+        openMenu()
+    }
+})
+
+function openMenu () {
     if(isMenuOpen === false) {
         navbar.style.right = "0";
         isMenuOpen = true;
