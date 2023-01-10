@@ -1487,20 +1487,131 @@ button {
     background-color: #3F3F3F;
   }
 }
-@media only screen and (max-height: 800px) {
+@media only screen and (max-height: 1000px) {
+  .landing-page {
+    min-height: 700px;
+  }
   .landing-page .landing-page-text {
     margin-top: 4rem;
   }
   .cv-section {
+    min-height: 700px;
     padding-top: 6rem;
   }
   .music-media {
+    min-height: 700px;
     min-height: 400px;
   }
   .projects-section {
+    min-height: 700px;
     padding: 5rem 0;
   }
   .contact-section {
+    min-height: 700px;
+    padding: 6rem 0;
+  }
+}
+@media only screen and (max-height: 600px) and (min-width: 700px) {
+  .background-image {
+    width: 1200px;
+    position: absolute;
+    top: 0px;
+    left: -300px;
+    z-index: 0;
+  }
+  .landing-page {
+    min-height: 300px;
+  }
+  .landing-page .navbar {
+    width: 40%;
+  }
+  .landing-page .landing-page-text {
+    position: absolute;
+    top: -120px;
+    width: 500px;
+  }
+  .landing-page .landing-page-text h1 {
+    color: #707070;
+  }
+  .landing-page .landing-page-text button {
+    color: #e4e4e4;
+    background-color: rgba(134, 164, 184, 0.5);
+  }
+  .landing-page .landing-page-text .landing-text-small {
+    display: block;
+    margin: 10px 0 100px 0;
+    color: #3F3F3F;
+  }
+  .landing-page .landing-page-text .landing-text-big {
+    display: none;
+  }
+  .cv-section {
+    min-height: 300px;
+    padding-top: 6rem;
+  }
+  .music-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+  }
+  .music-media .display-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 300px;
+    padding: 20px 40px;
+  }
+  .music-media .display-container .favourites-display {
+    height: 90%;
+    transition: 500ms;
+  }
+  .music-media .display-container .favourites-display img {
+    height: 100%;
+    width: 170px;
+  }
+  .music-media .display-container .favourites-description {
+    height: 80%;
+    margin-top: 40px;
+  }
+  .music-media .display-container .favourites-description .favourite-type {
+    font-size: 1em;
+    color: #707070;
+    font-weight: lighter;
+  }
+  .music-media .display-container .favourites-description .favourite-title {
+    font-size: 1.1em;
+    margin-top: 90px;
+  }
+  .music-media .display-container .favourites-description .favourite-author {
+    font-size: 1em;
+    color: #707070;
+    font-weight: lighter;
+  }
+  .music-media .display-container .description-text {
+    display: none;
+  }
+  .music-media .arrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin: 0 40px;
+  }
+  .music-media .arrows-phone {
+    display: none;
+  }
+  .projects-section {
+    min-height: 700px;
+    padding: 5rem 0;
+  }
+  .contact-section {
+    min-height: 700px;
     padding: 6rem 0;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -32,26 +32,6 @@ const getSpecificPosition = (positionX, positionY) => {
 }
 
 //Data for favourites section
-const myFavourites = {
-    time_war: {
-        title: "This Is How You Lose the Time War",
-        narocnik: "Lene Lekše",
-        description: "A simulator of new york lol.",
-        imgSrc: "images/craiglist.png"
-    },
-    PKMN: {
-        title: "Pokemon Teambuilder",
-        narocnik: " / ",
-        description: "A teambuilder for purpose of competitive battles.",
-        imgSrc: "images/pkmn-app.jpg"
-    },
-    IMA: {
-        title: "Inventory Managment App",
-        narocnik: " / ",
-        description: "An app to help a small bar manage its inventory and more.",
-        imgSrc: "images/pkmn-app.jpg"
-    }
-}
 
 //Data for projects section
 const myProjects = {
@@ -224,19 +204,12 @@ window.addEventListener("load", () => {
 //OPENINA AND CLOSING MENU FOR PHONE / SMALL TABLETS
 let isMenuOpen = false;
 
-navBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-        navbar.style.right = "-500px"
-        isMenuOpen = false;
-    });
-})
-
-const openMenu = e => {
+const openMenu = (navbarMove) => {
     if(isMenuOpen === false) {
         navbar.style.right = "0";
         isMenuOpen = true;
     } else {
-        navbar.style.right = "-700px"
+        navbar.style.right = "-700px";
         isMenuOpen = false;
     }
 }
