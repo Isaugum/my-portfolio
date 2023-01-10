@@ -1750,9 +1750,9 @@ button {
     }
 }
 
-@media only screen and (max-height: 600px) and (min-width: 700px)  {
+@media only screen and (max-height: 600px) and (max-width: 992px)  {
     .background-image {
-        width: 1200px;
+        width: 1300px;
     
         position: absolute;
         top: 0px;
@@ -1794,6 +1794,107 @@ button {
             }
         }
     }
+
+    .cv-section {
+        min-height: 300px;
+        padding-top: 6rem;
+    }
+
+    .music-media {
+        @include flex(row, center, center);
+        width: 100%;
+        margin: 0;
+
+        .display-container {
+            @include flex(row, center, center);
+            width: 80%;
+            height: 300px;
+
+            padding: 20px 40px;
+
+            .favourites-display {
+                height: 90%;
+
+                transition: 500ms;
+
+                img {
+                    height: 100%;
+                    width: 170px;
+                }
+            }
+            
+            .favourites-description {
+                height: 80%;
+                margin-top: 40px;
+
+                .favourite-type {
+                font-size: 1em;
+                color: $font-color-medium;
+                font-weight: lighter;
+                }
+
+                .favourite-title {
+                    font-size: 1.1em;
+                    margin-top: 90px;
+                }
+
+                .favourite-author {
+                    font-size: 1em;
+                    color: $font-color-medium;
+                    font-weight: lighter;
+                }
+            }
+
+            .description-text {
+                    display: none;
+                }
+        }
+
+        .arrow {
+            @include flex(row, center, center);
+            height: 100px;
+            margin: 0 40px;
+        }
+
+        .arrows-phone {
+            display: none;
+        }
+    }
+
+        
+
+    .projects-section {
+        min-height: 700px;
+        padding: 5rem 0;
+    }
+
+    .contact-section {
+        min-height: 700px;
+        padding: 6rem 0;
+    }
+}
+
+@media only screen and (max-height: 800px) and (max-width: 992px)  {
+
+    .landing-page {
+
+        .navbar {
+            width: 40%;
+        }
+
+        .landing-page-text {
+            margin: 0;
+            padding: 0;
+
+            position: absolute;
+            top: 60px;
+
+            h1 {
+                color: $font-color-dark;
+                margin-bottom: 120px;
+            }
+        }
+    }    
 
     .cv-section {
         min-height: 300px;
