@@ -167,7 +167,7 @@ window.addEventListener("load", () => {
                         mediaDisplay[0].style.boxShadow = "15px 15px 0 rgba(10, 10, 10, 0.3)";
     
                         stateOfMediaDisplay = "normal";
-                    }, 800);
+                    }, 600);
                 }
             }
         })
