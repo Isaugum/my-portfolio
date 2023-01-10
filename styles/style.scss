@@ -175,6 +175,7 @@ button {
                 display: block;
 
                 color: $font-color-medium;
+                font-family: $text-font;
                 font-size: 1.2em;
 
                 margin: 30px 0 45px 0;
@@ -1119,10 +1120,6 @@ button {
                     font-weight: lighter;
                 }
             }
-
-            &:nth-child(2) {
-                display: none;
-            }
         }
 
         
@@ -1755,7 +1752,7 @@ button {
         width: 1300px;
     
         position: absolute;
-        top: 0px;
+        top: -70px;
         left: -300px;
         z-index: 0;
     }
@@ -1770,23 +1767,28 @@ button {
 
         .landing-page-text {
             position: absolute;
-            top: -120px;
+            top: -130px;;
 
             width: 500px;
 
             h1 {
-                color: $font-color-medium;
+                color: $font-color-dark;
+                margin-bottom: 100px;
             }
 
             button {
                 color: $font-color-light;
                 background-color: $blue-highlights-opacity;
+
+                padding: 12px 70px;
             }
 
             .landing-text-small {
                 display: block;
-                margin: 10px 0 100px 0;
-                color: $font-color-dark;
+                font-family: $text-font;
+                color: $font-color-medium;
+
+                margin-bottom: 20px;
             }
 
             .landing-text-big {
@@ -1798,70 +1800,7 @@ button {
     .cv-section {
         min-height: 300px;
         padding-top: 6rem;
-    }
-
-    .music-media {
-        @include flex(row, center, center);
-        width: 100%;
-        margin: 0;
-
-        .display-container {
-            @include flex(row, center, center);
-            width: 80%;
-            height: 300px;
-
-            padding: 20px 40px;
-
-            .favourites-display {
-                height: 90%;
-
-                transition: 500ms;
-
-                img {
-                    height: 100%;
-                    width: 170px;
-                }
-            }
-            
-            .favourites-description {
-                height: 80%;
-                margin-top: 40px;
-
-                .favourite-type {
-                font-size: 1em;
-                color: $font-color-medium;
-                font-weight: lighter;
-                }
-
-                .favourite-title {
-                    font-size: 1.1em;
-                    margin-top: 90px;
-                }
-
-                .favourite-author {
-                    font-size: 1em;
-                    color: $font-color-medium;
-                    font-weight: lighter;
-                }
-            }
-
-            .description-text {
-                    display: none;
-                }
-        }
-
-        .arrow {
-            @include flex(row, center, center);
-            height: 100px;
-            margin: 0 40px;
-        }
-
-        .arrows-phone {
-            display: none;
-        }
-    }
-
-        
+    }      
 
     .projects-section {
         min-height: 700px;
@@ -1874,13 +1813,8 @@ button {
     }
 }
 
-@media only screen and (max-height: 800px) and (max-width: 992px)  {
-
+@media only screen and (min-height: 600px) and (max-height: 1000px) and (max-width: 992px)  {
     .landing-page {
-
-        .navbar {
-            width: 40%;
-        }
 
         .landing-page-text {
             margin: 0;
@@ -1891,14 +1825,9 @@ button {
 
             h1 {
                 color: $font-color-dark;
-                margin-bottom: 120px;
+                margin-bottom: 170px;
             }
         }
-    }    
-
-    .cv-section {
-        min-height: 300px;
-        padding-top: 6rem;
     }
 
     .music-media {
@@ -1960,17 +1889,5 @@ button {
         .arrows-phone {
             display: none;
         }
-    }
-
-        
-
-    .projects-section {
-        min-height: 700px;
-        padding: 5rem 0;
-    }
-
-    .contact-section {
-        min-height: 700px;
-        padding: 6rem 0;
     }
 }
