@@ -126,11 +126,6 @@ window.addEventListener("load", () => {
 
     let touchstartX = 0
     let touchendX = 0
-        
-    function checkDirection() {
-        if (touchendX < touchstartX) return 'left';
-        if (touchendX > touchstartX) return 'right';
-    }
 
     document.addEventListener('touchstart', e => {
         touchstartX = e.changedTouches[0].screenX
@@ -179,7 +174,7 @@ window.addEventListener("load", () => {
         })
 
         arrow.addEventListener("touchend", () => {
-            if(checkDirection() === "left") {
+            if(touchendX < touchstartX) {
 
                 console.log("arrow left")
                 mediaDisplay[0].style.transition = "400ms";
@@ -196,7 +191,7 @@ window.addEventListener("load", () => {
 
                 }, 600);
 
-            } else if(checkDirection() === "right") {
+            } else if(touchendX > touchstartX) {
                 console.log("arrow right");
                 mediaDisplay[0].style.transition = "400ms";
                 mediaDisplay[0].style.transform = "translate(500px, 0)";
