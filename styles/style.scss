@@ -925,6 +925,8 @@ button {
         @include flex(row, space-between, center);
 
         .contact-section-text {
+            align-items: flex-start;
+
             color: $font-color-light;
 
             width: 760px;
@@ -946,6 +948,7 @@ button {
 
             p {
                 font-size: 1.3em;
+                text-align: left;
             }
         }
 

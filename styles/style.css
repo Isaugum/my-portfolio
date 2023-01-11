@@ -747,6 +747,7 @@ button {
     align-items: center;
   }
   .contact-section .contact-section-text {
+    align-items: flex-start;
     color: #e4e4e4;
     width: 760px;
     padding: 70px 80px;
@@ -763,6 +764,7 @@ button {
   }
   .contact-section .contact-section-text p {
     font-size: 1.3em;
+    text-align: left;
   }
   .contact-section .social-media-container {
     display: grid;
