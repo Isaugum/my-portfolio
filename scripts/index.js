@@ -75,104 +75,6 @@ observer.observe(aboutMeSection);
 //ON LOAD - Project buttons functionality, animations, etc
 window.addEventListener("load", () => {
 
-    mediaDisplay[0].children[2].style.display = "none";
-    let stateOfMediaDisplay = "normal";
-
-    mediaDisplay.forEach(element => {
-        
-        element.addEventListener('click', (event) => {
-            if(stateOfMediaDisplay === "normal") {
-                element.style.transform = "scaleX(-1)";
-                element.style.boxShadow = "none";
-                element.children[0].style.transform = "scaleX(-1)";
-                element.children[0].style.opacity = "0.3";
-                element.children[1].style.opacity = "0";
-                element.children[2].style.transform = "scaleX(-1)";
-                element.children[2].style.display = "block";
-                
-                stateOfMediaDisplay = "reverse";
-
-            } else if (stateOfMediaDisplay === "reverse") {
-                element.style.transform = "scaleX(1)";
-                element.children[0].style.transform = "scaleX(1)";
-                element.children[1].style.transform = "scaleX(1)";
-                element.children[0].style.opacity = "1";
-                element.children[1].style.opacity = "1";
-                element.children[2].style.display = "none";
-                element.style.boxShadow = "15px 15px 0 rgba(10, 10, 10, 0.3)";
-
-                stateOfMediaDisplay = "normal";
-            } 
-        });
-    })
-
-    arrowsMedia.forEach(arrow => {
-
-        arrow.addEventListener('click', () => {
-
-            if(arrow.children[0].className.animVal === "arrow-right mirror") {
-
-                console.log("arrow left")
-                mediaDisplay[0].style.transition = "400ms";
-                mediaDisplay[0].style.transform = "translate(-500px, 0)";
-                mediaDisplay[0].style.opacity = "0";
-
-                const chaneAnimationLoc = setTimeout(() => {
-                    mediaDisplay[0].style.transform = "translate(500px, 0)";
-                }, 400);
-
-                const animationTimeout = setTimeout(() => {
-                    mediaDisplay[0].style.transform = "translate(0, 0)";
-                    mediaDisplay[0].style.opacity = "1"
-
-                }, 600);
-
-                if(stateOfMediaDisplay === "reverse") {
-                    const changeOrientation = setTimeout(() => {
-                        mediaDisplay[0].style.transform = "scaleX(1)";
-                        mediaDisplay[0].children[0].style.transform = "scaleX(1)";
-                        mediaDisplay[0].children[1].style.transform = "scaleX(1)";
-                        mediaDisplay[0].children[0].style.opacity = "1";
-                        mediaDisplay[0].children[1].style.opacity = "1";
-                        mediaDisplay[0].children[2].style.display = "none";
-                        mediaDisplay[0].style.boxShadow = "15px 15px 0 rgba(10, 10, 10, 0.3)";
-    
-                        stateOfMediaDisplay = "normal";
-                    }, 600);
-                }
-
-            } else if(arrow.children[0].className.animVal === "arrow-right") {
-                console.log("arrow right");
-                mediaDisplay[0].style.transition = "400ms";
-                mediaDisplay[0].style.transform = "translate(500px, 0)";
-                mediaDisplay[0].style.opacity = "0";
-
-                const chaneAnimationLoc = setTimeout(() => {
-                    mediaDisplay[0].style.transform = "translate(-500px, 0)";
-                }, 400);
-
-                const animationTimeout = setTimeout(() => {
-                    mediaDisplay[0].style.transform = "translate(0, 0)";
-                    mediaDisplay[0].style.opacity = "1"
-                }, 600);
-
-                if(stateOfMediaDisplay === "reverse") {
-                    const changeOrientation = setTimeout(() => {
-                        mediaDisplay[0].style.transform = "scaleX(1)";
-                        mediaDisplay[0].children[0].style.transform = "scaleX(1)";
-                        mediaDisplay[0].children[1].style.transform = "scaleX(1)";
-                        mediaDisplay[0].children[0].style.opacity = "1";
-                        mediaDisplay[0].children[1].style.opacity = "1";
-                        mediaDisplay[0].children[2].style.display = "none";
-                        mediaDisplay[0].style.boxShadow = "15px 15px 0 rgba(10, 10, 10, 0.3)";
-    
-                        stateOfMediaDisplay = "normal";
-                    }, 600);
-                }
-            }
-        })
-    })
-
     projectButtons.forEach(btn => {
 
         //controlled hoover effect
@@ -234,9 +136,8 @@ window.addEventListener("load", () => {
 let isMenuOpen = false;
 
 window.addEventListener("scroll", () => {
-    console.log(isMenuOpen);
+
     if(isMenuOpen === true) {
-        console.log("yess, yess");
         openMenu()
     }
 })
