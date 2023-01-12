@@ -60,12 +60,16 @@ button {
     width: 100%;
     min-height: 320px;
   }
-  .landing-page .open-menu {
+  .landing-page .menu-button {
     position: fixed;
-    top: 1.7em;
-    right: 2em;
-    height: 1.5em;
-    z-index: 2;
+    height: 120px;
+    width: 120px;
+    top: 30px;
+    right: -40px;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+    transform-origin: center;
   }
   .landing-page .navbar {
     position: fixed;
@@ -78,19 +82,16 @@ button {
     background-color: #86A4B8;
     transition: 500ms linear;
   }
-  .landing-page .navbar .close-menu {
-    height: 1.3em;
-    margin-top: 2em;
-  }
   .landing-page .navbar h1 {
+    display: none;
     font-size: 1.3rem;
   }
   .landing-page .navbar ul {
     font-size: 1.2rem;
-    margin-top: 1.5em;
+    margin-top: 100px;
   }
   .landing-page .navbar ul li {
-    padding: 0.2rem 0;
+    padding: 20px 0;
   }
   .landing-page .landing-page-text {
     display: flex;
@@ -179,9 +180,9 @@ button {
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    height: 100%;
     aspect-ratio: 2/3;
-    padding: 50px 40px;
+    padding: 40px 40px;
     z-index: 1;
     background-color: rgb(26, 26, 26);
     box-shadow: 15px 15px 0 rgba(10, 10, 10, 0.3);
@@ -542,6 +543,7 @@ button {
     justify-content: center;
     align-items: center;
     height: 300px;
+    aspect-ratio: 5/3;
     padding: 20px 40px;
     z-index: 2;
     background-color: rgb(26, 26, 26);
@@ -562,18 +564,21 @@ button {
     transition: 500ms;
   }
   .music-media .display-container .favourites-description .favourite-type {
-    font-size: 1em;
+    font-size: 0.8em;
     color: #707070;
     font-weight: lighter;
+    text-align: left;
   }
   .music-media .display-container .favourites-description .favourite-title {
-    font-size: 1.2em;
-    transform: translateY(35px);
+    font-size: 0.8em;
+    margin: 100px 0 0 0;
+    text-align: left;
   }
   .music-media .display-container .favourites-description .favourite-author {
-    font-size: 1em;
+    font-size: 0.8em;
     color: #707070;
     font-weight: lighter;
+    text-align: left;
   }
   .music-media .display-container .description-text {
     display: none;
@@ -763,6 +768,7 @@ button {
     justify-content: center;
     align-items: center;
     height: 300px;
+    aspect-ratio: 4/2;
     padding: 20px 40px;
     z-index: 2;
     background-color: rgb(26, 26, 26);
@@ -789,12 +795,12 @@ button {
   }
   .music-media .display-container .favourites-description .favourite-title {
     font-size: 1.2em;
-    transform: translateY(35px);
   }
   .music-media .display-container .favourites-description .favourite-author {
     font-size: 1em;
     color: #707070;
     font-weight: lighter;
+    text-align: left;
   }
   .music-media .display-container .description-text {
     display: none;
@@ -1076,8 +1082,7 @@ button {
   }
   .music-media .display-container .favourites-description .favourite-title {
     font-size: 1.2em;
-    transform: translateY(35px);
-    text-align: left;
+    margin: 30px 0 0 0;
   }
   .music-media .display-container .favourites-description .favourite-author {
     font-size: 1em;
