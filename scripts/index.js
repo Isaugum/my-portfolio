@@ -17,6 +17,10 @@ const mediaFavs = document.querySelector('.music-media');
 const mediaDisplay = document.querySelector('.music-media > .display-container');
 const arrowsMedia = document.querySelectorAll('.arrow');
 
+const mediaType = document.querySelector('.favourite-type');
+const mediaTitle = document.querySelector('.favourite-title');
+const mediaAuthor = document.querySelector('.favourite-author');
+const mediaImg = document.querySelector('.music-media > .display-container > img');
 
 const projectSection = document.querySelector('.projects-section');
 const projectButtons = document.querySelectorAll('.project-button');
@@ -32,6 +36,28 @@ const getSpecificPosition = (positionX, positionY) => {
 }
 
 //Data for favourites section
+const myFavourites = {
+    0: {
+        type: "The last book I read was...",
+        title: "This Is How You Lose the Time War",
+        author: "Amal El-Mothar - Max Gladstone / 2019",
+        imgSrc: "images/time-war.jpg"
+    },
+
+    1: {
+        type: "The last album I liked was...",
+        title: "Hellfire",
+        author: "black midi / 2022",
+        imgSrc: "images/hellfire.jpg"
+    },
+
+    2: {
+        type: "Another album I liked recently...",
+        title: "Multitude",
+        author: "Stormae / 2022",
+        imgSrc: "images/multitude.jpg"
+    }
+}
 
 //Data for projects section
 const myProjects = {
@@ -70,41 +96,58 @@ const observer = new IntersectionObserver(entries => {
 
 observer.observe(aboutMeSection);
 
+let mediaFavouritesState = 1;
+
 //ON LOAD - Project buttons functionality, animations, etc
 window.addEventListener("load", () => {
 
     arrowsMedia.forEach(arrow => {
 
         arrow.addEventListener("click", () => {
+            	
+            console.log(mediaFavouritesState);
+            console.log(myFavourites[mediaFavouritesState]);
+
             if(arrow.className.split(" ").includes("left-arrow")) {
-                console.log("left");
                 mediaDisplay.classList.add("project-animation-left");
                 console.log(mediaDisplay.classList);
     
-                /*const changeContent = setTimeout(() => {
-                    projectTitle.innerText = myProjects[btn.dataset.content].title;
-                    projectDescription.innerText = myProjects[btn.dataset.content].description;
-                    projectImage.src = myProjects[btn.dataset.content].imgSrc;
-                }, 400);*/
+                const changeMediaContent = setTimeout(() => {
+                    mediaType.innerText = myFavourites[mediaFavouritesState].type;
+                    mediaTitle.innerText = myFavourites[mediaFavouritesState].title;
+                    mediaAuthor.innerText = myFavourites[mediaFavouritesState].author;
+                    mediaImg.src = myFavourites[mediaFavouritesState].imgSrc;
+                }, 400);
     
                 const animationRemover = setTimeout(() => {
                     mediaDisplay.classList.remove("project-animation-left");
+
+                    mediaFavouritesState -= 1;
+
+                    if(mediaFavouritesState < 0) {
+                        mediaFavouritesState = Object.keys(myFavourites).length - 1;
+                    }
                 }, 800)
             }
 
             if(arrow.className.split(" ").includes("right-arrow")) {
-                console.log("right");
                 mediaDisplay.classList.add("project-animation-right");
                 console.log(mediaDisplay.classList);
-    
-                /*const changeContent = setTimeout(() => {
-                    projectTitle.innerText = myProjects[btn.dataset.content].title;
-                    projectDescription.innerText = myProjects[btn.dataset.content].description;
-                    projectImage.src = myProjects[btn.dataset.content].imgSrc;
-                }, 400);*/
+
+                const changeMediaContent = setTimeout(() => {
+                    mediaType.innerText = myFavourites[mediaFavouritesState].type;
+                    mediaTitle.innerText = myFavourites[mediaFavouritesState].title;
+                    mediaAuthor.innerText = myFavourites[mediaFavouritesState].author;
+                    mediaImg.src = myFavourites[mediaFavouritesState].imgSrc;
+                }, 400);
     
                 const animationRemover = setTimeout(() => {
                     mediaDisplay.classList.remove("project-animation-right");
+                    mediaFavouritesState += 1;
+
+                    if(mediaFavouritesState > Object.keys(myFavourites).length - 1) {
+                        mediaFavouritesState = 0;
+                    }
                 }, 800)
             }
         })
@@ -164,7 +207,6 @@ window.addEventListener("load", () => {
         // DO IT WITH CLASS MANIPULATION AND CSS;
         btn.addEventListener("click", () => {
             projectContainer.classList.add("project-animation");
-            console.log(projectContainer.classList);
 
             const changeContent = setTimeout(() => {
                 projectTitle.innerText = myProjects[btn.dataset.content].title;
