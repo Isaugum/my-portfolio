@@ -14,7 +14,7 @@ const aboutText = document.querySelector('.cv-section > .cv-text');
 const aboutSkills = document.querySelector('.cv-section > .cv-skills');
 
 const mediaFavs = document.querySelector('.music-media');
-const mediaDisplay = document.querySelectorAll('.music-media > .display-container');
+const mediaDisplay = document.querySelector('.music-media > .display-container');
 const arrowsMedia = document.querySelectorAll('.arrow');
 
 
@@ -64,8 +64,6 @@ const observer = new IntersectionObserver(entries => {
             children[0].style.opacity = '1';
             children[1].style.transform = 'translate(0, 0)';
             children[1].style.opacity = '1';
-
-            mediaFavs.style.opacity = '1';
             }
         });
 }, { threshold: 0.3 })
@@ -74,6 +72,43 @@ observer.observe(aboutMeSection);
 
 //ON LOAD - Project buttons functionality, animations, etc
 window.addEventListener("load", () => {
+
+    arrowsMedia.forEach(arrow => {
+
+        arrow.addEventListener("click", () => {
+            if(arrow.className.split(" ").includes("left-arrow")) {
+                console.log("left");
+                mediaDisplay.classList.add("project-animation-left");
+                console.log(mediaDisplay.classList);
+    
+                /*const changeContent = setTimeout(() => {
+                    projectTitle.innerText = myProjects[btn.dataset.content].title;
+                    projectDescription.innerText = myProjects[btn.dataset.content].description;
+                    projectImage.src = myProjects[btn.dataset.content].imgSrc;
+                }, 400);*/
+    
+                const animationRemover = setTimeout(() => {
+                    mediaDisplay.classList.remove("project-animation-left");
+                }, 800)
+            }
+
+            if(arrow.className.split(" ").includes("right-arrow")) {
+                console.log("right");
+                mediaDisplay.classList.add("project-animation-right");
+                console.log(mediaDisplay.classList);
+    
+                /*const changeContent = setTimeout(() => {
+                    projectTitle.innerText = myProjects[btn.dataset.content].title;
+                    projectDescription.innerText = myProjects[btn.dataset.content].description;
+                    projectImage.src = myProjects[btn.dataset.content].imgSrc;
+                }, 400);*/
+    
+                const animationRemover = setTimeout(() => {
+                    mediaDisplay.classList.remove("project-animation-right");
+                }, 800)
+            }
+        })
+    })
 
     projectButtons.forEach(btn => {
 
@@ -104,8 +139,10 @@ window.addEventListener("load", () => {
              btn.style.color = "#86A4B8";
          });
 
-        //do the animation
-        btn.addEventListener("click", () => {
+        //DO THE SLIDING ANIMATION
+
+        // DO IT WITH STYLE MANIPULATION (BAD);
+        /*btn.addEventListener("click", () => {
             projectContainer.style.transition = "400ms";
             projectContainer.style.transform = "translate(500px, 0)";
             projectContainer.style.opacity = "0";
@@ -122,6 +159,22 @@ window.addEventListener("load", () => {
                 projectDescription.innerText = myProjects[btn.dataset.content].description;
                 projectImage.src = myProjects[btn.dataset.content].imgSrc;
             }, 600);
+        });*/
+
+        // DO IT WITH CLASS MANIPULATION AND CSS;
+        btn.addEventListener("click", () => {
+            projectContainer.classList.add("project-animation");
+            console.log(projectContainer.classList);
+
+            const changeContent = setTimeout(() => {
+                projectTitle.innerText = myProjects[btn.dataset.content].title;
+                projectDescription.innerText = myProjects[btn.dataset.content].description;
+                projectImage.src = myProjects[btn.dataset.content].imgSrc;
+            }, 400);
+
+            const animationRemover = setTimeout(() => {
+                projectContainer.classList.remove("project-animation");
+            }, 800)
         });
     })
 
