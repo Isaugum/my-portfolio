@@ -12,44 +12,6 @@ const menuBtnVector_1 = document.getElementById('vector');
 const menuBtnVector_2 = document.getElementById('vector_2');
 const menuBtnVector_3 = document.getElementById('vector_3');
 
-const menuAnimation = (menuState) => {
-    if(menuState === true) {
-        menuBtnVector_1.style.transition = "500ms";
-        menuBtnVector_3.style.transition = "500ms";
-        menuBtnVector_2.style.transition = "500ms";
-        menuBtnVector_2.style.opacity = "0";
-
-        menuBtnVector_1.style.transformOrigin = "center";
-        menuBtnVector_3.style.transformOrigin = "center";
-
-        menuBtnVector_1.attributes[4].value = "45";
-        menuBtnVector_3.attributes[4].value = "45";
-
-        const delayRotation = setTimeout(() => {
-            menuBtnVector_1.style.transform = "rotate(42deg)";
-            menuBtnVector_3.style.transform = "rotate(-42deg)";    
-        }, 300);
-        
-    }
-
-    if(menuState === false) {
-        menuBtnVector_2.style.opacity = "1";
-
-        menuBtnVector_1.style.transform = "rotate(0)";
-        menuBtnVector_3.style.transform = "rotate(0)";
-
-        const delayRotation = setTimeout(() => {
-            menuBtnVector_1.attributes[4].value = "25";
-            menuBtnVector_3.attributes[4].value = "65"; 
-        }, 200);
-
-        
-
-    }
-
-}
-
-
 
 const aboutMeSection = document.querySelector('.cv-section');
 const aboutText = document.querySelector('.cv-section > .cv-text');
@@ -406,6 +368,40 @@ function openMenu () {
         isMenuOpen = false;
     }
 }
+
+const menuAnimation = (menuState) => {
+    if(menuState === true) {
+        menuBtnVector_1.style.transition = "500ms";
+        menuBtnVector_3.style.transition = "500ms";
+        menuBtnVector_2.style.transition = "500ms";
+        menuBtnVector_2.style.opacity = "0";
+
+        menuBtnVector_1.style.transformOrigin = "center";
+        menuBtnVector_3.style.transformOrigin = "center";
+
+        menuBtnVector_1.attributes[4].value = "45";
+        menuBtnVector_3.attributes[4].value = "45";
+
+        const delayRotation = setTimeout(() => {
+            menuBtnVector_1.style.transform = "rotate(42deg)";
+            menuBtnVector_3.style.transform = "rotate(-42deg)";    
+        }, 300);
+        
+    }
+
+    if(menuState === false) {
+        menuBtnVector_2.style.opacity = "1";
+
+        menuBtnVector_1.style.transform = "rotate(0)";
+        menuBtnVector_3.style.transform = "rotate(0)";
+
+        const delayRotation = setTimeout(() => {
+            menuBtnVector_1.attributes[4].value = "25";
+            menuBtnVector_3.attributes[4].value = "65"; 
+        }, 200);
+    }
+}
+
 
 menuButtonOpen.addEventListener("click", openMenu);
 

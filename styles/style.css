@@ -64,8 +64,8 @@ button {
     position: fixed;
     height: 120px;
     width: 120px;
-    top: 30px;
-    right: -40px;
+    top: 5%;
+    right: -12%;
     margin: 0;
     padding: 0;
     z-index: 3;
@@ -180,7 +180,7 @@ button {
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 400px;
     aspect-ratio: 2/3;
     padding: 40px 40px;
     z-index: 1;
@@ -659,7 +659,7 @@ button {
     margin-top: 1.5em;
   }
   .landing-page .navbar ul li {
-    padding: 0.5em 0;
+    padding: 20px 0;
   }
   .landing-page .landing-page-text h1 {
     font-size: 2.5em;
@@ -877,10 +877,8 @@ button {
     width: 100%;
     background-color: rgba(63, 63, 63, 0.1);
   }
-  .landing-page .navbar .close-menu {
-    display: none;
-  }
   .landing-page .navbar h1 {
+    display: block;
     color: #3F3F3F;
     font-size: 1.8em;
     padding: 0;
@@ -1082,7 +1080,7 @@ button {
   }
   .music-media .display-container .favourites-description .favourite-title {
     font-size: 1.2em;
-    margin: 30px 0 0 0;
+    transform: translateY(8px);
   }
   .music-media .display-container .favourites-description .favourite-author {
     font-size: 1em;
