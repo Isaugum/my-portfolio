@@ -164,6 +164,10 @@ button {
     transition: 500ms ease-out 100ms;
   }
   .music-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     min-height: 320px;
   }
@@ -175,11 +179,13 @@ button {
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    width: 90%;
+    aspect-ratio: 2/3;
     padding: 50px 40px;
     z-index: 1;
     background-color: rgb(26, 26, 26);
     box-shadow: 15px 15px 0 rgba(10, 10, 10, 0.3);
+    transition: 400ms;
   }
   .music-media .display-container img {
     height: 20vh;
