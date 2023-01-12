@@ -103,7 +103,7 @@ const observer = new IntersectionObserver(entries => {
 
 observer.observe(aboutMeSection);
 
-let mediaFavouritesState = 1;
+let mediaFavouritesState = 0;
 
 const swipeInfo = {
     touchStart: 0,
@@ -122,7 +122,6 @@ window.addEventListener("load", () => {
     });
 
     mediaFavs.addEventListener("touchend", e => {
-        console.log(swipeInfo);
 
         if(swipeInfo.touchEnd < 50) {
             swipeInfo.touchStart = 0;
@@ -130,9 +129,16 @@ window.addEventListener("load", () => {
         }
         else if(swipeInfo.touchStart > swipeInfo.touchEnd && Math.abs(swipeInfo.touchStart - swipeInfo.touchEnd) > 100) {
             mediaDisplay.classList.add("project-animation-left");
-            console.log(mediaDisplay.classList);
 
             const changeMediaContent = setTimeout(() => {
+                mediaFavouritesState += 1;
+
+                console.log(mediaFavouritesState);
+
+                if(mediaFavouritesState > Object.keys(myFavourites).length - 1) {
+                    mediaFavouritesState = 0;
+                }
+
                 mediaType.innerText = myFavourites[mediaFavouritesState].type;
                 mediaTitle.innerText = myFavourites[mediaFavouritesState].title;
                 mediaAuthor.innerText = myFavourites[mediaFavouritesState].author;
@@ -141,18 +147,18 @@ window.addEventListener("load", () => {
 
             const animationRemover = setTimeout(() => {
                 mediaDisplay.classList.remove("project-animation-left");
+            }, 800) 
+        } else if (swipeInfo.touchStart < swipeInfo.touchEnd && Math.abs(swipeInfo.touchStart - swipeInfo.touchEnd) > 100) { 
+            mediaDisplay.classList.add("project-animation-right");
 
+            const changeMediaContent = setTimeout(() => {
                 mediaFavouritesState -= 1;
 
                 if(mediaFavouritesState < 0) {
+                    console.log(mediaFavouritesState);
                     mediaFavouritesState = Object.keys(myFavourites).length - 1;
                 }
-            }, 800)
-        } else if (swipeInfo.touchStart < swipeInfo.touchEnd && Math.abs(swipeInfo.touchStart - swipeInfo.touchEnd) > 100) { 
-            mediaDisplay.classList.add("project-animation-right");
-            console.log(mediaDisplay.classList);
 
-            const changeMediaContent = setTimeout(() => {
                 mediaType.innerText = myFavourites[mediaFavouritesState].type;
                 mediaTitle.innerText = myFavourites[mediaFavouritesState].title;
                 mediaAuthor.innerText = myFavourites[mediaFavouritesState].author;
@@ -161,17 +167,11 @@ window.addEventListener("load", () => {
 
             const animationRemover = setTimeout(() => {
                 mediaDisplay.classList.remove("project-animation-right");
-                mediaFavouritesState += 1;
-
-                if(mediaFavouritesState > Object.keys(myFavourites).length - 1) {
-                    mediaFavouritesState = 0;
-                }
             }, 800)        
         }
 
         swipeInfo.touchStart = 0;
         swipeInfo.touchEnd = 0;
-        console.log(swipeInfo);
     });
 
     arrowsMedia.forEach(arrow => {
