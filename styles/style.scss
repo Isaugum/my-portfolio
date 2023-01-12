@@ -261,6 +261,11 @@ button {
                 }
             }  
         }
+        	
+        .favourite-details {
+            display: none;
+        }
+
         .project-animation-right {
             animation: slide-right 800ms linear normal;
         }
@@ -1256,6 +1261,7 @@ button {
             @include flex(row, center, center);
 
             height: 300px;
+            aspect-ratio: 4/2;
 
             padding: 20px 40px;
 
@@ -1279,14 +1285,15 @@ button {
                 transition: 500ms;
 
                 .favourite-type {
-                font-size: 1em;
-                color: $font-color-medium;
-                font-weight: lighter;
+                    font-size: 1em;
+                    color: $font-color-medium;
+                    font-weight: lighter;
                 }
 
                 .favourite-title {
                     font-size: 1.2em;
                     transform: translateY(35px);
+                    text-align: left;
                 }
 
                 .favourite-author {

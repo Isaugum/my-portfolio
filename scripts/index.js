@@ -21,6 +21,7 @@ const mediaType = document.querySelector('.favourite-type');
 const mediaTitle = document.querySelector('.favourite-title');
 const mediaAuthor = document.querySelector('.favourite-author');
 const mediaImg = document.querySelector('.music-media > .display-container > img');
+const mediaDetails = document.querySelector('.favourite-details');
 
 const projectSection = document.querySelector('.projects-section');
 const projectButtons = document.querySelectorAll('.project-button');
@@ -41,28 +42,32 @@ const myFavourites = {
         type: "The last book I read was...",
         title: "This Is How You Lose the Time War",
         author: "Amal El-Mothar - Max Gladstone / 2019",
-        imgSrc: "images/time-war.jpg"
+        imgSrc: "images/time-war.jpg",
+        details: "blabla"
     },
 
     1: {
         type: "The last album I liked was...",
         title: "Hellfire",
         author: "black midi / 2022",
-        imgSrc: "images/hellfire.jpg"
+        imgSrc: "images/hellfire.jpg",
+        details: "blabla"
     },
 
     2: {
         type: "Another album I liked recently...",
         title: "Multitude",
         author: "Stormae / 2022",
-        imgSrc: "images/multitude.jpg"
+        imgSrc: "images/multitude.jpg",
+        details: "blabla"
     },
 
     3: {
         type: "A book I really like...",
         title: "Three Body Problem",
         author: "Cixin Liu",
-        imgSrc: "images/TBP.jpg"
+        imgSrc: "images/TBP.jpg",
+        details: "blabla"
     }
 }
 
@@ -103,8 +108,8 @@ const observer = new IntersectionObserver(entries => {
 
 observer.observe(aboutMeSection);
 
+let mediaDisplayState = false;
 let mediaFavouritesState = 0;
-
 const swipeInfo = {
     touchStart: 0,
     touchEnd: 0
@@ -133,12 +138,10 @@ window.addEventListener("load", () => {
             const changeMediaContent = setTimeout(() => {
                 mediaFavouritesState += 1;
 
-                console.log(mediaFavouritesState);
-
                 if(mediaFavouritesState > Object.keys(myFavourites).length - 1) {
                     mediaFavouritesState = 0;
                 }
-
+                mediaDetails.innerText = myFavourites[mediaFavouritesState].details;
                 mediaType.innerText = myFavourites[mediaFavouritesState].type;
                 mediaTitle.innerText = myFavourites[mediaFavouritesState].title;
                 mediaAuthor.innerText = myFavourites[mediaFavouritesState].author;
@@ -159,6 +162,7 @@ window.addEventListener("load", () => {
                     mediaFavouritesState = Object.keys(myFavourites).length - 1;
                 }
 
+                mediaDetails.innerText = myFavourites[mediaFavouritesState].details;
                 mediaType.innerText = myFavourites[mediaFavouritesState].type;
                 mediaTitle.innerText = myFavourites[mediaFavouritesState].title;
                 mediaAuthor.innerText = myFavourites[mediaFavouritesState].author;
@@ -190,7 +194,8 @@ window.addEventListener("load", () => {
                         console.log(mediaFavouritesState);
                         mediaFavouritesState = Object.keys(myFavourites).length - 1;
                     }
-    
+                    
+                    mediaDetails.innerText = myFavourites[mediaFavouritesState].details;
                     mediaType.innerText = myFavourites[mediaFavouritesState].type;
                     mediaTitle.innerText = myFavourites[mediaFavouritesState].title;
                     mediaAuthor.innerText = myFavourites[mediaFavouritesState].author;
@@ -214,7 +219,8 @@ window.addEventListener("load", () => {
                     if(mediaFavouritesState > Object.keys(myFavourites).length - 1) {
                         mediaFavouritesState = 0;
                     }
-    
+
+                    mediaDetails.innerText = myFavourites[mediaFavouritesState].details;
                     mediaType.innerText = myFavourites[mediaFavouritesState].type;
                     mediaTitle.innerText = myFavourites[mediaFavouritesState].title;
                     mediaAuthor.innerText = myFavourites[mediaFavouritesState].author;
@@ -226,6 +232,41 @@ window.addEventListener("load", () => {
                 }, 800)
             }
         })
+    })
+
+    mediaDisplay.addEventListener("click", () => {
+
+        if(mediaDisplayState === false) {
+
+            mediaDisplay.style.transform = "scaleX(-1)";
+            mediaImg.style.transform = "scaleX(-1)";
+            mediaImg.style.opacity = "0.1";
+
+            mediaType.style.display = "none";
+            mediaTitle.style.display = "none";
+            mediaAuthor.style.display = "none";
+
+            const slowTextChange = setTimeout(() => {
+                mediaDetails.style.transform = "scaleX(-1)";
+                mediaDetails.style.display = "block";             
+            }, 200)
+
+            mediaDisplayState = true;
+        } else if(mediaDisplayState === true) {
+            mediaDisplay.style.transform = "scaleX(1)";
+            mediaImg.style.transform = "scaleX(1)";
+            mediaImg.style.opacity = "1";
+
+            const slowTextChange = setTimeout(() => {
+                mediaType.style.display = "block";
+                mediaTitle.style.display = "block";
+                mediaAuthor.style.display = "block";
+                mediaDetails.style.display = "none";               
+            }, 200)
+
+            mediaDisplayState = false;
+        }
+        
     })
 
     projectButtons.forEach(btn => {

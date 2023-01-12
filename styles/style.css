@@ -211,6 +211,9 @@ button {
     text-align: center;
     color: #707070;
   }
+  .music-media .favourite-details {
+    display: none;
+  }
   .music-media .project-animation-right {
     -webkit-animation: slide-right 800ms linear normal;
             animation: slide-right 800ms linear normal;
@@ -1040,6 +1043,7 @@ button {
     justify-content: center;
     align-items: center;
     height: 300px;
+    aspect-ratio: 4/2;
     padding: 20px 40px;
     z-index: 2;
     background-color: rgb(26, 26, 26);
@@ -1067,6 +1071,7 @@ button {
   .music-media .display-container .favourites-description .favourite-title {
     font-size: 1.2em;
     transform: translateY(35px);
+    text-align: left;
   }
   .music-media .display-container .favourites-description .favourite-author {
     font-size: 1em;
