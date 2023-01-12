@@ -124,8 +124,11 @@ window.addEventListener("load", () => {
     mediaFavs.addEventListener("touchend", e => {
         console.log(swipeInfo);
 
-        if(swipeInfo.touchStart > swipeInfo.touchEnd && Math.abs(swipeInfo.touchStart - swipeInfo.touchEnd) > 100) {
-            console.log("left");
+        if(swipeInfo.touchEnd < 50) {
+            swipeInfo.touchStart = 0;
+            swipeInfo.touchEnd = 0;
+        }
+        else if(swipeInfo.touchStart > swipeInfo.touchEnd && Math.abs(swipeInfo.touchStart - swipeInfo.touchEnd) > 100) {
             mediaDisplay.classList.add("project-animation-left");
             console.log(mediaDisplay.classList);
 
@@ -145,8 +148,7 @@ window.addEventListener("load", () => {
                     mediaFavouritesState = Object.keys(myFavourites).length - 1;
                 }
             }, 800)
-        } else if (swipeInfo.touchStart < swipeInfo.touchEnd && Math.abs(swipeInfo.touchStart - swipeInfo.touchEnd) > 100) {
-            console.log("right");   
+        } else if (swipeInfo.touchStart < swipeInfo.touchEnd && Math.abs(swipeInfo.touchStart - swipeInfo.touchEnd) > 100) { 
             mediaDisplay.classList.add("project-animation-right");
             console.log(mediaDisplay.classList);
 
@@ -166,6 +168,10 @@ window.addEventListener("load", () => {
                 }
             }, 800)        
         }
+
+        swipeInfo.touchStart = 0;
+        swipeInfo.touchEnd = 0;
+        console.log(swipeInfo);
     });
 
     arrowsMedia.forEach(arrow => {
