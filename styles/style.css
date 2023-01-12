@@ -320,6 +320,28 @@ button {
     margin-top: 15px;
     color: #707070;
   }
+  .projects-section .project-animation {
+    -webkit-animation: slide-right 800ms linear normal;
+            animation: slide-right 800ms linear normal;
+  }
+  @keyframes slide-right {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    25% {
+      transform: translateX(500px);
+      opacity: 0;
+    }
+    75% {
+      opacity: 0;
+      transform: translateX(-500px);
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
   .contact-section {
     display: flex;
     flex-direction: column;
