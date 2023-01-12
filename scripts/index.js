@@ -124,7 +124,7 @@ window.addEventListener("load", () => {
     mediaFavs.addEventListener("touchend", e => {
         console.log(swipeInfo);
 
-        if(swipeInfo.touchStart > swipeInfo.touchEnd) {
+        if(swipeInfo.touchStart > swipeInfo.touchEnd && Math.abs(swipeInfo.touchStart - swipeInfo.touchEnd) > 100) {
             console.log("left");
             mediaDisplay.classList.add("project-animation-left");
             console.log(mediaDisplay.classList);
@@ -145,7 +145,7 @@ window.addEventListener("load", () => {
                     mediaFavouritesState = Object.keys(myFavourites).length - 1;
                 }
             }, 800)
-        } else if (swipeInfo.touchStart < swipeInfo.touchEnd) {
+        } else if (swipeInfo.touchStart < swipeInfo.touchEnd && Math.abs(swipeInfo.touchStart - swipeInfo.touchEnd) > 100) {
             console.log("right");   
             mediaDisplay.classList.add("project-animation-right");
             console.log(mediaDisplay.classList);
