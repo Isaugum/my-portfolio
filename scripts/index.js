@@ -56,6 +56,13 @@ const myFavourites = {
         title: "Multitude",
         author: "Stormae / 2022",
         imgSrc: "images/multitude.jpg"
+    },
+
+    3: {
+        type: "A book I really like...",
+        title: "Three Body Problem",
+        author: "Cixin Liu",
+        imgSrc: "images/TBP.jpg"
     }
 }
 
@@ -98,13 +105,71 @@ observer.observe(aboutMeSection);
 
 let mediaFavouritesState = 1;
 
+const swipeInfo = {
+    touchStart: 0,
+    touchEnd: 0
+}
+
 //ON LOAD - Project buttons functionality, animations, etc
 window.addEventListener("load", () => {
 
-    arrowsMedia.forEach(arrow => {
+    mediaFavs.addEventListener("touchstart", e => {
+        swipeInfo.touchStart = e.touches[0].screenX;
+    });
 
-        arrow.addEventListener("click", () => {
-            	
+    mediaFavs.addEventListener("touchmove", e => {
+        swipeInfo.touchEnd = e.touches[0].screenX;
+    });
+
+    mediaFavs.addEventListener("touchend", e => {
+        console.log(swipeInfo);
+
+        if(swipeInfo.touchStart > swipeInfo.touchEnd) {
+            console.log("left");
+            mediaDisplay.classList.add("project-animation-left");
+            console.log(mediaDisplay.classList);
+
+            const changeMediaContent = setTimeout(() => {
+                mediaType.innerText = myFavourites[mediaFavouritesState].type;
+                mediaTitle.innerText = myFavourites[mediaFavouritesState].title;
+                mediaAuthor.innerText = myFavourites[mediaFavouritesState].author;
+                mediaImg.src = myFavourites[mediaFavouritesState].imgSrc;
+            }, 400);
+
+            const animationRemover = setTimeout(() => {
+                mediaDisplay.classList.remove("project-animation-left");
+
+                mediaFavouritesState -= 1;
+
+                if(mediaFavouritesState < 0) {
+                    mediaFavouritesState = Object.keys(myFavourites).length - 1;
+                }
+            }, 800)
+        } else if (swipeInfo.touchStart < swipeInfo.touchEnd) {
+            console.log("right");   
+            mediaDisplay.classList.add("project-animation-right");
+            console.log(mediaDisplay.classList);
+
+            const changeMediaContent = setTimeout(() => {
+                mediaType.innerText = myFavourites[mediaFavouritesState].type;
+                mediaTitle.innerText = myFavourites[mediaFavouritesState].title;
+                mediaAuthor.innerText = myFavourites[mediaFavouritesState].author;
+                mediaImg.src = myFavourites[mediaFavouritesState].imgSrc;
+            }, 400);
+
+            const animationRemover = setTimeout(() => {
+                mediaDisplay.classList.remove("project-animation-right");
+                mediaFavouritesState += 1;
+
+                if(mediaFavouritesState > Object.keys(myFavourites).length - 1) {
+                    mediaFavouritesState = 0;
+                }
+            }, 800)        
+        }
+    });
+
+    arrowsMedia.forEach(arrow => {
+        arrow.addEventListener("click", () => {	
             console.log(mediaFavouritesState);
             console.log(myFavourites[mediaFavouritesState]);
 

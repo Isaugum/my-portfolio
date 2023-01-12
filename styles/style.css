@@ -211,6 +211,86 @@ button {
     text-align: center;
     color: #707070;
   }
+  .music-media .project-animation-right {
+    -webkit-animation: slide-right 800ms linear normal;
+            animation: slide-right 800ms linear normal;
+  }
+  .music-media .project-animation-left {
+    -webkit-animation: slide-left 800ms linear normal;
+            animation: slide-left 800ms linear normal;
+  }
+  @-webkit-keyframes slide-right {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    25% {
+      transform: translateX(500px);
+      opacity: 0;
+    }
+    75% {
+      opacity: 0;
+      transform: translateX(-500px);
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-right {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    25% {
+      transform: translateX(500px);
+      opacity: 0;
+    }
+    75% {
+      opacity: 0;
+      transform: translateX(-500px);
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes slide-left {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    25% {
+      transform: translateX(-500px);
+      opacity: 0;
+    }
+    75% {
+      opacity: 0;
+      transform: translateX(500px);
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-left {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    25% {
+      transform: translateX(-500px);
+      opacity: 0;
+    }
+    75% {
+      opacity: 0;
+      transform: translateX(500px);
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
   .projects-section {
     width: 100%;
   }

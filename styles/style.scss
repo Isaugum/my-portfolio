@@ -260,7 +260,60 @@ button {
                     color: $font-color-medium;
                 }
             }  
-        }  
+        }
+        .project-animation-right {
+            animation: slide-right 800ms linear normal;
+        }
+
+        .project-animation-left {
+            animation: slide-left 800ms linear normal;
+        }
+
+        @keyframes slide-right {
+            0% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            25% {
+                transform: translateX(500px);
+                opacity: 0;
+            }
+
+
+            75% {
+                opacity: 0;
+                transform: translateX(-500px);
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-left {
+            0% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            25% {
+                transform: translateX(-500px);
+                opacity: 0;
+            }
+
+
+            75% {
+                opacity: 0;
+                transform: translateX(500px);
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        } 
     }
 
     .projects-section {
