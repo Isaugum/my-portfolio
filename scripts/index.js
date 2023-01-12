@@ -47,7 +47,7 @@ const myFavourites = {
         title: "This Is How You Lose the Time War",
         author: "Amal El-Mothar - Max Gladstone / 2019",
         imgSrc: "images/time-war.jpg",
-        details: "blabla"
+        details: "Modern reinvention of a novel through letters, with a nice time travel twist and gorgeous language."
     },
 
     1: {
@@ -55,7 +55,7 @@ const myFavourites = {
         title: "Hellfire",
         author: "black midi / 2022",
         imgSrc: "images/hellfire.jpg",
-        details: "blabla"
+        details: "Creative and whacky as Black Midi have always been, this latest release shows off their skill and imagination even more."
     },
 
     2: {
@@ -63,15 +63,15 @@ const myFavourites = {
         title: "Multitude",
         author: "Stormae / 2022",
         imgSrc: "images/multitude.jpg",
-        details: "blabla"
+        details: "An album I honestly did not expect to like, but was blown away by it. The production and rhythms are just excelent."
     },
 
     3: {
         type: "A book I really like...",
-        title: "Three Body Problem",
-        author: "Cixin Liu",
-        imgSrc: "images/TBP.jpg",
-        details: "blabla"
+        title: "Solaris",
+        author: "Stanislav Lem",
+        imgSrc: "images/solaris.png",
+        details: "A classic science fiction novel with emphasis on limits of human understanding and scientific method itself - how to know and understand something so alien that scientific methods simply cannot apply?"
     }
 }
 
