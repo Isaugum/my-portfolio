@@ -276,14 +276,14 @@ button {
             }
 
             25% {
-                transform: translateX(500px);
+                transform: translateX(300px);
                 opacity: 0;
             }
 
 
             75% {
                 opacity: 0;
-                transform: translateX(-500px);
+                transform: translateX(-300px);
             }
 
             100% {
@@ -299,14 +299,14 @@ button {
             }
 
             25% {
-                transform: translateX(-500px);
+                transform: translateX(-300px);
                 opacity: 0;
             }
 
 
             75% {
                 opacity: 0;
-                transform: translateX(500px);
+                transform: translateX(300px);
             }
 
             100% {

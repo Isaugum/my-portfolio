@@ -180,32 +180,17 @@ window.addEventListener("load", () => {
             console.log(myFavourites[mediaFavouritesState]);
 
             if(arrow.className.split(" ").includes("left-arrow")) {
-                mediaDisplay.classList.add("project-animation-left");
-                console.log(mediaDisplay.classList);
-    
-                const changeMediaContent = setTimeout(() => {
-                    mediaType.innerText = myFavourites[mediaFavouritesState].type;
-                    mediaTitle.innerText = myFavourites[mediaFavouritesState].title;
-                    mediaAuthor.innerText = myFavourites[mediaFavouritesState].author;
-                    mediaImg.src = myFavourites[mediaFavouritesState].imgSrc;
-                }, 400);
-    
-                const animationRemover = setTimeout(() => {
-                    mediaDisplay.classList.remove("project-animation-left");
-
-                    mediaFavouritesState -= 1;
-
-                    if(mediaFavouritesState < 0) {
-                        mediaFavouritesState = Object.keys(myFavourites).length - 1;
-                    }
-                }, 800)
-            }
-
-            if(arrow.className.split(" ").includes("right-arrow")) {
                 mediaDisplay.classList.add("project-animation-right");
                 console.log(mediaDisplay.classList);
-
+    
                 const changeMediaContent = setTimeout(() => {
+                    mediaFavouritesState -= 1;
+    
+                    if(mediaFavouritesState < 0) {
+                        console.log(mediaFavouritesState);
+                        mediaFavouritesState = Object.keys(myFavourites).length - 1;
+                    }
+    
                     mediaType.innerText = myFavourites[mediaFavouritesState].type;
                     mediaTitle.innerText = myFavourites[mediaFavouritesState].title;
                     mediaAuthor.innerText = myFavourites[mediaFavouritesState].author;
@@ -214,11 +199,30 @@ window.addEventListener("load", () => {
     
                 const animationRemover = setTimeout(() => {
                     mediaDisplay.classList.remove("project-animation-right");
-                    mediaFavouritesState += 1;
+                }, 800)
+            }
 
+            if(arrow.className.split(" ").includes("right-arrow")) {
+                mediaDisplay.classList.add("project-animation-left");
+                console.log(mediaDisplay.classList);
+
+                const changeMediaContent = setTimeout(() => {
+                    mediaFavouritesState += 1;
+    
+                    console.log(mediaFavouritesState);
+    
                     if(mediaFavouritesState > Object.keys(myFavourites).length - 1) {
                         mediaFavouritesState = 0;
                     }
+    
+                    mediaType.innerText = myFavourites[mediaFavouritesState].type;
+                    mediaTitle.innerText = myFavourites[mediaFavouritesState].title;
+                    mediaAuthor.innerText = myFavourites[mediaFavouritesState].author;
+                    mediaImg.src = myFavourites[mediaFavouritesState].imgSrc;
+                }, 400);
+    
+                const animationRemover = setTimeout(() => {
+                    mediaDisplay.classList.remove("project-animation-left");
                 }, 800)
             }
         })
