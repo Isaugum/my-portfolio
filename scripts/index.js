@@ -52,39 +52,31 @@ const myFavourites = {
 
     1: {
         type: "The last album I liked was...",
-        title: "Hellfire",
-        author: "black midi / 2022",
-        imgSrc: "images/hellfire.jpg",
-        details: "Creative and whacky as Black Midi have always been, this latest release shows off their skill and imagination even more."
+        title: "Figura",
+        author: "The Canyon Observer / 2022",
+        imgSrc: "https://f4.bcbits.com/img/a1664673679_10.jpg",
+        details: "One of my favourite Slovenian bands outdid themselves with an amazing album, adding saxophone and cellos to their already cacophonic sound."
     },
 
     2: {
-        type: "Another album I liked recently...",
-        title: "Multitude",
-        author: "Stormae / 2022",
-        imgSrc: "images/multitude.jpg",
-        details: "An album I honestly did not expect to like, but was blown away by it. The production and rhythms are just excelent."
+        type: "One of my all time favourites...",
+        title: "Sirens",
+        author: "Nicolas Jaar / 2016",
+        imgSrc: "https://f4.bcbits.com/img/a1554562966_16.jpg",
+        details: "There is not much to say here - the whole album is a beautiful collage of rhythm and sound and offers both depth, detail and variety."
     },
 }
 
 //Data for projects section
 const myProjects = {
-    LL: {
-        title: "Craiglist Simulator",
-        narocnik: "Lene Lekše",
-        description: "A simulator of new york lol.",
-        imgSrc: "images/craiglist.png"
-    },
     PKMN: {
         title: "Pokemon Teambuilder",
-        narocnik: " / ",
-        description: "A teambuilder for purpose of competitive battles.",
+        description: "A teambuilder for purpose of competitive battles.\n\nThe app is built from a React.js front end and Node.js backend, including a NeDB databasbe.\n\nIt allows users to enter parameters that are then send to the server, which retrieves matching data from the database and returns it back to client. Aditional features involve setting parameters for specific pokemon and saving them, as well as exporting those pokemon in a format that can be imported directly into Pokemon Showdown.",
         imgSrc: "images/pkmn-app.jpg"
     },
     IMA: {
         title: "Inventory Managment App",
-        narocnik: " / ",
-        description: "An app to help a small bar manage its inventory and more.",
+        description: "An app to help a small bar manage its inventory.\n\nA small lightweight app that is meant to make it easier for workers in a bar to track all sorts of thing: received and available items, cleanings, scheduled tasks...\n\nI am currently working on developing the front end using React.js - when that is finished, I plan on making a backend for it using Python's Django.",
         imgSrc: "images/pkmn-app.jpg"
     }
 }

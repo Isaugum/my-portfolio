@@ -259,6 +259,8 @@ button {
                 height: 20vh;
                 min-height: 200px;
                 width: auto;
+
+                z-index: 1;
             }
 
             .favourites-description {
@@ -297,6 +299,8 @@ button {
         	
         .favourite-details {
             display: none;
+            position: relative;
+            z-index: 3;
         }
 
         .project-animation-right {
@@ -931,7 +935,7 @@ button {
         }
 
         p {
-            font-size: 1.6em; 
+            font-size: 1.3em; 
         }
     }
 
@@ -1271,7 +1275,7 @@ button {
 
         p {
             margin-top: 30px;
-            font-size: 1.4em;
+            font-size: 1.3em; 
         }
 
         .cv-text {

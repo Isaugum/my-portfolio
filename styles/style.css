@@ -214,6 +214,7 @@ button {
     height: 20vh;
     min-height: 200px;
     width: auto;
+    z-index: 1;
   }
   .music-media .display-container .favourites-description {
     display: flex;
@@ -242,6 +243,8 @@ button {
   }
   .music-media .favourite-details {
     display: none;
+    position: relative;
+    z-index: 3;
   }
   .music-media .project-animation-right {
     -webkit-animation: slide-right 800ms linear normal;
@@ -750,7 +753,7 @@ button {
     font-size: 2em;
   }
   .cv-section p {
-    font-size: 1.6em;
+    font-size: 1.3em;
   }
 }
 @media screen and (min-width: 62em) {
@@ -1048,7 +1051,7 @@ button {
   }
   .cv-section p {
     margin-top: 30px;
-    font-size: 1.4em;
+    font-size: 1.3em;
   }
   .cv-section .cv-text {
     width: 50%;
