@@ -76,8 +76,8 @@ const myProjects = {
     },
     IMA: {
         title: "Inventory Managment App",
-        description: "An app to help a small bar manage its inventory.\n\nA small lightweight app that is meant to make it easier for workers in a bar to track all sorts of thing: received and available items, cleanings, scheduled tasks...\n\nI am currently working on developing the front end using React.js - when that is finished, I plan on making a backend for it using Python's Django.",
-        imgSrc: "images/pkmn-app.jpg"
+        description: "An app to help a small bar manage its inventory.\n\nSmall lightweight, it is meant to make it easier for workers in a bar or restaurant to track all sorts of thing: received and available items, cleanings, scheduled tasks...\n\nI am currently working on developing the front end using React.js - when that is finished, I plan on making a backend for it using Python's Django framework.",
+        imgSrc: "https://images.pexels.com/photos/256559/pexels-photo-256559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
 }
 
