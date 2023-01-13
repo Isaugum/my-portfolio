@@ -129,6 +129,14 @@ button {
 
                 li {
                     padding: 20px 0;
+
+                    .github-dark {
+                        display: none;
+                    }
+
+                    .github-white {
+                        height: 40px;
+                    }
                 }
             }
         }
@@ -207,12 +215,30 @@ button {
     }
 
     .music-media {
-        @include flex(row, center, center);
+        @include flex(column, center, center);
         width: 100%;
         min-height: 320px;
 
         .arrow {
             display: none;
+        }
+
+        .arrows-for-phone {
+            @include flex(row, center, center);
+
+            margin-top: 50px;
+
+            h2 {
+                font-size: 1em;
+
+                color: $font-color-dark;
+                font-weight: lighter;
+            }
+
+            .arrow-small {
+                height: 20px;
+                margin: 0 30px;
+            }
         }
 
         .display-container {
@@ -341,6 +367,8 @@ button {
             li {
                 margin: 10px 0;
                 color: $font-color-dark;
+
+                transition: 500ms;
             }
         }
 
@@ -419,7 +447,13 @@ button {
             }
 
             p {
+                @include flex(row, center, center);
                 text-align: center;
+
+                img {
+                    height: 20px;
+                    margin-right: 15px;
+                }
             }
 
             svg {
@@ -445,20 +479,6 @@ button {
             }
         }
     }
-
-    /*.back-to-top {
-        height: 7%;
-
-        position: fixed;
-        bottom: 10%;
-        right: 10%;
-
-        transition: 500ms;
-
-        &:hover {
-            height: 90px;
-        }
-    }*/
 }
 
 @media screen and (min-width: 40em) {
@@ -625,7 +645,6 @@ button {
     }
 
     .music-media {
-        @include flex(row, space-around, center);
         color: $font-color-light;
 
         width: 100%;
@@ -941,6 +960,10 @@ button {
             }
         }
 
+        .arrows-for-phone {
+            display: none;
+        }
+
         .display-container {
             @include flex(row, center, center);
 
@@ -1109,11 +1132,18 @@ button {
                 width: 500px;
                 height: 100%;
 
-                .back-to-top {
-                    display: none;
-                }
-
                 li {
+
+                    .github-white {
+                        display: none;
+                    }
+
+                    .github-dark {
+                        display: block;
+                        height: 40px;
+
+                        animation: text-slide-down 700ms ease-in 1 normal forwards;
+                    }
 
                     a {
                         color: $font-color-medium;
@@ -1136,6 +1166,10 @@ button {
                     &:hover::after  {
                         width: 100%;
                     }
+
+                    &:nth-child(1) {
+                        display: none;
+                    }             
 
                     &:nth-child(2) {
                         transform: translateY(-100px);
@@ -1225,7 +1259,7 @@ button {
     }
  
     .cv-section {
-        @include flex(row, space-between, center);
+        @include flex(row, space-between, flex-start);
 
         min-height: 500px;
 
@@ -1386,7 +1420,7 @@ button {
             color: $font-color-dark;
             font-size: 1em;
             
-            width: 55%;
+            width: 40%;
 
             li {
                 color: $font-color-dark;

@@ -93,6 +93,12 @@ button {
   .landing-page .navbar ul li {
     padding: 20px 0;
   }
+  .landing-page .navbar ul li .github-dark {
+    display: none;
+  }
+  .landing-page .navbar ul li .github-white {
+    height: 40px;
+  }
   .landing-page .landing-page-text {
     display: flex;
     flex-direction: column;
@@ -166,7 +172,7 @@ button {
   }
   .music-media {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -174,6 +180,22 @@ button {
   }
   .music-media .arrow {
     display: none;
+  }
+  .music-media .arrows-for-phone {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .music-media .arrows-for-phone h2 {
+    font-size: 1em;
+    color: #3F3F3F;
+    font-weight: lighter;
+  }
+  .music-media .arrows-for-phone .arrow-small {
+    height: 20px;
+    margin: 0 30px;
   }
   .music-media .display-container {
     display: flex;
@@ -313,6 +335,7 @@ button {
   .projects-section ul li {
     margin: 10px 0;
     color: #3F3F3F;
+    transition: 500ms;
   }
   .projects-section .project-container img {
     width: 100%;
@@ -377,7 +400,15 @@ button {
     margin-bottom: 20px;
   }
   .contact-section .contact-section-text p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+  }
+  .contact-section .contact-section-text p img {
+    height: 20px;
+    margin-right: 15px;
   }
   .contact-section .contact-section-text svg {
     background-color: #3F3F3F;
@@ -398,19 +429,6 @@ button {
     height: 30px;
     width: 30px;
   }
-  /*.back-to-top {
-      height: 7%;
-
-      position: fixed;
-      bottom: 10%;
-      right: 10%;
-
-      transition: 500ms;
-
-      &:hover {
-          height: 90px;
-      }
-  }*/
 }
 @media screen and (min-width: 40em) {
   .landing-page .open-menu {
@@ -524,10 +542,6 @@ button {
 }
 @media screen and (min-width: 40em) {
   .music-media {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
     color: #e4e4e4;
     width: 100%;
     z-index: 1;
@@ -762,6 +776,9 @@ button {
     background-color: rgba(63, 63, 63, 0.1);
     cursor: pointer;
   }
+  .music-media .arrows-for-phone {
+    display: none;
+  }
   .music-media .display-container {
     display: flex;
     flex-direction: row;
@@ -899,8 +916,14 @@ button {
     width: 500px;
     height: 100%;
   }
-  .landing-page .navbar ul .back-to-top {
+  .landing-page .navbar ul li .github-white {
     display: none;
+  }
+  .landing-page .navbar ul li .github-dark {
+    display: block;
+    height: 40px;
+    -webkit-animation: text-slide-down 700ms ease-in 1 normal forwards;
+            animation: text-slide-down 700ms ease-in 1 normal forwards;
   }
   .landing-page .navbar ul li a {
     color: #707070;
@@ -920,6 +943,9 @@ button {
   }
   .landing-page .navbar ul li:hover::after {
     width: 100%;
+  }
+  .landing-page .navbar ul li:nth-child(1) {
+    display: none;
   }
   .landing-page .navbar ul li:nth-child(2) {
     transform: translateY(-100px);
@@ -1013,7 +1039,7 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     min-height: 500px;
     z-index: 1;
   }
@@ -1183,7 +1209,7 @@ button {
     align-items: center;
     color: #3F3F3F;
     font-size: 1em;
-    width: 55%;
+    width: 40%;
   }
   .projects-section ul li {
     color: #3F3F3F;

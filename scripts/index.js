@@ -65,14 +65,6 @@ const myFavourites = {
         imgSrc: "images/multitude.jpg",
         details: "An album I honestly did not expect to like, but was blown away by it. The production and rhythms are just excelent."
     },
-
-    3: {
-        type: "A book I really like...",
-        title: "Solaris",
-        author: "Stanislav Lem",
-        imgSrc: "images/solaris.png",
-        details: "A classic science fiction novel with emphasis on limits of human understanding and scientific method itself - how to know and understand something so alien that scientific methods simply cannot apply?"
-    }
 }
 
 //Data for projects section
@@ -342,9 +334,9 @@ window.addEventListener("load", () => {
 
     //set initial active button
     projectButtons[0].style.color = "#86A4B8";
-    projectTitle.innerText = myProjects.LL.title;
-    projectDescription.innerText = myProjects.LL.description;
-    projectImage.src = "images/craiglist.png";
+    projectTitle.innerText = myProjects.PKMN.title;
+    projectDescription.innerText = myProjects.PKMN.description;
+    projectImage.src = "images/pkmn-app.jpg";
 });
 
 //OPENINA AND CLOSING MENU FOR PHONE / SMALL TABLETS
