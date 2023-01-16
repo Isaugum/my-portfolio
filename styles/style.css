@@ -243,7 +243,6 @@ button {
   }
   .music-media .favourite-details {
     display: none;
-    position: relative;
     z-index: 3;
   }
   .music-media .project-animation-right {
@@ -924,7 +923,8 @@ button {
   }
   .landing-page .navbar ul li .github-dark {
     display: block;
-    height: 40px;
+    height: 100%;
+    height: 35px;
     -webkit-animation: text-slide-down 700ms ease-in 1 normal forwards;
             animation: text-slide-down 700ms ease-in 1 normal forwards;
   }
@@ -935,7 +935,7 @@ button {
   .landing-page .navbar ul li a:hover {
     cursor: pointer;
   }
-  .landing-page .navbar ul li::after {
+  .landing-page .navbar ul li a::after {
     display: block;
     width: 0;
     content: "";
@@ -944,8 +944,11 @@ button {
     margin: auto;
     transition: 500ms;
   }
-  .landing-page .navbar ul li:hover::after {
+  .landing-page .navbar ul li a:hover::after {
     width: 100%;
+  }
+  .landing-page .navbar ul li .github-main:after {
+    display: none;
   }
   .landing-page .navbar ul li:nth-child(1) {
     display: none;
