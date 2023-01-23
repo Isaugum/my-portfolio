@@ -205,12 +205,35 @@ button {
             transform: translate(-100px, 0);
             opacity: 0;
             transition: 500ms ease-out 100ms;
+
+            p {
+                margin: 0;
+                padding: 0;
+                
+                font-weight: lighter;
+            }
         }
 
         .cv-skills {
             transform: translate(200px, 0);
             opacity: 0;
             transition: 500ms ease-out 100ms;
+
+            .skill-list {
+                h3 {
+                    margin: 20px 0;
+                    padding: 0;
+                }
+    
+                p {
+                    margin: 0;
+                    padding: 0;
+                    
+                    color: $font-color-medium;
+                    font-size: 1em;
+                    font-weight: lighter;
+                }
+            }
         }
     }
 
@@ -643,7 +666,7 @@ button {
         }
 
         p {
-            font-size: 1.6em; 
+            font-size: 1em; 
         }
     }
 
@@ -932,9 +955,20 @@ button {
         h1 {
             font-size: 2em;
         }
+        
+        .skill-list {
+            h3 {
+                font-size: 1.4em;
+                margin: 10px 0;
+                padding: 0;
+            }
 
-        p {
-            font-size: 1.3em; 
+            p {
+                margin: 0;
+                padding: 0;
+
+                font-size: 1.3em; 
+            }
         }
     }
 
@@ -1132,7 +1166,7 @@ button {
                 padding: 0;
 
                 font-size: 1.2em;
-                width: 500px;
+                width: 550px;
                 height: 100%;
 
                 li {
@@ -1431,7 +1465,7 @@ button {
             color: $font-color-dark;
             font-size: 1em;
             
-            width: 40%;
+            width: 50%;
 
             li {
                 color: $font-color-dark;

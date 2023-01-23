@@ -71,13 +71,18 @@ const myFavourites = {
 const myProjects = {
     PKMN: {
         title: "Pokemon Teambuilder",
-        description: "A teambuilder for purpose of competitive battles.\n\nThe app is built from a React.js front end and Node.js backend, including a NeDB databasbe.\n\nIt allows users to enter parameters that are then send to the server, which retrieves matching data from the database and returns it back to client. Aditional features involve setting parameters for specific pokemon and saving them, as well as exporting those pokemon in a format that can be imported directly into Pokemon Showdown.",
+        description: "A teambuilder for purpose of competitive battles.\n\nFull stach app with ReactJS frontend, NodeJS backend and PostgreSQL + NeDB databases.\n\nIt allows users to enter parameters that are then send to the server, which retrieves matching data from the database and returns it back to client. Aditional features involve setting parameters for specific pokemon and saving them, as well as exporting those pokemon in a format that can be imported directly into Pokemon Showdown.",
         imgSrc: "images/pkmn-app.jpg"
     },
     IMA: {
         title: "Inventory Managment App",
         description: "An app to help a small bar manage its inventory.\n\nSmall lightweight, it is meant to make it easier for workers in a bar or restaurant to track all sorts of thing: received and available items, cleanings, scheduled tasks...\n\nI am currently working on developing the front end using React.js - when that is finished, I plan on making a backend for it using Python's Django framework.",
         imgSrc: "https://images.pexels.com/photos/256559/pexels-photo-256559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    LL: {
+        title: "Serendipitously",
+        description: "A text-based terminal game that I've written in Python for Lene Lekše's art exhibition.\n\nThe game puts the player on a stylized map of New York, where he is free to walk around, inspect locations, pick up items and fullfills quests. The game's architecture was written from scratch and is based on classes and custom states.",
+        imgSrc: "https://koridor-ku.si/wp-content/uploads/2022/02/272561200_322977683171595_2621809276680702965_n.jpg"        
     }
 }
 
