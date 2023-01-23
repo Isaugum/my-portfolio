@@ -97,7 +97,7 @@ const myProjects = {
     },
     LL: {
         title: "Serendipitously",
-        description: "A text-based terminal game that I've written in Python for Lene Lekše's art exhibition.\n\nThe game puts the player on a stylized map of New York, where he is free to walk around, inspect locations, pick up items and fullfills quests. The game's architecture was written from scratch and is based on classes and custom states.",
+        description: "A text-based terminal game that I've written in Python for Lene Lekše's art exhibition.\n\nThe game puts the player on a stylized map of New York, where he or she is free to walk around, inspect locations, pick up items and fulfill quests. The game's architecture was written from scratch and is based on classes and custom states.",
         imgSrc: "https://koridor-ku.si/wp-content/uploads/2022/02/272561200_322977683171595_2621809276680702965_n.jpg"        
     }
 }
