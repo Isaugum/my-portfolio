@@ -59,11 +59,27 @@ const myFavourites = {
     },
 
     2: {
-        type: "One of my all time favourites...",
+        type: "One of my all time favourite albums...",
         title: "Sirens",
         author: "Nicolas Jaar / 2016",
         imgSrc: "https://f4.bcbits.com/img/a1554562966_16.jpg",
         details: "There is not much to say here - the whole album is a beautiful collage of rhythm and sound and offers both depth, detail and variety."
+    },
+
+    3: {
+        type: "One of favourite non-fiction books...",
+        title: "Thinking fast and slow",
+        author: "David Kahneman / 2011",
+        imgSrc: "https://upload.wikimedia.org/wikipedia/en/c/c1/Thinking%2C_Fast_and_Slow.jpg",
+        details: "A professional yet easy to read study of laziness of human intellect. Through experiements and analysis, Kahneman gives the reader a wonderful overview of how human brain makes judgements - and how it even learns to make them."
+    },
+
+    4: {
+        type: "One of my all time favourite books...",
+        title: "Blindsight",
+        author: "Peter Watts / 2006",
+        imgSrc: "https://upload.wikimedia.org/wikipedia/en/2/2f/Blindsight_%28book_cover%29.jpg",
+        details: "A novel that is at the same time a very good hard sci-fi thriller and an essay on human consciousness. There aren't many sci-fi novels that can pack such a polemic punch, nevermind doing it with such style."
     },
 }
 
