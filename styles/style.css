@@ -106,8 +106,7 @@ button {
     align-items: center;
     width: 70%;
     height: 50%;
-    -webkit-animation: text-slide-up 500ms ease-out forwards;
-            animation: text-slide-up 500ms ease-out forwards;
+    animation: text-slide-up 500ms ease-out forwards;
   }
   .landing-page .landing-page-text h1 {
     font-size: 2.2em;
@@ -127,16 +126,6 @@ button {
     margin: 30px 0 30px 0;
     text-align: center;
     color: #707070;
-  }
-  @-webkit-keyframes text-slide-up {
-    from {
-      transform: translateY(400px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
   }
   @keyframes text-slide-up {
     from {
@@ -259,33 +248,13 @@ button {
   }
   .music-media .favourite-details {
     display: none;
-    z-index: 3;
+    z-index: 0;
   }
   .music-media .project-animation-right {
-    -webkit-animation: slide-right 800ms linear normal;
-            animation: slide-right 800ms linear normal;
+    animation: slide-right 800ms linear normal;
   }
   .music-media .project-animation-left {
-    -webkit-animation: slide-left 800ms linear normal;
-            animation: slide-left 800ms linear normal;
-  }
-  @-webkit-keyframes slide-right {
-    0% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    25% {
-      transform: translateX(300px);
-      opacity: 0;
-    }
-    75% {
-      opacity: 0;
-      transform: translateX(-300px);
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
+    animation: slide-left 800ms linear normal;
   }
   @keyframes slide-right {
     0% {
@@ -299,24 +268,6 @@ button {
     75% {
       opacity: 0;
       transform: translateX(-300px);
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  @-webkit-keyframes slide-left {
-    0% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    25% {
-      transform: translateX(-300px);
-      opacity: 0;
-    }
-    75% {
-      opacity: 0;
-      transform: translateX(300px);
     }
     100% {
       transform: translateX(0);
@@ -372,8 +323,7 @@ button {
     color: #707070;
   }
   .projects-section .project-animation {
-    -webkit-animation: slide-right 800ms linear normal;
-            animation: slide-right 800ms linear normal;
+    animation: slide-right 800ms linear normal;
   }
   @keyframes slide-right {
     0% {
@@ -925,10 +875,8 @@ button {
     font-size: 1.8em;
     padding: 0;
     margin: 0;
-    -webkit-animation-name: text-slide-down;
-            animation-name: text-slide-down;
-    -webkit-animation-duration: 1000ms;
-            animation-duration: 1000ms;
+    animation-name: text-slide-down;
+    animation-duration: 1000ms;
   }
   .landing-page .navbar ul {
     display: flex;
@@ -948,8 +896,6 @@ button {
     display: block;
     height: 100%;
     height: 35px;
-    -webkit-animation: text-slide-down 700ms ease-in 1 normal forwards;
-            animation: text-slide-down 700ms ease-in 1 normal forwards;
   }
   .landing-page .navbar ul li a {
     color: #707070;
@@ -970,6 +916,9 @@ button {
   .landing-page .navbar ul li a:hover::after {
     width: 100%;
   }
+  .landing-page .navbar ul li .github-main {
+    animation: text-slide-down 700ms ease-in 500ms 1 normal forwards;
+  }
   .landing-page .navbar ul li .github-main:after {
     display: none;
   }
@@ -978,28 +927,19 @@ button {
   }
   .landing-page .navbar ul li:nth-child(2) {
     transform: translateY(-100px);
-    -webkit-animation: text-slide-down 700ms ease-in 500ms 1 normal forwards;
-            animation: text-slide-down 700ms ease-in 500ms 1 normal forwards;
+    animation: text-slide-down 700ms ease-in 400ms 1 normal forwards;
   }
   .landing-page .navbar ul li:nth-child(3) {
     transform: translateY(-100px);
-    -webkit-animation: text-slide-down 700ms ease-in 800ms 1 normal forwards;
-            animation: text-slide-down 700ms ease-in 800ms 1 normal forwards;
+    animation: text-slide-down 700ms ease-in 600ms 1 normal forwards;
   }
   .landing-page .navbar ul li:nth-child(4) {
     transform: translateY(-100px);
-    -webkit-animation: text-slide-down 700ms ease-in 1100ms 1 normal forwards;
-            animation: text-slide-down 700ms ease-in 1100ms 1 normal forwards;
+    animation: text-slide-down 700ms ease-in 800ms 1 normal forwards;
   }
-  @-webkit-keyframes text-slide-down {
-    from {
-      transform: translateY(-100px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
+  .landing-page .navbar ul li:nth-child(6) {
+    transform: translateY(-100px);
+    animation: text-slide-down 700ms ease-in 1000ms 1 normal forwards;
   }
   @keyframes text-slide-down {
     from {
@@ -1015,8 +955,7 @@ button {
     align-items: flex-start;
     padding: 25% 0 0 12%;
     width: 65%;
-    -webkit-animation: text-slide-right 1000ms forwards;
-            animation: text-slide-right 1000ms forwards;
+    animation: text-slide-right 1000ms forwards;
   }
   .landing-page .landing-page-text h1 {
     color: #3F3F3F;
@@ -1043,16 +982,6 @@ button {
     padding: 0;
     color: #707070;
     font-size: 1.5em;
-  }
-  @-webkit-keyframes text-slide-right {
-    from {
-      transform: translateX(-500px);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
   }
   @keyframes text-slide-right {
     from {
@@ -1146,30 +1075,10 @@ button {
     display: none;
   }
   .music-media .project-animation-right {
-    -webkit-animation: slide-right 800ms linear normal;
-            animation: slide-right 800ms linear normal;
+    animation: slide-right 800ms linear normal;
   }
   .music-media .project-animation-left {
-    -webkit-animation: slide-left 800ms linear normal;
-            animation: slide-left 800ms linear normal;
-  }
-  @-webkit-keyframes slide-right {
-    0% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    25% {
-      transform: translateX(500px);
-      opacity: 0;
-    }
-    75% {
-      opacity: 0;
-      transform: translateX(-500px);
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
+    animation: slide-left 800ms linear normal;
   }
   @keyframes slide-right {
     0% {
@@ -1183,24 +1092,6 @@ button {
     75% {
       opacity: 0;
       transform: translateX(-500px);
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  @-webkit-keyframes slide-left {
-    0% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    25% {
-      transform: translateX(-500px);
-      opacity: 0;
-    }
-    75% {
-      opacity: 0;
-      transform: translateX(500px);
     }
     100% {
       transform: translateX(0);
@@ -1237,7 +1128,7 @@ button {
     justify-content: space-between;
     align-items: center;
     color: #3F3F3F;
-    font-size: 1em;
+    font-size: 0.9em;
     width: 50%;
   }
   .projects-section ul li {

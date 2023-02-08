@@ -87,13 +87,13 @@ const myFavourites = {
 const myProjects = {
     PKMN: {
         title: "Pokemon Teambuilder",
-        description: "A teambuilder for purpose of competitive battles.\n\nFull stach app with ReactJS frontend, NodeJS backend and PostgreSQL + NeDB databases.\n\nIt allows users to enter parameters that are then send to the server, which retrieves matching data from the database and returns it back to client. Aditional features involve setting parameters for specific pokemon and saving them, as well as exporting those pokemon in a format that can be imported directly into Pokemon Showdown.",
+        description: "A teambuilder for purpose of competitive battles.\n\nFull stach app with ReactJS and Tailwind frontend, NodeJS backend and PostgreSQL database.\n\nIt allows user to enter relevant parameters, which are used to filter the list of 1279 pokemon in real time, showing up relevant results. In the future, the wish is to allow users to build teams and save them to their personal profile, as well as export them in format that is immediately importable into Pokemon Showdown.",
         imgSrc: "images/pkmn-app.jpg"
     },
     IMA: {
-        title: "Inventory Managment App",
-        description: "An app to help a small bar manage its inventory.\n\nSmall lightweight, it is meant to make it easier for workers in a bar or restaurant to track all sorts of thing: received and available items, cleanings, scheduled tasks...\n\nI am currently working on developing the front end using React.js - when that is finished, I plan on making a backend for it using Python's Django framework.",
-        imgSrc: "https://images.pexels.com/photos/256559/pexels-photo-256559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        title: "Text-Based Project",
+        description: "A text-based game, currently in early development. The project is built using ReactJS and uses Redux to manage its states.\n\nThe plan is to make a large and detailed open world RPG. The game will rely on text as the main way for player to interact with it, sticking to the old-school gameplay approach while updating the look of interface itself.\n\nThe emphasis of the game will be on the vast and unique world to explore, as well as interesting mechanics that will enhance the experience.",
+        imgSrc: "images/text-based.jpg"
     },
     LL: {
         title: "Serendipitously",
@@ -249,15 +249,16 @@ window.addEventListener("load", () => {
 
             mediaDisplay.style.transform = "scaleX(-1)";
             mediaImg.style.transform = "scaleX(-1)";
-            mediaImg.style.opacity = "0.1";
+            mediaImg.style.display = "none";
+            mediaImg.style.zIndex = "-1";
 
             mediaType.style.display = "none";
             mediaTitle.style.display = "none";
             mediaAuthor.style.display = "none";
 
-            const slowTextChange = setTimeout(() => {
+            const slowTextChange = setTimeout(() => {   
                 mediaDetails.style.transform = "scaleX(-1)";
-                mediaDetails.style.display = "block";             
+                mediaDetails.style.display = "block";
             }, 200)
 
             mediaDisplayState = true;
@@ -267,11 +268,12 @@ window.addEventListener("load", () => {
             mediaImg.style.opacity = "1";
 
             const slowTextChange = setTimeout(() => {
+                mediaImg.style.display = "block";
                 mediaType.style.display = "block";
                 mediaTitle.style.display = "block";
                 mediaAuthor.style.display = "block";
                 mediaDetails.style.display = "none";               
-            }, 200)
+            }, 100)
 
             mediaDisplayState = false;
         }
